@@ -7,8 +7,6 @@ runtime-version: '18.08'
 appstream-compose: false
 separate-locales: false
 build-options:
-  cflags: -O2 -g
-  cxxflags: -O2 -g
   prefix: /usr/lib/sdk/texlive
   env:
     PATH: /usr/lib/sdk/texlive/bin:/usr/bin
