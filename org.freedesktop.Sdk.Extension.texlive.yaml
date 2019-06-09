@@ -31,8 +31,8 @@ modules:
     - '*'
   sources:
     - type: archive
-      url: https://ftp.gnu.org/gnu/wget/wget-1.19.tar.xz
-      sha256: 0f1157bbf4daae19f3e1ddb70c6ccb2067feb834a6aa23c9d9daa7f048606384
+      url: https://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
+      sha256: 31cccfc6630528db1c8e3a06f6decf2a370060b982841cfab2b8677400a5092e
 
 - name: texlive
   buildsystem: simple
@@ -61,8 +61,8 @@ modules:
     - "*.h"
   sources:
   - type: archive
-    url: http://www.cpan.org/src/5.0/perl-5.26.2.tar.gz
-    sha256: 572f9cea625d6062f8a63b5cee9d3ee840800a001d2bb201a41b9a177ab7f70d
+    url: https://www.cpan.org/src/5.0/perl-5.30.0.tar.gz
+    sha256: 851213c754d98ccff042caa40ba7a796b2cee88c5325f121be5cbb61bbf975f2
   - type: script
     dest-filename: configure
     commands:
@@ -75,8 +75,8 @@ modules:
     ldflags: -L/app/lib
   sources:
   - type: archive
-    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs925/ghostscript-9.25.tar.xz
-    sha256: a2971a23bf15bbd9ddcd173141b15504e51ddc1d5a0a0144b00a6a8b14a62fed
+    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs927/ghostscript-9.27.tar.gz
+    sha256: 9760e8bdd07a08dbd445188a6557cb70e60ccb6a5601f7dbfba0d225e28ce285
 
 - name: appdata
   buildsystem: simple
