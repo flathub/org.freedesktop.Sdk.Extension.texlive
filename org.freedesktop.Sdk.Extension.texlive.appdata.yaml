@@ -1,0 +1,17 @@
+
+---
+File: DEP-11
+Version: TeXLive 2019
+Origin: flathub
+---
+ID: org.freedesktop.Sdk.Extension.texlive
+Type: runtime
+Name:
+  C: TeX Live Sdk extension
+Summary:
+  C: LaTeX packages and tools
+Url:
+  homepage: http://tug.org/texlive/
+  bugtracker: http://tug.org/texlive/contribute.html
+  help: http://tug.org/texlive/doc.html
+  donation: https://www.tug.org/donate.html
