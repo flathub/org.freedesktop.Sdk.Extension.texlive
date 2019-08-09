@@ -46,7 +46,7 @@ modules:
     - "echo \"I\nn\" | TEXLIVE_INSTALL_PREFIX=/usr/lib/sdk/texlive ./install-tl -portable"
     - rm -rf /usr/lib/sdk/texlive/texmf-dist/doc
 
-- name: perl # required for makeglossaries
+- name: perl # required for makeglossaries, but should be bundled in texlive
   no-autogen: true
   config-opts:
   - -des # use default build configuration
@@ -82,11 +82,11 @@ modules:
   buildsystem: simple
   build-commands:
     - mkdir -p ${FLATPAK_DEST}/share/appdata
-    - cp org.freedesktop.Sdk.Extension.texlive.appdata.xml ${FLATPAK_DEST}/share/appdata
+    - cp org.freedesktop.Sdk.Extension.texlive.appdata.yaml ${FLATPAK_DEST}/share/appdata
     - appstream-compose  --basename=org.freedesktop.Sdk.Extension.texlive --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Sdk.Extension.texlive
   sources:
   - type: file
-    path: org.freedesktop.Sdk.Extension.texlive.appdata.xml
+    path: org.freedesktop.Sdk.Extension.texlive.appdata.yaml
 
 - name: scripts
   buildsystem: simple
