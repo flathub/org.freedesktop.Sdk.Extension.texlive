@@ -75,8 +75,8 @@ modules:
     ldflags: -L/app/lib
   sources:
   - type: archive
-    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs925/ghostscript-9.25.tar.xz
-    sha256: a2971a23bf15bbd9ddcd173141b15504e51ddc1d5a0a0144b00a6a8b14a62fed
+    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/ghostscript-9.50.tar.gz
+    sha256: 0f53e89fd647815828fc5171613e860e8535b68f7afbc91bf89aee886769ce89
 
 - name: appdata
   buildsystem: simple
