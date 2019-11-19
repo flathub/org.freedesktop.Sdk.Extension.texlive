@@ -44,10 +44,6 @@ modules:
     - type: file
       url: http://mirrors.ctan.org/systems/texlive/Images/texlive2019.iso
       sha512: a00a943ce4438fe2aecf8b1e05f9055135ef03c56b6782a49205bac9023d77c781f3cab50f2f9555ac116bb0d97d6570afffe7c60b8745325b9941f82af7ef83
-      x-checker-data:
-          type: rotating-url
-          url: http://mirrors.ctan.org/systems/texlive/Images/texlive2019.iso
-          pattern: http://mirrors.ctan.org/systems/texlive/Images/texlive(d+).iso
   build-commands:
     - 7z x texlive2019.iso
     - chmod +x install-tl
