@@ -33,6 +33,10 @@ modules:
     - type: archive
       url: https://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
       sha256: 31cccfc6630528db1c8e3a06f6decf2a370060b982841cfab2b8677400a5092e
+      x-checker-data:
+          type: rotating-url
+          url: https://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
+          pattern: https://ftp.gnu.org/gnu/wget/wget-(\d+.\d+[.\d]+).tar.gz
 
 - name: texlive
   buildsystem: simple
@@ -40,6 +44,10 @@ modules:
     - type: file
       url: http://mirrors.ctan.org/systems/texlive/Images/texlive2019.iso
       sha512: a00a943ce4438fe2aecf8b1e05f9055135ef03c56b6782a49205bac9023d77c781f3cab50f2f9555ac116bb0d97d6570afffe7c60b8745325b9941f82af7ef83
+      x-checker-data:
+          type: rotating-url
+          url: http://mirrors.ctan.org/systems/texlive/Images/texlive2019.iso
+          pattern: http://mirrors.ctan.org/systems/texlive/Images/texlive(d+).iso
   build-commands:
     - 7z x texlive2019.iso
     - chmod +x install-tl
@@ -63,6 +71,10 @@ modules:
   - type: archive
     url: http://www.cpan.org/src/5.0/perl-5.26.2.tar.gz
     sha256: 572f9cea625d6062f8a63b5cee9d3ee840800a001d2bb201a41b9a177ab7f70d
+    x-checker-data:
+          type: rotating-url
+          url: http://www.cpan.org/src/5.0/perl-5.26.2.tar.gz
+          pattern: http://www.cpan.org/src/5.0/perl-(\d+.\d+[.\d]+).tar.gz
   - type: script
     dest-filename: configure
     commands:
@@ -77,6 +89,10 @@ modules:
   - type: archive
     url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/ghostscript-9.50.tar.gz
     sha256: 0f53e89fd647815828fc5171613e860e8535b68f7afbc91bf89aee886769ce89
+        x-checker-data:
+          type: rotating-url
+          url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/ghostscript-9.50.tar.gz
+          pattern: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs(d+)/ghostscript-(d+.d+).tar.gz
 
 - name: appdata
   buildsystem: simple
