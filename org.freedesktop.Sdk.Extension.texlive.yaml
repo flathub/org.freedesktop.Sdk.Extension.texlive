@@ -22,6 +22,10 @@ modules:
     - type: archive
       url: https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
       sha256: 5eb20ac0e2944f6cb9c2d51dd6c4518941c185347d4089ea89087ffdd6e2341f
+      x-checker-data:
+        type: rotating-url
+        url: https://sourceforge.net/projects/p7zip/files/p7zip/last-version
+        pattern: https://sourceforge.net/projects/p7zip/files/p7zip/\d+.\+/p7zip_(\d+.\d+)_src_all.tar.bz2
     - type: shell
       commands:
       - sed -i 's|/usr/local|/usr/lib/sdk/texlive|g' makefile.common
@@ -33,6 +37,10 @@ modules:
     - type: archive
       url: https://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
       sha256: 31cccfc6630528db1c8e3a06f6decf2a370060b982841cfab2b8677400a5092e
+      x-checker-data:
+          type: rotating-url
+          url: https://ftp.gnu.org/gnu/wget/last-version
+          pattern: https://ftp.gnu.org/gnu/wget/wget-(\d+.\d+[.\d]+).tar.gz
 
 - name: texlive
   buildsystem: simple
@@ -63,6 +71,10 @@ modules:
   - type: archive
     url: http://www.cpan.org/src/5.0/perl-5.26.2.tar.gz
     sha256: 572f9cea625d6062f8a63b5cee9d3ee840800a001d2bb201a41b9a177ab7f70d
+    x-checker-data:
+          type: rotating-url
+          url: http://www.cpan.org/src/5.0/last-version
+          pattern: http://www.cpan.org/src/5.0/perl-(\d+.\d+[.\d]+).tar.gz
   - type: script
     dest-filename: configure
     commands:
