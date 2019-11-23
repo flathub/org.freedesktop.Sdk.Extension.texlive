@@ -75,9 +75,7 @@ modules:
         url: http://www.cpan.org/src/5.0/perl-5.26.2.tar.gz
         sha256: 572f9cea625d6062f8a63b5cee9d3ee840800a001d2bb201a41b9a177ab7f70d
         x-checker-data:
-          type: rotating-url
-          url: http://www.cpan.org/src/5.0/perl-5.26.2.tar.gz
-          pattern: http://www.cpan.org/src/5.0/perl-(\d+.\d+[.\d]+).tar.gz
+          pattern: http://www.cpan.org/src/5.0/perl-(\d+\.\d+[\.\d]+)\.tar\.gz
       - type: script
         dest-filename: configure
         commands:
