@@ -19,7 +19,7 @@ modules:
       revision: 'r50896'
   build-commands:
     # has to be fixed by pulling in further depencies, see 
-    - configure --without-x --disable-xetex --disable-xindy 
+    - ./configure --without-x --disable-xetex --disable-xindy 
     - make
     - make check
     - make install
