@@ -1,5 +1,5 @@
 id: org.freedesktop.Sdk.Extension.texlive
-branch: '18.08'
+branch: '19.08'
 runtime: org.freedesktop.Sdk
 build-extension: true
 sdk: org.freedesktop.Sdk
