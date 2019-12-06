@@ -18,7 +18,7 @@ modules:
       url: svn://tug.org/texlive/branches/branch2019/Build/source
   build-commands:
     # has to be fixed by pulling in further depencies, see http://tug.org/texlive/doc/tlbuild.html#Prerequisites
-    - ./Build --prefix=/usr/lib/sdk/texlive --without-x --disable-xetex --disable-xindy
+    - ./Build --prefix=/app --without-x --disable-xetex --disable-xindy
 
 - name: perl # required for makeglossaries
   no-autogen: true
