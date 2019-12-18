@@ -17,6 +17,10 @@ modules:
     - type: archive
       url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-source.tar.xz
       sha256: d2a29fef04e34dc3d2d2296c18995fc357aa7625e7a6bbf40fb92d83d3d0d7b5
+    - type: extra-data
+      filename: texlive-20190410-texmf.tar.xz
+      url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-texmf.tar.xz
+      sha256: c2ec974abc98b91995969e7871a0b56dbc80dd8508113ffcff6923e912c4c402
   build-commands:
     # has to be fixed by pulling in further depencies, see http://tug.org/texlive/doc/tlbuild.html#Prerequisites
     - ./Build \
@@ -26,12 +30,6 @@ modules:
     - mkdir -p /app/texmf-dist
     - tar texlive-20190410-texmf.tar.xz
     - cp * /app/texmf-dist
-- type: extra-data
-  sources:
-    - type: archive
-      filename: texlive-20190410-texmf.tar.xz
-      url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-texmf.tar.xz
-      sha256: c2ec974abc98b91995969e7871a0b56dbc80dd8508113ffcff6923e912c4c402
 - name: scripts
   buildsystem: simple
   build-commands:
