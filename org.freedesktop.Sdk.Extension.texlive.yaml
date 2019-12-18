@@ -20,19 +20,18 @@ modules:
   build-commands:
     # has to be fixed by pulling in further depencies, see http://tug.org/texlive/doc/tlbuild.html#Prerequisites
     - ./Build \
+       --disable-native-texlive-build \
        --prefix=/app \
-       --without-x \
-       --disable-xetex \
-       --disable-xindy
-- name: texmf
-  build-system: simple
+       --disable-missing
+    - mkdir -p /app/texmf-dist
+    - tar texlive-20190410-texmf.tar.xz
+    - cp * /app/texmf-dist
+- type: extra-data
   sources:
     - type: archive
+      filename: texlive-20190410-texmf.tar.xz
       url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-texmf.tar.xz
       sha256: c2ec974abc98b91995969e7871a0b56dbc80dd8508113ffcff6923e912c4c402
-  build-commands:
-    - mkdir -p 
-    - cp * /app/texmf-dist
 - name: scripts
   buildsystem: simple
   build-commands:
