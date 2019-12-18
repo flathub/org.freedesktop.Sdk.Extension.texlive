@@ -14,54 +14,29 @@ modules:
 - name: texlive
   buildsystem: simple
   sources:
-    - type: svn
-      url: svn://tug.org/texlive/branches/branch2019/Build/source
+    - type: archive
+      url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-source.tar.xz
+      sha256: d2a29fef04e34dc3d2d2296c18995fc357aa7625e7a6bbf40fb92d83d3d0d7b5
   build-commands:
     # has to be fixed by pulling in further depencies, see http://tug.org/texlive/doc/tlbuild.html#Prerequisites
-    - ./Build --prefix=/app --without-x --disable-xetex --disable-xindy
-
-- name: perl # required for makeglossaries
-  no-autogen: true
-  config-opts:
-  - -des # use default build configuration
-  - -Duseshrplib # build shared library
-  build-options:
-    cflags: -fPIC
-    ldflags: -fpic
-    no-debuginfo: true
-  cleanup:
-    - /man
-    - "*.pod"
-    - "*.h"
+    - ./Build \
+       --prefix=/app \
+       --disable-native-texlive-build \
+       --with-banner-add='TeX Live 2019/Flatpak' \
+       --enable-shared \
+       --disable-static \
+       --without-x \
+       --disable-xetex \
+       --disable-xindy
+- name: texmf
+  build-system: simple
   sources:
-  - type: archive
-    url: https://www.cpan.org/src/5.0/perl-5.30.1.tar.gz
-    sha256: bf3d25571ff1ee94186177c2cdef87867fd6a14aa5a84f0b1fb7bf798f42f964
-  - type: script
-    dest-filename: configure
-    commands:
-    - exec ./configure.gnu $@
-    
-- name: ghostscript # required for including .eps graphics
-  config-opts:
-  - --disable-cups
-  build-options:
-    ldflags: -L/app/lib
-  sources:
-  - type: archive
-    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/ghostscript-9.50.tar.xz
-    sha256: db9bb0817b6f22974e6d5ad751975f346420c2c86a0afcfe6b4e09c47803e7d4
-    
-- name: appdata
-  buildsystem: simple
+    - type: archive
+      url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-texmf.tar.xz
+      sha256: c2ec974abc98b91995969e7871a0b56dbc80dd8508113ffcff6923e912c4c402
   build-commands:
-    - mkdir -p ${FLATPAK_DEST}/share/appdata
-    - cp org.freedesktop.Sdk.Extension.texlive.appdata.xml ${FLATPAK_DEST}/share/appdata
-    - appstream-compose  --basename=org.freedesktop.Sdk.Extension.texlive --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Sdk.Extension.texlive
-  sources:
-  - type: file
-    path: org.freedesktop.Sdk.Extension.texlive.appdata.xml
-
+    - mkdir -p 
+    - cp * /app/texmf-dist
 - name: scripts
   buildsystem: simple
   build-commands:
