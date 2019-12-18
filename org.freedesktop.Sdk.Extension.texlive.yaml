@@ -21,6 +21,7 @@ modules:
       filename: texlive-20190410-texmf.tar.xz
       url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-texmf.tar.xz
       sha256: c2ec974abc98b91995969e7871a0b56dbc80dd8508113ffcff6923e912c4c402
+      size: 2845806940
   build-commands:
     # has to be fixed by pulling in further depencies, see http://tug.org/texlive/doc/tlbuild.html#Prerequisites
     - ./Build \
