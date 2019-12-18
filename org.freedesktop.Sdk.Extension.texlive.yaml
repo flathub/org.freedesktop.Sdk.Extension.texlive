@@ -21,7 +21,6 @@ modules:
     # has to be fixed by pulling in further depencies, see http://tug.org/texlive/doc/tlbuild.html#Prerequisites
     - ./Build \
        --prefix=/app \
-       --with-banner-add='TeX Live 2019/Flatpak' \
        --without-x \
        --disable-xetex \
        --disable-xindy
