@@ -21,10 +21,7 @@ modules:
     # has to be fixed by pulling in further depencies, see http://tug.org/texlive/doc/tlbuild.html#Prerequisites
     - ./Build \
        --prefix=/app \
-       --disable-native-texlive-build \
        --with-banner-add='TeX Live 2019/Flatpak' \
-       --enable-shared \
-       --disable-static \
        --without-x \
        --disable-xetex \
        --disable-xindy
