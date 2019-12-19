@@ -24,9 +24,7 @@ modules:
       size: 2845806940
   build-commands:
     # has to be fixed by pulling in further depencies, see http://tug.org/texlive/doc/tlbuild.html#Prerequisites
-    - ./Build \
-       --prefix=/app \
-       --disable-missing
+    - ./Build --disable-missing --prefix=/app
     - mkdir -p /app/texmf-dist
     - tar xf texlive-20190410-texmf.tar.xz
     - cp * /app/texmf-dist
