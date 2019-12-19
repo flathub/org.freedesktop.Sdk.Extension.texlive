@@ -24,7 +24,9 @@ modules:
       size: 2845806940
   build-commands:
     # has to be fixed by pulling in further depencies, see http://tug.org/texlive/doc/tlbuild.html#Prerequisites
-    - ./configure --disable-native-texlive-build --prefix=/app
+    - mkdir build
+    - cd build
+    - ../configure --disable-native-texlive-build --prefix=/app     
     - make world
     - make check
     - tar xf texlive-20190410-texmf.tar.xz -C /app --strip-components=1
