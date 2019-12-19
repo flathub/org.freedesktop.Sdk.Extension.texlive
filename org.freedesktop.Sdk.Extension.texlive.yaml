@@ -24,10 +24,14 @@ modules:
       size: 2845806940
   build-commands:
     # has to be fixed by pulling in further depencies, see http://tug.org/texlive/doc/tlbuild.html#Prerequisites
-    - ./Build --disable-missing --prefix=/app
-    - mkdir -p /app/texmf-dist
-    - tar xf texlive-20190410-texmf.tar.xz
-    - cp * /app/texmf-dist
+    - ./configure --disable-native-texlive-build --prefix=/app
+    - make world
+    - make check
+    - tar xf texlive-20190410-texmf.tar.xz -C /app --strip-components=1
+    - rm cp * /app
+    - mktexlsr
+    - fmtutil-sys --all
+    - mtxrun --generate
 - name: scripts
   buildsystem: simple
   build-commands:
