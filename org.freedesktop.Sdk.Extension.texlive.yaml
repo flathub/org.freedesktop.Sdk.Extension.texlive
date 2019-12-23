@@ -13,7 +13,7 @@ build-options:
 modules:
 - name: texlive
   buildsystem: autotools
-  builddir: "true"
+  builddir: true
   config-opts:
   - --disable-native-texlive-build
   post-install:
