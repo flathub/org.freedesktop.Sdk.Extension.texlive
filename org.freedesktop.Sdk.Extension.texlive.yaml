@@ -12,27 +12,24 @@ build-options:
     PATH: /usr/lib/sdk/texlive/bin:/usr/bin
 modules:
 - name: texlive
-  buildsystem: simple
+  buildsystem: autotools
+  builddir: "true"
+  config-opts:
+  - --disable-native-texlive-build
+  post-install:
+  - cp -r /app/extra/export/share/texlive-20190410-texmf /usr/lib/sdk/texlive/texmf
+  - mktexlsr
+  - fmtutil-sys --all
+  - mtxrun --generate  
   sources:
     - type: archive
       url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-source.tar.xz
       sha256: d2a29fef04e34dc3d2d2296c18995fc357aa7625e7a6bbf40fb92d83d3d0d7b5
     - type: extra-data
-      filename: texlive-20190410-texmf.tar.xz
+      filename: texlive-20190410-texmf
       url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-texmf.tar.xz
       sha256: c2ec974abc98b91995969e7871a0b56dbc80dd8508113ffcff6923e912c4c402
       size: 2845806940
-  build-commands:
-    # has to be fixed by pulling in further depencies, see http://tug.org/texlive/doc/tlbuild.html#Prerequisites
-    - ./configure --disable-native-texlive-build --prefix=/app --enable-build-in-source-tree
-    - make world
-    - make check
-    - make install
-    - tar xf texlive-20190410-texmf.tar.xz -C /app --strip-components=1
-    - rm cp * /app
-    - mktexlsr
-    - fmtutil-sys --all
-    - mtxrun --generate
 - name: scripts
   buildsystem: simple
   build-commands:
