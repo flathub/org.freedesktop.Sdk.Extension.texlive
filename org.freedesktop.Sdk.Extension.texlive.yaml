@@ -18,6 +18,7 @@ modules:
   - --disable-native-texlive-build
   - --disable-missing
   - --disable-dvisvgm
+  - --disable-xdvik
   post-install:
   - cp -r /app/extra/export/share/texlive-20190410-texmf /usr/lib/sdk/texlive/texmf
   - mktexlsr
