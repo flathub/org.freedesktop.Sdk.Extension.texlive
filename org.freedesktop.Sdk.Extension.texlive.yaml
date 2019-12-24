@@ -20,7 +20,7 @@ modules:
   - --disable-dvisvgm
   - --disable-xdvik
   post-install:
-  - cp -r /app/extra/export/share/texlive-20190410-texmf /usr/lib/sdk/texlive/texmf
+  - tar xf /app/extra/export/share/texlive-20190410-texmf.tar.xz /usr/lib/sdk/texlive/texmf --strip-components=2
   - mktexlsr
   - fmtutil-sys --all
   - mtxrun --generate  
@@ -29,7 +29,7 @@ modules:
       url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-source.tar.xz
       sha256: d2a29fef04e34dc3d2d2296c18995fc357aa7625e7a6bbf40fb92d83d3d0d7b5
     - type: extra-data
-      filename: texlive-20190410-texmf
+      filename: texlive-20190410-texmf.tar.xz
       url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-texmf.tar.xz
       sha256: c2ec974abc98b91995969e7871a0b56dbc80dd8508113ffcff6923e912c4c402
       size: 2845806940
