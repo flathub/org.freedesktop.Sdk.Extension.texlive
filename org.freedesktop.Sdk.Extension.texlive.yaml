@@ -14,11 +14,11 @@ modules:
 - name: texlive
   buildsystem: autotools
   builddir: true
-  config-opts:
-  - --disable-native-texlive-build
-  - --disable-missing
-  - --disable-dvisvgm
-  - --disable-xdvik
+  #config-opts:
+  #- --disable-native-texlive-build
+  #- --disable-missing
+  #- --disable-dvisvgm
+  #- --disable-xdvik
   #post-install:
   # - tar xf /app/extra/export/share/texlive-20190410-texmf.tar.xz /usr/lib/sdk/texlive --strip-components=1
   #- /sbin/ldconfig
@@ -28,7 +28,7 @@ modules:
   #- mtxrun --generate  
   sources:
     - type: archive
-      url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-source.tar.xz
+      url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2019/texlive-20190410-source.tar.xz
       sha256: d2a29fef04e34dc3d2d2296c18995fc357aa7625e7a6bbf40fb92d83d3d0d7b5
     - type: extra-data
       filename: texlive-20190410-texmf.tar.xz
