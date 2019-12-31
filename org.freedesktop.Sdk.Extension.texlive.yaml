@@ -19,13 +19,13 @@ modules:
   - --disable-missing
   - --disable-dvisvgm
   - --disable-xdvik
-  post-install:
+  #post-install:
   # - tar xf /app/extra/export/share/texlive-20190410-texmf.tar.xz /usr/lib/sdk/texlive --strip-components=1
-  - /sbin/ldconfig
-  - make texlinks
-  - mktexlsr
-  - fmtutil-sys --all
-  - mtxrun --generate  
+  #- /sbin/ldconfig
+  #- make texlinks
+  #- mktexlsr
+  #- fmtutil-sys --all
+  #- mtxrun --generate  
   sources:
     - type: archive
       url: ftp://tug.org/historic/systems/texlive/2019/texlive-20190410-source.tar.xz
