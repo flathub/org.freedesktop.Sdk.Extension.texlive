@@ -21,6 +21,8 @@ modules:
   - --disable-xdvik
   post-install:
   # - tar xf /app/extra/export/share/texlive-20190410-texmf.tar.xz /usr/lib/sdk/texlive --strip-components=1
+  - /sbin/ldconfig
+  - make texlinks
   - mktexlsr
   - fmtutil-sys --all
   - mtxrun --generate  
