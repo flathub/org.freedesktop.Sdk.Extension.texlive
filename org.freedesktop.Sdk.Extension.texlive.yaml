@@ -15,7 +15,7 @@ modules:
   buildsystem: autotools
   builddir: true
   config-opts:
-  - --disable-xdvik
+  - --without-x
   post-install:
   # - tar -xf texlive-20190410-texmf.tar.xz -C $prefix/share --strip-components=1
   - mktexlsr
