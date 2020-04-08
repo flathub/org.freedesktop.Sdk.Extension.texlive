@@ -47,8 +47,8 @@ modules:
   sources:
   - type: script
     commands:
-    - install -d ${FLATPAK_DEST}/texlive
-    - cp -ra /usr/lib/sdk/texlive/* ${FLATPAK_DEST}/texlive
+    - install -d ${FLATPAK_DEST}
+    - cp -ra /usr/lib/sdk/texlive/* ${FLATPAK_DEST}
     dest-filename: install.sh
   - type: script
     commands:
