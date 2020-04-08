@@ -16,6 +16,13 @@ modules:
   builddir: true
   config-opts:
   - --prefix=${FLATPAK_DEST}
+  - --exec_prefix=${FLATPAK_DEST}
+  - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}
+  - --libdir=${FLATPAK_DEST}/lib/${FLATPAK_ARCH}
+  - --includedir=${FLATPAK_DEST}/include
+  - --datarootdir=${FLATPAK_DEST}/share
+  - --mandir=${FLATPAK_DEST}/share/man
+  - --infodir=${FLATPAK_DEST}/share/info
   - --with-banner-add='Flatpak'
   - --without-x # needs additonal dependencies
   - --disable-xetex # needs additonal dependencies
@@ -47,10 +54,10 @@ modules:
   sources:
   - type: script
     commands:
-    - install -d ${FLATPAK_DEST}
-    - cp -ra /usr/lib/sdk/texlive/* ${FLATPAK_DEST}
+    - install -d /app
+    - cp -ra /usr/lib/sdk/texlive/* /app/
     dest-filename: install.sh
   - type: script
     commands:
-    - export PATH=/usr/lib/sdk/texlive/bin/${FLATPAK_ARCH}-pc-linux-gnu:/usr/lib/sdk/texlive/bin:$PATH
+    - export PATH=/usr/lib/sdk/texlive/bin/${FLATPAK_ARCH}:/usr/lib/sdk/texlive/bin:$PATH
     dest-filename: enable.sh
