@@ -11,7 +11,6 @@ build-options:
   env:
     PATH: /usr/lib/sdk/texlive/bin:/usr/bin
 modules:
-
 - name: p7zip # required for unzipping texlive.iso
   no-autogen: true
   make-args:
@@ -25,7 +24,6 @@ modules:
     - type: shell
       commands:
       - sed -i 's|/usr/local|/usr/lib/sdk/texlive|g' makefile.common
-
 - name: wget # build dependency of TeX Live
   cleanup:
     - '*'
@@ -33,19 +31,17 @@ modules:
     - type: archive
       url: https://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
       sha256: 31cccfc6630528db1c8e3a06f6decf2a370060b982841cfab2b8677400a5092e
-
 - name: texlive
   buildsystem: simple
   sources:
     - type: file
-      url: http://mirrors.ctan.org/systems/texlive/Images/texlive2019.iso
-      sha256: 3bab87c384a3a470b3e7c6f1c101fef2db121a19b97c44c0863f00104059957f
+      url: http://mirrors.ctan.org/systems/texlive/Images/texlive2020.iso
+      sha256: ec812ba2f345d8d990fc86b67a9bfc4cc8d17eb64a87423c976bea05cc076bff
   build-commands:
-    - 7z x texlive2019.iso
+    - 7z x texlive2020.iso
     - chmod +x install-tl
     - "echo \"I\nn\" | TEXLIVE_INSTALL_PREFIX=/usr/lib/sdk/texlive ./install-tl -portable"
     - rm -rf /usr/lib/sdk/texlive/texmf-dist/doc
-
 - name: perl # required for makeglossaries
   no-autogen: true
   config-opts:
@@ -61,13 +57,12 @@ modules:
     - "*.h"
   sources:
   - type: archive
-    url: https://www.cpan.org/src/5.0/perl-5.30.1.tar.gz
-    sha256: bf3d25571ff1ee94186177c2cdef87867fd6a14aa5a84f0b1fb7bf798f42f964
+    url: https://www.cpan.org/src/5.0/perl-5.30.2.tar.gz
+    sha256: 66db7df8a91979eb576fac91743644da878244cf8ee152f02cd6f5cd7a731689
   - type: script
     dest-filename: configure
     commands:
     - exec ./configure.gnu $@
-
 - name: ghostscript # required for including .eps graphics
   config-opts:
   - --disable-cups
@@ -75,9 +70,8 @@ modules:
     ldflags: -L/app/lib
   sources:
   - type: archive
-    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/ghostscript-9.50.tar.xz
-    sha256: db9bb0817b6f22974e6d5ad751975f346420c2c86a0afcfe6b4e09c47803e7d4
-
+    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs952/ghostscript-9.52.tar.gz
+    sha256: c2501d8e8e0814c4a5aa7e443e230e73d7af7f70287546f7b697e5ef49e32176
 - name: appdata
   buildsystem: simple
   build-commands:
@@ -87,7 +81,6 @@ modules:
   sources:
   - type: file
     path: org.freedesktop.Sdk.Extension.texlive.appdata.xml
-
 - name: scripts
   buildsystem: simple
   build-commands:
