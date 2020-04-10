@@ -29,13 +29,13 @@ modules:
   - --disable-xindy # needs additonal dependencies
   sources:
   - type: archive
-    url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2019/texlive-20190410-source.tar.xz
-    sha256: d2a29fef04e34dc3d2d2296c18995fc357aa7625e7a6bbf40fb92d83d3d0d7b5
-# The texmf archive has only to be copied into the texlive directory and afterwards "mktexlsr", "fmtuitls-sys -all" and "mtxrun --generate" have to be executed to give a working texlive installation
+    url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-source.tar.xz
+    sha256: e32f3d08cbbbcf21d8d3f96f2143b64a1f5e4cb01b06b761d6249c8785249078
+# The following archive includes all additional packages that make up a full texlive installation.
 #  - type: archive
-#    url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2019/texlive-20190410-texmf.tar.xz
-#    sha256: c2ec974abc98b91995969e7871a0b56dbc80dd8508113ffcff6923e912c4c402
-#    size: 2845806940
+#    url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
+#    sha256: 0aa97e583ecfd488e1dc60ff049fec073c1e22dfe7de30a3e4e8c851bb875a95
+#    size: 3165595416
     
 - name: appdata
   buildsystem: simple
@@ -50,14 +50,14 @@ modules:
 - name: scripts
   buildsystem: simple
   build-commands:
-  - cp *.sh ${FLATPAK_DEST}
+  - cp *.sh ${FLATPAK_DEST}  # unsure if the use of FLATPAK_DEST is appropriate here
   sources:
   - type: script
     commands:
     - install -d /app
-    - cp -ra ${FLATPAK_DEST}/* /app/
+    - cp -ra ${FLATPAK_DEST}/* /app  # unsure if the use of FLATPAK_DEST is appropriate here
     dest-filename: install.sh
   - type: script
     commands:
-    - export PATH=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}:${FLATPAK_DEST}/bin:$PATH
+    - export PATH=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}:${FLATPAK_DEST}/bin:$PATH  # unsure if the use of FLATPAK_DEST is appropriate here
     dest-filename: enable.sh
