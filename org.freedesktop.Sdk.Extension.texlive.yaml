@@ -29,11 +29,11 @@ modules:
   - --disable-xindy # needs additonal dependencies
   sources:
   - type: archive
-    url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-source.tar.xz
+    url: http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2020/texlive-20200406-source.tar.xz
     sha256: e32f3d08cbbbcf21d8d3f96f2143b64a1f5e4cb01b06b761d6249c8785249078
 # The following archive includes all additional packages that make up a full texlive installation.
 #  - type: archive
-#    url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
+#    url: http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
 #    sha256: 0aa97e583ecfd488e1dc60ff049fec073c1e22dfe7de30a3e4e8c851bb875a95
 #    size: 3165595416
 - name: appdata
