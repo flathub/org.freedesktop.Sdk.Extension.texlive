@@ -37,6 +37,11 @@ modules:
     - type: file
       url: http://mirrors.ctan.org/systems/texlive/Images/texlive2020.iso
       sha256: ec812ba2f345d8d990fc86b67a9bfc4cc8d17eb64a87423c976bea05cc076bff
+      x-checker-data:
+        type: html
+        url: https://www.example.com/download.html
+        version-pattern: Current release: TeX Live [\d]{4}
+        url-template: http://mirror.ctan.org/systems/texlive/Images/texlive$version.iso
   build-commands:
     - 7z x texlive2020.iso
     - chmod +x install-tl
