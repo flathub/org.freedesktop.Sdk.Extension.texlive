@@ -40,7 +40,7 @@ modules:
       x-checker-data:
         type: html
         url: https://www.tug.org/texlive
-        version-pattern: Current release: TeX Live (\d\d\d\d)
+        version-pattern: 'Current release: TeX Live (\d\d\d\d)'
         url-template: http://mirror.ctan.org/systems/texlive/Images/texlive$version.iso
   build-commands:
     - 7z x texlive2020.iso
