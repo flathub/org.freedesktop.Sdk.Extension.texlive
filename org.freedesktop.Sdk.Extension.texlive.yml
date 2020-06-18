@@ -53,6 +53,7 @@ modules:
     - mktexlsr &&
     - fmtutil-sys --all &&
     - mtxrun --generate
+    dest-filename: content.sh
   - type: script
     commands:
     - install -d /app
