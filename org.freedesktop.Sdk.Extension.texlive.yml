@@ -44,8 +44,8 @@ modules:
       sha256: ec812ba2f345d8d990fc86b67a9bfc4cc8d17eb64a87423c976bea05cc076bff
       x-checker-data:
         type: html
-        url: https://www.tug.org/texlive
-        version-pattern: Current release: TeX Live (\d\d\d\d)
+        url: http://mirror.ctan.org/systems/texlive/Images
+        version-pattern: texlive(\d\d\d\d).iso
         url-template: http://mirror.ctan.org/systems/texlive/Images/texlive$version.iso
   build-commands:
     - 7z x texlive2020.iso
