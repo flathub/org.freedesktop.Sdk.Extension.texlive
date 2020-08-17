@@ -11,55 +11,54 @@ build-options:
   env:
     PATH: /usr/lib/sdk/texlive/bin:/usr/bin
 modules:
-- name: texlive
-  buildsystem: autotools
-  builddir: true
-  config-opts:
-  - --prefix=${FLATPAK_DEST}
-  - --exec_prefix=${FLATPAK_DEST}
-  - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}
-  - --libdir=${FLATPAK_DEST}/lib/${FLATPAK_ARCH}
-  - --includedir=${FLATPAK_DEST}/include
-  - --datarootdir=${FLATPAK_DEST}/share
-  - --mandir=${FLATPAK_DEST}/share/man
-  - --infodir=${FLATPAK_DEST}/share/info
-  - --with-banner-add='Flatpak'
-  - --without-x # needs additonal dependencies
-  - --disable-xetex # needs additonal dependencies
-  - --disable-xindy # needs additonal dependencies
-  sources:
-  - type: archive
-    url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-source.tar.xz
-    sha256: e32f3d08cbbbcf21d8d3f96f2143b64a1f5e4cb01b06b761d6249c8785249078
-  - type: archive
-    url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
-    sha256: 0aa97e583ecfd488e1dc60ff049fec073c1e22dfe7de30a3e4e8c851bb875a95
-- name: appdata
-  buildsystem: simple
-  build-commands:
-    - mkdir -p ${FLATPAK_DEST}/share/appdata
-    - cp org.freedesktop.Sdk.Extension.texlive.appdata.xml ${FLATPAK_DEST}/share/appdata
-    - appstream-compose  --basename=org.freedesktop.Sdk.Extension.texlive --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Sdk.Extension.texlive
-  sources:
-  - type: file
-    path: org.freedesktop.Sdk.Extension.texlive.appdata.xml
-- name: scripts
-  buildsystem: simple
-  build-commands:
-  - cp *.sh ${FLATPAK_DEST}  # unsure if the use of FLATPAK_DEST is appropriate here
-  sources:
-  - type: script
+  - name: texlive-source
+    buildsystem: autotools
+    builddir: true
+    config-opts:
+      - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}
+      - --datarootdir=${FLATPAK_DEST}/share
+      - --disable-xetex # needs additonal dependencies
+      - --disable-xindy # needs additonal dependencies
+      - --exec_prefix=${FLATPAK_DEST}
+      - --includedir=${FLATPAK_DEST}/include
+      - --infodir=${FLATPAK_DEST}/share/info
+      - --libdir=${FLATPAK_DEST}/lib
+      - --mandir=${FLATPAK_DEST}/share/man
+      - --prefix=${FLATPAK_DEST}
+      - --without-x # needs additonal dependencies
+    post-install:
+      - tar -xf texmf.tar.xz ${FLATPAK_DEST}/share --strip-component=1
+      - mktexlsr
+      - fmtutil-sys --all
+      - mtxrun --generate      
+    sources:
+      - type: archive
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-source.tar.xz
+        sha256: e32f3d08cbbbcf21d8d3f96f2143b64a1f5e4cb01b06b761d6249c8785249078
+#      - type: archive
+#        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
+#        sha256: 0aa97e583ecfd488e1dc60ff049fec073c1e22dfe7de30a3e4e8c851bb875a95
+#        size: 3165595416
+  - name: appdata
+    buildsystem: simple
+    build-commands:
+      - mkdir -p ${FLATPAK_DEST}/share/appdata
+      - cp org.freedesktop.Sdk.Extension.texlive.appdata.xml ${FLATPAK_DEST}/share/appdata
+      - appstream-compose  --basename=org.freedesktop.Sdk.Extension.texlive --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Sdk.Extension.texlive
+    sources:
+      - type: file
+        path: org.freedesktop.Sdk.Extension.texlive.appdata.xml
+  - name: scripts
+    buildsystem: simple
+    build-commands:
+      - cp *.sh /usr/lib/sdk/texlive/
+    sources:
+      - type: script
     commands:
-    - mktexlsr &&
-    - fmtutil-sys --all &&
-    - mtxrun --generate
-    dest-filename: content.sh
-  - type: script
-    commands:
-    - install -d /app
-    - cp -ra ${FLATPAK_DEST}/* /app  # unsure if the use of FLATPAK_DEST is appropriate here
+      - install -d /app/texlive
+      - cp -ra /usr/lib/sdk/texlive/* /app/texlive
     dest-filename: install.sh
   - type: script
     commands:
-    - export PATH=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}:${FLATPAK_DEST}/bin:$PATH  # unsure if the use of FLATPAK_DEST is appropriate here
+      - export PATH=/usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin:$PATH
     dest-filename: enable.sh
