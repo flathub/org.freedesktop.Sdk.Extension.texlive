@@ -26,11 +26,7 @@ modules:
       - --mandir=${FLATPAK_DEST}/share/man
       - --prefix=${FLATPAK_DEST}
       - --without-x # needs additonal dependencies
-    post-install:
-      - tar -xf texmf.tar.xz ${FLATPAK_DEST}/share --strip-component=1
-      - mktexlsr
-      - fmtutil-sys --all
-      - mtxrun --generate      
+    # Hints for a proper installation can be found in http://www.linuxfromscratch.org/blfs/view/svn/pst/texlive.html or http://ftp.math.utah.edu/pub/texlive-utah/ .
     sources:
       - type: archive
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-source.tar.xz
