@@ -62,3 +62,4 @@ modules:
         commands:
           - export PATH=/usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin:$PATH
         dest-filename: enable.sh
+        
