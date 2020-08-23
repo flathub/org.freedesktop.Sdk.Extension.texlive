@@ -28890,7 +28890,7 @@ modules:
       sha512: 65d1a13f72185beb667e0322fc6c2dbeb476d847824578fc403161cdeaf52d40624c7193f3beedb606d245b3c1b6bd38990a4fa9be7865fec0a8906e019c98da
       dest: tlnet/tlpkg
     - type: file
-      url: https://www.texlive.info/tlnet-archive/2020/08/22/tlnet/tlpkg/texlive.tlpdb.sha512
+      path: texlive.tlpdb.sha512
       dest: tlnet/tlpkg
     - type: file
       path: texlive.profile

@@ -48,7 +48,7 @@ done
     printf   "      sha512: %s\n" $(cut -d' ' -f1 < texlive.tlpdb.sha512)
     printf   "      dest: tlnet/tlpkg\n"
     printf   "    - type: file\n"
-    printf   "      url: %s/%s/%s/%s/tlnet/tlpkg/%s/\n" $TRUNK $year $month $day $TLPDB.sha512
+    printf   "      path: $TLPDB.sha512\n"
     printf   "      dest: tlnet/tlpkg\n"
     printf   "    - type: file\n"
     printf   "      path: texlive.profile\n"
@@ -56,4 +56,3 @@ done
     printf   "    - ./install-tl -profile texlive.profile -repository ./tlnet\n"
 
 rm -f $TLPDB
-rm -f $TLPDB.sha512
