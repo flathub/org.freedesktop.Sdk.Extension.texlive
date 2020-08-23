@@ -1,0 +1,91 @@
+id: org.freedesktop.Sdk.Extension.texlive
+branch: '19.08'
+runtime: org.freedesktop.Sdk
+build-extension: true
+sdk: org.freedesktop.Sdk
+runtime-version: '19.08'
+appstream-compose: false
+separate-locales: false
+build-options:
+  prefix: /usr/lib/sdk/texlive
+  env:
+    PATH: /usr/lib/sdk/texlive/bin:/usr/bin
+modules:
+- name: wget # build dependency of TeX Live
+  cleanup:
+    - '*'
+  sources:
+    - type: archive
+      url: https://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
+      sha256: 31cccfc6630528db1c8e3a06f6decf2a370060b982841cfab2b8677400a5092e
+      x-checker-data:
+        type: html
+        url: https://ftp.gnu.org/gnu/wget
+        version-pattern: wget-(\d\.\d+\.\d+).tar.gz
+        url-template: https://ftp.gnu.org/gnu/wget/wget-$version.tar.gz
+- name: perl # required for makeglossaries
+  no-autogen: true
+  config-opts:
+  - -des # use default build configuration
+  - -Duseshrplib # build shared library
+  build-options:
+    cflags: -fPIC
+    ldflags: -fpic
+    no-debuginfo: true
+  cleanup:
+    - /man
+    - "*.pod"
+    - "*.h"
+  sources:
+  - type: archive
+    url: https://www.cpan.org/src/5.0/perl-5.30.2.tar.gz
+    sha256: 66db7df8a91979eb576fac91743644da878244cf8ee152f02cd6f5cd7a731689
+    x-checker-data:
+      type: html
+      url: https://www.cpan.org/src/5.0
+      version-pattern: perl-(5\.\d[02468]\.\d).tar.gz
+      url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
+  - type: script
+    dest-filename: configure
+    commands:
+    - exec ./configure.gnu $@
+- name: ghostscript # required for including .eps graphics
+  config-opts:
+  - --disable-cups
+  build-options:
+    ldflags: -L/app/lib
+  sources:
+  - type: archive
+    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs952/ghostscript-9.52.tar.gz
+    sha256: c2501d8e8e0814c4a5aa7e443e230e73d7af7f70287546f7b697e5ef49e32176
+- name: pygments
+  buildsystem: simple
+  build-commands:
+    - pip3 install --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} pygments
+  sources:
+    - type: file
+      url: https://files.pythonhosted.org/packages/2d/68/106af3ae51daf807e9cdcba6a90e518954eb8b70341cee52995540a53ead/Pygments-2.6.1-py3-none-any.whl
+      sha256: ff7a40b4860b727ab48fad6360eb351cc1b33cbf9b15a0f689ca5353e9463324    
+- name: appdata
+  buildsystem: simple
+  build-commands:
+    - mkdir -p ${FLATPAK_DEST}/share/appdata
+    - cp org.freedesktop.Sdk.Extension.texlive.appdata.xml ${FLATPAK_DEST}/share/appdata
+    - appstream-compose  --basename=org.freedesktop.Sdk.Extension.texlive --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Sdk.Extension.texlive
+  sources:
+  - type: file
+    path: org.freedesktop.Sdk.Extension.texlive.appdata.xml
+- name: scripts
+  buildsystem: simple
+  build-commands:
+  - cp *.sh /usr/lib/sdk/texlive/
+  sources:
+  - type: script
+    commands:
+    - install -d /app
+    - cp -ra /usr/lib/sdk/texlive/* /app/
+    dest-filename: install.sh
+  - type: script
+    commands:
+    - export PATH=/usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin:$PATH
+    dest-filename: enable.sh
