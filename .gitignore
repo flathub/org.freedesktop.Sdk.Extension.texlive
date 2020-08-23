@@ -1,0 +1,5 @@
+build-dir/
+.flatpak-builder/
+repo/
+texlive.tlpdb
+texlive.tlpdb.sha512
