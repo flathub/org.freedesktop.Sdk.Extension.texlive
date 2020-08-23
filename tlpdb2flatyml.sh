@@ -44,11 +44,11 @@ done
     printf   "      url: %s/%s/%s/%s/tlnet/%s.tar.gz\n" $TRUNK $year $month $day install-tl-unx
     printf   "      sha512: 57c44236f13017a1ce44fcc866b803618372b22ac0d96031d5fe7e08ee3c3aaabb3bcb343be8eebb40b983d867084d50a2ad67795d426f9bc595b67117bc9f88\n"
     printf   "    - type: file\n"
-    printf   "      url: %s/%s/%s/%s/tlnet/%s/\n" $TRUNK $year $month $day $TLPDB
+    printf   "      url: %s/%s/%s/%s/tlnet/tlpkg/%s/\n" $TRUNK $year $month $day $TLPDB
     printf   "      sha512: %s\n" $(cut -d' ' -f1 < texlive.tlpdb.sha512)
     printf   "      dest: tlnet/tlpkg\n"
     printf   "    - type: file\n"
-    printf   "      url: %s/%s/%s/%s/tlnet/%s/\n" $TRUNK $year $month $day $TLPDB.sha512
+    printf   "      url: %s/%s/%s/%s/tlnet/tlpkg/%s/\n" $TRUNK $year $month $day $TLPDB.sha512
     printf   "      dest: tlnet/tlpkg\n"
     printf   "    - type: file\n"
     printf   "      path: texlive.profile\n"

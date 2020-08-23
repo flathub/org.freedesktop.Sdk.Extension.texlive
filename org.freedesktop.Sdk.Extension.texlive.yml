@@ -28886,11 +28886,11 @@ modules:
       url: https://www.texlive.info/tlnet-archive/2020/08/22/tlnet/install-tl-unx.tar.gz
       sha512: 57c44236f13017a1ce44fcc866b803618372b22ac0d96031d5fe7e08ee3c3aaabb3bcb343be8eebb40b983d867084d50a2ad67795d426f9bc595b67117bc9f88
     - type: file
-      url: https://www.texlive.info/tlnet-archive/2020/08/22/tlnet/texlive.tlpdb
+      url: https://www.texlive.info/tlnet-archive/2020/08/22/tlnet/tlpkg/texlive.tlpdb
       sha512: 65d1a13f72185beb667e0322fc6c2dbeb476d847824578fc403161cdeaf52d40624c7193f3beedb606d245b3c1b6bd38990a4fa9be7865fec0a8906e019c98da
       dest: tlnet/tlpkg
     - type: file
-      url: https://www.texlive.info/tlnet-archive/2020/08/22/tlnet/texlive.tlpdb.sha512
+      url: https://www.texlive.info/tlnet-archive/2020/08/22/tlnet/tlpkg/texlive.tlpdb.sha512
       dest: tlnet/tlpkg
     - type: file
       path: texlive.profile
