@@ -47,6 +47,8 @@ modules:
         url: http://mirror.ctan.org/systems/texlive/Images
         version-pattern: texlive(\d\d\d\d).iso
         url-template: http://mirror.ctan.org/systems/texlive/Images/texlive$version.iso
+    - type: file
+      path: texlive.profile
   build-commands:
     - 7z x texlive2020.iso
     - chmod +x install-tl
