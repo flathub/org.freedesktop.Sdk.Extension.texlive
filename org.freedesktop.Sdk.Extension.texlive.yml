@@ -42,11 +42,11 @@ modules:
     - type: file
       url: http://mirrors.ctan.org/systems/texlive/Images/texlive2020.iso
       sha256: ec812ba2f345d8d990fc86b67a9bfc4cc8d17eb64a87423c976bea05cc076bff
-      x-checker-data:
-        type: html
-        url: http://mirror.ctan.org/systems/texlive/Images
-        version-pattern: texlive(\d\d\d\d).iso
-        url-template: http://mirror.ctan.org/systems/texlive/Images/texlive$version.iso
+#      x-checker-data:  # fails for the iso
+#        type: html
+#        url: http://mirror.ctan.org/systems/texlive/Images
+#        version-pattern: texlive(\d\d\d\d).iso
+#        url-template: http://mirror.ctan.org/systems/texlive/Images/texlive$version.iso
     - type: file
       path: texlive.profile
   build-commands:
