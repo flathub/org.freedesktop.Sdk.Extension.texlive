@@ -51,10 +51,10 @@ modules:
     sources:
       - type: script
         commands:
-          - install -d /app/texlive
-          - cp -ra /usr/lib/sdk/texlive/* /app/texlive
+          - install -d ${FLATPAK_DEST}/texlive
+          - cp -ra /usr/lib/sdk/texlive/* ${FLATPAK_DEST}/texlive
         dest-filename: install.sh
       - type: script
         commands:
-          - export PATH=/usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin:$PATH
+          - export PATH=/usr/lib/sdk/texlive/bin/${FLATPAK_ARCH}:/usr/lib/sdk/texlive/bin:$PATH
         dest-filename: enable.sh
