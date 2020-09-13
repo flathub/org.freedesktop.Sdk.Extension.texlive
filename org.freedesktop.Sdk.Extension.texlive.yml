@@ -24,6 +24,8 @@ modules:
     - type: shell
       commands:
       - sed -i 's|/usr/local|/usr/lib/sdk/texlive|g' makefile.common
+    - type: patch
+      path: p7zip-gcc10.patch
 - name: wget # build dependency of TeX Live
   cleanup:
     - '*'
