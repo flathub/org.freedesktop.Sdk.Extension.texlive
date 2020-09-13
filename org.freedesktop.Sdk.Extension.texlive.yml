@@ -12,6 +12,8 @@ build-options:
     PATH: /usr/lib/sdk/texlive/bin:/usr/bin
 modules:
 - name: p7zip # required for unzipping texlive.iso
+  build-options:
+    cflags: -fcommon
   no-autogen: true
   make-args:
     - 7z
@@ -24,8 +26,8 @@ modules:
     - type: shell
       commands:
       - sed -i 's|/usr/local|/usr/lib/sdk/texlive|g' makefile.common
-    - type: patch
-      path: p7zip-gcc10.patch
+#    - type: patch
+#      path: p7zip-gcc10.patch
 - name: wget # build dependency of TeX Live
   cleanup:
     - '*'
