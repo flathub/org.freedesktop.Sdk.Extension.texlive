@@ -31,12 +31,22 @@ modules:
     - type: archive
       url: https://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
       sha256: 31cccfc6630528db1c8e3a06f6decf2a370060b982841cfab2b8677400a5092e
+      x-checker-data:
+        type: html
+        url: https://ftp.gnu.org/gnu/wget
+        version-pattern: wget-(\d\.\d+\.\d+).tar.gz
+        url-template: https://ftp.gnu.org/gnu/wget/wget-$version.tar.gz
 - name: texlive
   buildsystem: simple
   sources:
     - type: file
       url: http://mirrors.ctan.org/systems/texlive/Images/texlive2020.iso
       sha256: ec812ba2f345d8d990fc86b67a9bfc4cc8d17eb64a87423c976bea05cc076bff
+      x-checker-data:
+        type: html
+        url: http://mirror.ctan.org/systems/texlive/Images
+        version-pattern: texlive(\d\d\d\d).iso
+        url-template: http://mirror.ctan.org/systems/texlive/Images/texlive$version.iso      
   build-commands:
     - 7z x texlive2020.iso
     - chmod +x install-tl
@@ -59,6 +69,11 @@ modules:
   - type: archive
     url: https://www.cpan.org/src/5.0/perl-5.30.2.tar.gz
     sha256: 66db7df8a91979eb576fac91743644da878244cf8ee152f02cd6f5cd7a731689
+    x-checker-data:
+      type: html
+      url: https://www.cpan.org/src/5.0
+      version-pattern: perl-(5\.\d[02468]\.\d).tar.gz
+      url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
   - type: script
     dest-filename: configure
     commands:
