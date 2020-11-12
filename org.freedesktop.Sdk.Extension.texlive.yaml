@@ -34,7 +34,7 @@ modules:
       x-checker-data:
         type: html
         url: https://ftp.gnu.org/gnu/wget
-        version-pattern: wget-(\d\.\d+\.\d+).tar.gz
+        version-pattern: wget-(\d\.\d+\.*\d*).tar.gz
         url-template: https://ftp.gnu.org/gnu/wget/wget-$version.tar.gz
 - name: texlive
   buildsystem: simple
@@ -67,7 +67,7 @@ modules:
     x-checker-data:
       type: html
       url: https://www.cpan.org/src/5.0
-      version-pattern: perl-(5\.\d[02468]\.\d).tar.gz
+      version-pattern: perl-(5\.\d[02468]+\.*\d*).tar.gz
       url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
   - type: script
     dest-filename: configure
