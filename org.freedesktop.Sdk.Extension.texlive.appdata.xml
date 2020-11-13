@@ -4,7 +4,6 @@
   <metadata_license>CC0-1.0</metadata_license>
   <name>TeX Live Sdk extension</name>
   <summary>LaTeX packages and tools</summary>
-  <releases>
     <release version="5.32.0" date="2020-06-20"/>
   </releases>
 </component>
