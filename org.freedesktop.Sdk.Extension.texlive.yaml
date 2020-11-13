@@ -11,97 +11,100 @@ build-options:
   env:
     PATH: /usr/lib/sdk/texlive/bin:/usr/bin
 modules:
-- name: p7zip # required for unzipping texlive.iso
-  no-autogen: true
-  make-args:
-    - 7z
-  cleanup:
-    - '*'
-  sources:
-    - type: archive
-      url: https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
-      sha256: 5eb20ac0e2944f6cb9c2d51dd6c4518941c185347d4089ea89087ffdd6e2341f
-    - type: shell
-      commands:
-      - sed -i 's|/usr/local|/usr/lib/sdk/texlive|g' makefile.common
-- name: wget # build dependency of TeX Live
-  cleanup:
-    - '*'
-  sources:
-    - type: archive
-      url: https://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
-      sha256: 31cccfc6630528db1c8e3a06f6decf2a370060b982841cfab2b8677400a5092e
-      x-checker-data:
-        type: html
-        url: https://ftp.gnu.org/gnu/wget
-        version-pattern: wget-(\d\.\d+\.*\d*).tar.gz
-        url-template: https://ftp.gnu.org/gnu/wget/wget-$version.tar.gz
-- name: texlive
-  buildsystem: simple
-  sources:
-    - type: file
-      url: http://mirrors.ctan.org/systems/texlive/Images/texlive2020.iso
-      sha256: ec812ba2f345d8d990fc86b67a9bfc4cc8d17eb64a87423c976bea05cc076bff
-  build-commands:
-    - 7z x texlive2020.iso
-    - chmod +x install-tl
-    - "echo \"I\nn\" | TEXLIVE_INSTALL_PREFIX=/usr/lib/sdk/texlive ./install-tl -portable"
-    - rm -rf /usr/lib/sdk/texlive/texmf-dist/doc
-- name: perl # required for makeglossaries
-  no-autogen: true
-  config-opts:
-  - -des # use default build configuration
-  - -Duseshrplib # build shared library
-  build-options:
-    cflags: -fPIC
-    ldflags: -fpic
-    no-debuginfo: true
-  cleanup:
-    - /man
-    - "*.pod"
-    - "*.h"
-  sources:
-  - type: archive
-    url: https://www.cpan.org/src/5.0/perl-5.30.2.tar.gz
-    sha256: 66db7df8a91979eb576fac91743644da878244cf8ee152f02cd6f5cd7a731689
-    x-checker-data:
-      type: html
-      url: https://www.cpan.org/src/5.0
-      version-pattern: perl-(5\.\d[02468]+\.*\d*).tar.gz
-      url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
-  - type: script
-    dest-filename: configure
-    commands:
-    - exec ./configure.gnu $@
-- name: ghostscript # required for including .eps graphics
-  config-opts:
-  - --disable-cups
-  build-options:
-    ldflags: -L/app/lib
-  sources:
-  - type: archive
-    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs952/ghostscript-9.52.tar.gz
-    sha256: c2501d8e8e0814c4a5aa7e443e230e73d7af7f70287546f7b697e5ef49e32176
-- name: appdata
-  buildsystem: simple
-  build-commands:
-    - mkdir -p ${FLATPAK_DEST}/share/appdata
-    - cp org.freedesktop.Sdk.Extension.texlive.appdata.xml ${FLATPAK_DEST}/share/appdata
-    - appstream-compose  --basename=org.freedesktop.Sdk.Extension.texlive --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Sdk.Extension.texlive
-  sources:
-  - type: file
-    path: org.freedesktop.Sdk.Extension.texlive.appdata.xml
-- name: scripts
-  buildsystem: simple
-  build-commands:
-  - cp *.sh /usr/lib/sdk/texlive/
-  sources:
-  - type: script
-    commands:
-    - install -d /app
-    - cp -ra /usr/lib/sdk/texlive/* /app/
-    dest-filename: install.sh
-  - type: script
-    commands:
-    - export PATH=/usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin:$PATH
-    dest-filename: enable.sh
+  - name: p7zip # required for unzipping texlive.iso
+    no-autogen: true
+    make-args:
+      - 7z
+    cleanup:
+      - '*'
+    sources:
+      - type: archive
+        url: https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
+        sha256: 5eb20ac0e2944f6cb9c2d51dd6c4518941c185347d4089ea89087ffdd6e2341f
+      - type: shell
+        commands:
+          - sed -i 's|/usr/local|/usr/lib/sdk/texlive|g' makefile.common
+  - name: wget # build dependency of TeX Live
+    cleanup:
+      - '*'
+    sources:
+      - type: archive
+        url: https://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
+        sha256: 31cccfc6630528db1c8e3a06f6decf2a370060b982841cfab2b8677400a5092e
+        x-checker-data:
+          type: html
+          url: https://ftp.gnu.org/gnu/wget
+          version-pattern: wget-(\d\.\d+\.*\d*).tar.gz
+          url-template: https://ftp.gnu.org/gnu/wget/wget-$version.tar.gz
+  - name: texlive
+    buildsystem: simple
+    sources:
+      - type: file
+        url: http://mirrors.ctan.org/systems/texlive/Images/texlive2020.iso
+        sha256: ec812ba2f345d8d990fc86b67a9bfc4cc8d17eb64a87423c976bea05cc076bff
+    build-commands:
+      - 7z x texlive2020.iso
+      - chmod +x install-tl
+      - "echo \"I\nn\" | TEXLIVE_INSTALL_PREFIX=/usr/lib/sdk/texlive ./install-tl\
+        \ -portable"
+      - rm -rf /usr/lib/sdk/texlive/texmf-dist/doc
+  - name: perl # required for makeglossaries
+    no-autogen: true
+    config-opts:
+      - -des # use default build configuration
+      - -Duseshrplib # build shared library
+    build-options:
+      cflags: -fPIC
+      ldflags: -fpic
+      no-debuginfo: true
+    cleanup:
+      - /man
+      - '*.pod'
+      - '*.h'
+    sources:
+      - type: archive
+        url: https://www.cpan.org/src/5.0/perl-5.32.0.tar.gz
+        sha256: efeb1ce1f10824190ad1cadbcccf6fdb8a5d37007d0100d2d9ae5f2b5900c0b4
+        x-checker-data:
+          type: html
+          url: https://www.cpan.org/src/5.0
+          version-pattern: perl-(5\.\d[02468]+\.*\d*).tar.gz
+          url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
+        size: 18204616
+      - type: script
+        dest-filename: configure
+        commands:
+          - exec ./configure.gnu $@
+  - name: ghostscript # required for including .eps graphics
+    config-opts:
+      - --disable-cups
+    build-options:
+      ldflags: -L/app/lib
+    sources:
+      - type: archive
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs952/ghostscript-9.52.tar.gz
+        sha256: c2501d8e8e0814c4a5aa7e443e230e73d7af7f70287546f7b697e5ef49e32176
+  - name: appdata
+    buildsystem: simple
+    build-commands:
+      - mkdir -p ${FLATPAK_DEST}/share/appdata
+      - cp org.freedesktop.Sdk.Extension.texlive.appdata.xml ${FLATPAK_DEST}/share/appdata
+      - appstream-compose  --basename=org.freedesktop.Sdk.Extension.texlive --prefix=${FLATPAK_DEST}
+        --origin=flatpak org.freedesktop.Sdk.Extension.texlive
+    sources:
+      - type: file
+        path: org.freedesktop.Sdk.Extension.texlive.appdata.xml
+  - name: scripts
+    buildsystem: simple
+    build-commands:
+      - cp *.sh /usr/lib/sdk/texlive/
+    sources:
+      - type: script
+        commands:
+          - install -d /app
+          - cp -ra /usr/lib/sdk/texlive/* /app/
+        dest-filename: install.sh
+      - type: script
+        commands:
+          - export PATH=/usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin:$PATH
+        dest-filename: enable.sh
