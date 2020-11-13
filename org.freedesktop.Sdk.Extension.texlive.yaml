@@ -82,11 +82,6 @@ modules:
   - type: archive
     url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs952/ghostscript-9.52.tar.gz
     sha256: c2501d8e8e0814c4a5aa7e443e230e73d7af7f70287546f7b697e5ef49e32176
-        x-checker-data:
-      type: html
-      url: https://www.ghostscript.com/download/gpdldnld.html
-      version-pattern:  GhostPDL (\d\.\d+\.*\d*) Source
-      url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs(\d+)/ghostpdl-(\d\.\d+\.*\d*).tar.gz
 - name: appdata
   buildsystem: simple
   build-commands:
