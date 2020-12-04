@@ -15,23 +15,17 @@ modules:
     buildsystem: autotools
     builddir: true
     build-options:
-      arch:
-        aarch64:
-          ldflags: -ldl
+      ldflags: -ldl
     config-opts:
-      - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}
-      - --datarootdir=${FLATPAK_DEST}/share
-      - --disable-xetex # needs additonal dependencies
-      - --disable-xindy # needs additonal dependencies
-      - --exec_prefix=${FLATPAK_DEST}
-      - --includedir=${FLATPAK_DEST}/include
-      - --infodir=${FLATPAK_DEST}/share/info
-      - --libdir=${FLATPAK_DEST}/lib
-      - --mandir=${FLATPAK_DEST}/share/man
-      - --prefix=${FLATPAK_DEST}
+      - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
       - --without-x # needs additonal dependencies
       - --disable-native-texlive-build
+      - --with-system-cairo
+      - --with-system-freetype2
+      - --with-system-harfbuzz
+      - --with-system-icu
       - --with-system-libpng
+      - --with-system-zlib
     # Hints for a proper installation can be found in http://www.linuxfromscratch.org/blfs/view/svn/pst/texlive.html or http://ftp.math.utah.edu/pub/texlive-utah/ .
     sources:
       - type: archive
