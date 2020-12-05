@@ -32,6 +32,9 @@ modules:
       - --with-system-zlib
     post-install:
       - make texlinks
+      - mktexlsr &&
+      - fmtutil-sys --all &&
+      - mtxrun --generate
     # Hints for a proper installation can be found in http://www.linuxfromscratch.org/blfs/view/svn/pst/texlive.html or http://ftp.math.utah.edu/pub/texlive-utah/ .
     sources:
       - type: archive
