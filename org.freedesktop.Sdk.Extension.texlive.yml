@@ -8,8 +8,11 @@ appstream-compose: false
 separate-locales: false
 build-options:
   prefix: /usr/lib/sdk/texlive
-  env:
-    PATH: /usr/lib/sdk/texlive/bin/aarch64-linux:/usr/lib/sdk/texlive/bin/x86_64-linux:/usr/bin
+  arch:
+    x86_64:
+      prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux
+    aarch64:
+      prepend-path: /usr/lib/sdk/texlive/bin/aarch64-linux
 modules:
   - name: texlive-source
     buildsystem: autotools
