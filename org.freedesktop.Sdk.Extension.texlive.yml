@@ -9,7 +9,7 @@ separate-locales: false
 build-options:
   prefix: /usr/lib/sdk/texlive
   env:
-    PATH: /usr/lib/sdk/texlive/bin:/usr/bin
+    PATH: /usr/lib/sdk/texlive/bin/${FLATPAK_ARCH}-linux:/usr/bin
 modules:
   - name: texlive-source
     buildsystem: autotools
