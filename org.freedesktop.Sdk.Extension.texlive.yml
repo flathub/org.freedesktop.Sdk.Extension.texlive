@@ -21,11 +21,17 @@ modules:
       - --without-x # needs additonal dependencies
       - --disable-native-texlive-build
       - --with-system-cairo
+      - --with-system-fontconfig
       - --with-system-freetype2
+      - --with-system-gmp
+      - --with-system-graphite2
       - --with-system-harfbuzz
       - --with-system-icu
       - --with-system-libpng
+      - --with-system-pixman
       - --with-system-zlib
+    post-install:
+      - make texlinks
     # Hints for a proper installation can be found in http://www.linuxfromscratch.org/blfs/view/svn/pst/texlive.html or http://ftp.math.utah.edu/pub/texlive-utah/ .
     sources:
       - type: archive
