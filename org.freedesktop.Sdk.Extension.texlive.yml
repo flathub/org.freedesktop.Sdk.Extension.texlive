@@ -14,6 +14,17 @@ build-options:
     aarch64:
       prepend-path: /usr/lib/sdk/texlive/bin/aarch64-linux
 modules:
+  - name: texmf
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 -t ${FLATPAK_DEST}/dist texlive-20200406-texmf.tar.xz
+      - tar -xf texlive-20200406-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
+    cleanup:
+      - /texmf-dist
+    sources:
+      - type: file
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
+        sha256: 0aa97e583ecfd488e1dc60ff049fec073c1e22dfe7de30a3e4e8c851bb875a95
   - name: texlive-source
     buildsystem: autotools
     builddir: true
@@ -38,7 +49,6 @@ modules:
       - install -d ${FLATPAK_DEST}/tlpkg/TeXLive
       - install -m644 ../texk/tests/TeXLive/* ${FLATPAK_DEST}/tlpkg/TeXLive
       - tar -xf ../texlive-20200406-tlpdb-full.tar.gz -C ${FLATPAK_DEST}/tlpkg
-      - tar -xf ../texlive-20200406-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
       - mktexlsr
       - fmtutil-sys --all
       - mtxrun --generate
@@ -47,9 +57,6 @@ modules:
       - type: archive
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-source.tar.xz
         sha256: e32f3d08cbbbcf21d8d3f96f2143b64a1f5e4cb01b06b761d6249c8785249078
-      - type: file
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
-        sha256: 0aa97e583ecfd488e1dc60ff049fec073c1e22dfe7de30a3e4e8c851bb875a95
       - type: file
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-tlpdb-full.tar.gz
         sha256: 2990a8d275506c297b2239a1b4c5d9a9ec0d18cf12ff9a6a33924cf2e3838ed4
@@ -70,7 +77,8 @@ modules:
       - type: script
         commands:
           - install -d ${FLATPAK_DEST}
-          - cp -ra /usr/lib/sdk/texlive/* ${FLATPAK_DEST}
+          - cp -ra /usr/lib/sdk/texlive/{bin,*.sh,include,lib,manifest.json,share,texmf-var,tlpkg} ${FLATPAK_DEST}
+          - tar Jxvf /usr/lib/sdk/texlive/dist/texlive-*-texmf.tar.xz --strip-components=1 -C ${FLATPAK_DEST}
         dest-filename: install.sh
       - type: script
         commands:
