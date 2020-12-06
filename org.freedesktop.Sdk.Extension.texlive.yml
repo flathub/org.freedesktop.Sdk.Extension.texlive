@@ -35,6 +35,10 @@ modules:
       - --with-system-zlib
     post-install:
       - make texlinks
+      - install -d ${FLATPAK_DEST}/tlpkg/TeXLive
+      - install -m644 ../texk/tests/TeXLive/* ${FLATPAK_DEST}/tlpkg/TeXLive
+      - tar -xf ../texlive-20200406-tlpdb-full.tar.gz -C ${FLATPAK_DEST}/tlpkg
+      - tar -xf ../texlive-20200406-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
       - mktexlsr
       - fmtutil-sys --all
       - mtxrun --generate
@@ -43,10 +47,12 @@ modules:
       - type: archive
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-source.tar.xz
         sha256: e32f3d08cbbbcf21d8d3f96f2143b64a1f5e4cb01b06b761d6249c8785249078
-#      - type: archive
-#        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
-#        sha256: 0aa97e583ecfd488e1dc60ff049fec073c1e22dfe7de30a3e4e8c851bb875a95
-#        size: 3165595416
+      - type: file
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
+        sha256: 0aa97e583ecfd488e1dc60ff049fec073c1e22dfe7de30a3e4e8c851bb875a95
+      - type: file
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-tlpdb-full.tar.gz
+        sha256: 2990a8d275506c297b2239a1b4c5d9a9ec0d18cf12ff9a6a33924cf2e3838ed4
   - name: appdata
     buildsystem: simple
     build-commands:
