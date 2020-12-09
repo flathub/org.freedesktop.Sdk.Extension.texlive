@@ -17,10 +17,7 @@ modules:
   - name: texmf
     buildsystem: simple
     build-commands:
-      - install -Dm644 -t ${FLATPAK_DEST}/dist texlive-20200406-texmf.tar.xz
       - tar -xf texlive-20200406-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
-    cleanup:
-      - /texmf-dist
     sources:
       - type: file
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
@@ -77,8 +74,7 @@ modules:
       - type: script
         commands:
           - install -d ${FLATPAK_DEST}
-          - cp -ra /usr/lib/sdk/texlive/{bin,*.sh,include,lib,manifest.json,share,texmf-var,tlpkg} ${FLATPAK_DEST}
-          - tar Jxvf /usr/lib/sdk/texlive/dist/texlive-*-texmf.tar.xz --strip-components=1 -C ${FLATPAK_DEST}
+          - cp -ra /usr/lib/sdk/texlive/* ${FLATPAK_DEST}
         dest-filename: install.sh
       - type: script
         commands:
