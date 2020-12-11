@@ -8,6 +8,7 @@ appstream-compose: false
 separate-locales: false
 build-options:
   prefix: /usr/lib/sdk/texlive
+  prepend-path: /usr/lib/sdk/texlive/bin
   arch:
     x86_64:
       prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux
@@ -57,6 +58,16 @@ modules:
       - type: file
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-tlpdb-full.tar.gz
         sha256: 2990a8d275506c297b2239a1b4c5d9a9ec0d18cf12ff9a6a33924cf2e3838ed4
+  - ghostscript.yaml
+  - name: asymptote
+    config-opts:
+      - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
+      - --with-latex=${FLATPAK_DEST}/texmf-dist/tex/latex
+      - --with-context=${FLATPAK_DEST}/texmf-dist/tex/context/third
+    sources:
+      - type: archive
+        url: https://downloads.sourceforge.net/asymptote/asymptote-2.68.src.tgz
+        sha256: e1e85a5db14dc809a43189f85415bd0845bcb9eec7aea5533767838d045b02b2
   - name: appdata
     buildsystem: simple
     build-commands:
