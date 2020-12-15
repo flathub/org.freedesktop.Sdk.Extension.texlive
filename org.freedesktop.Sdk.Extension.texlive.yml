@@ -15,7 +15,7 @@ build-options:
     aarch64:
       prepend-path: /usr/lib/sdk/texlive/bin/aarch64-linux
 modules:
-  - name: texmf
+  - name: texlive-texmf
     buildsystem: simple
     build-commands:
       - tar -xf texlive-20200406-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
@@ -58,7 +58,27 @@ modules:
       - type: file
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-tlpdb-full.tar.gz
         sha256: 2990a8d275506c297b2239a1b4c5d9a9ec0d18cf12ff9a6a33924cf2e3838ed4
-  - ghostscript.yaml
+  - name: ghostscript
+    config-opts:
+    - --enable-dynamic
+    - --disable-cups
+    - --disable-dbus
+    - --disable-gtk
+    - --with-drivers=FILES
+    make-args:
+    - so
+    make-install-args:
+    - soinstall
+    - install
+    sources:
+    - type: archive
+      url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/ghostscript-9.53.3.tar.xz
+      sha256: 9c9f5bc85b6c7eb08368c05b1e3339f7aaf9677ddca710c6283f872d55e2a234
+    cleanup:
+    - /share/doc
+    - /share/man
+    - /share/ghostscript/9.53.3/doc
+    - /share/ghostscript/9.53.3/examples
   - name: asymptote
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
