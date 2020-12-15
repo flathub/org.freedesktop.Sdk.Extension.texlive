@@ -8,6 +8,7 @@ appstream-compose: false
 separate-locales: false
 build-options:
   prefix: /usr/lib/sdk/texlive
+  prepend-path: /usr/lib/sdk/texlive/bin
   arch:
     x86_64:
       prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux
@@ -17,10 +18,7 @@ modules:
   - name: texmf
     buildsystem: simple
     build-commands:
-      - install -Dm644 -t ${FLATPAK_DEST}/dist texlive-20200406-texmf.tar.xz
       - tar -xf texlive-20200406-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
-    cleanup:
-      - /texmf-dist
     sources:
       - type: file
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
@@ -60,6 +58,37 @@ modules:
       - type: file
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-tlpdb-full.tar.gz
         sha256: 2990a8d275506c297b2239a1b4c5d9a9ec0d18cf12ff9a6a33924cf2e3838ed4
+  - ghostscript.yaml
+  - name: asymptote
+    config-opts:
+      - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
+      - --with-latex=${FLATPAK_DEST}/texmf-dist/tex/latex
+      - --with-context=${FLATPAK_DEST}/texmf-dist/tex/context/third
+    sources:
+      - type: archive
+        url: https://downloads.sourceforge.net/asymptote/asymptote-2.68.src.tgz
+        sha256: e1e85a5db14dc809a43189f85415bd0845bcb9eec7aea5533767838d045b02b2
+  - name: woff2
+    buildsystem: cmake-ninja
+    builddir: true
+    sources:
+        - type: archive
+          url: https://github.com/google/woff2/archive/v1.0.2.tar.gz
+          sha256: add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594
+  - name: dvisvgm
+    buildsystem: autotools
+    build-options:
+      cxxflags: -I/usr/lib/sdk/texlive/include
+      cflags: -I/usr/lib/sdk/texlive/include
+      ldflags: -L/usr/lib/sdk/texlive/lib
+      env:
+        PKG_CONFIG_PATH: /usr/lib/sdk/texlive/lib/pkgconfig
+    config-opts:
+      - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
+    sources:
+      - type: archive
+        url: https://github.com/mgieseki/dvisvgm/releases/download/2.10.1/dvisvgm-2.10.1.tar.gz
+        md5: e1fa5d5ce656fedcdb7cd4146220e181
   - name: appdata
     buildsystem: simple
     build-commands:
@@ -77,8 +106,7 @@ modules:
       - type: script
         commands:
           - install -d ${FLATPAK_DEST}
-          - cp -ra /usr/lib/sdk/texlive/{bin,*.sh,include,lib,manifest.json,share,texmf-var,tlpkg} ${FLATPAK_DEST}
-          - tar Jxvf /usr/lib/sdk/texlive/dist/texlive-*-texmf.tar.xz --strip-components=1 -C ${FLATPAK_DEST}
+          - cp -ra /usr/lib/sdk/texlive/* ${FLATPAK_DEST}
         dest-filename: install.sh
       - type: script
         commands:
