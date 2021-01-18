@@ -31,6 +31,7 @@ modules:
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
       - --without-x # needs additonal dependencies
+      - --with-banner-add=' - Flatpak'      
       - --disable-native-texlive-build
       - --with-system-cairo
       - --with-system-fontconfig
@@ -88,13 +89,6 @@ modules:
       - type: archive
         url: https://downloads.sourceforge.net/asymptote/asymptote-2.68.src.tgz
         sha256: e1e85a5db14dc809a43189f85415bd0845bcb9eec7aea5533767838d045b02b2
-  - name: woff2
-    buildsystem: cmake-ninja
-    builddir: true
-    sources:
-        - type: archive
-          url: https://github.com/google/woff2/archive/v1.0.2.tar.gz
-          sha256: add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594
   - name: dvisvgm
     buildsystem: autotools
     build-options:
@@ -105,6 +99,7 @@ modules:
         PKG_CONFIG_PATH: /usr/lib/sdk/texlive/lib/pkgconfig
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
+      - --enable-bundled-libs      
     sources:
       - type: archive
         url: https://github.com/mgieseki/dvisvgm/releases/download/2.10.1/dvisvgm-2.10.1.tar.gz
