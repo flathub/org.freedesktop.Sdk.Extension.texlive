@@ -105,6 +105,10 @@ modules:
         url: https://github.com/mgieseki/dvisvgm/releases/download/2.10.1/dvisvgm-2.10.1.tar.gz
         md5: e1fa5d5ce656fedcdb7cd4146220e181
   - name: clisp
+    build-options:
+      env:
+        CPPFLAGS: -I/usr/lib/sdk/texlive/include
+        LDFLAGS: -L/usr/lib/sdk/texlive/lib
     modules:
       - name: libsigsegv
         sources:
