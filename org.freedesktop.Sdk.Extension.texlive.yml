@@ -107,8 +107,8 @@ modules:
   - name: clisp
     build-options:
       env:
-        cppflags: -I/usr/lib/sdk/texlive/include
-        ldflags: -L/usr/lib/sdk/texlive/lib
+        CPPFLAGS: -I/usr/lib/sdk/texlive/include
+        LDFLAGS: -L/usr/lib/sdk/texlive/lib
     modules:
       - name: libsigsegv
         sources:
