@@ -10,10 +10,10 @@ build-options:
   prefix: /usr/lib/sdk/texlive
   prepend-path: /usr/lib/sdk/texlive/bin
   arch:
-    x86_64:
-      prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux
     aarch64:
       prepend-path: /usr/lib/sdk/texlive/bin/aarch64-linux
+    x86_64:
+      prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux
 modules:
   - name: texlive-texmf
     buildsystem: simple
@@ -30,9 +30,9 @@ modules:
       ldflags: -ldl
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
-      - --without-x # needs additonal dependencies
-      - --with-banner-add=' - Flatpak'      
       - --disable-native-texlive-build
+      - --with-banner-add=' - Flatpak'      
+      - --without-x # needs additonal dependencies
       - --with-system-cairo
       - --with-system-fontconfig
       - --with-system-freetype2
@@ -61,30 +61,30 @@ modules:
         sha256: 2990a8d275506c297b2239a1b4c5d9a9ec0d18cf12ff9a6a33924cf2e3838ed4
   - name: ghostscript
     config-opts:
-    - --enable-dynamic
     - --disable-cups
     - --disable-dbus
+    - --enable-dynamic
     - --disable-gtk
     - --with-drivers=FILES
     make-args:
     - so
     make-install-args:
-    - soinstall
     - install
+    - soinstall
     sources:
     - type: archive
       url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/ghostscript-9.53.3.tar.xz
       sha256: 9c9f5bc85b6c7eb08368c05b1e3339f7aaf9677ddca710c6283f872d55e2a234
     cleanup:
     - /share/doc
-    - /share/man
     - /share/ghostscript/9.53.3/doc
     - /share/ghostscript/9.53.3/examples
+    - /share/man    
   - name: asymptote
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
-      - --with-latex=${FLATPAK_DEST}/texmf-dist/tex/latex
       - --with-context=${FLATPAK_DEST}/texmf-dist/tex/context/third
+      - --with-latex=${FLATPAK_DEST}/texmf-dist/tex/latex
     sources:
       - type: archive
         url: https://downloads.sourceforge.net/asymptote/asymptote-2.68.src.tgz
@@ -92,29 +92,29 @@ modules:
   - name: dvisvgm
     buildsystem: autotools
     build-options:
-      cxxflags: -I/usr/lib/sdk/texlive/include
       cflags: -I/usr/lib/sdk/texlive/include
+      cxxflags: -I/usr/lib/sdk/texlive/include
       ldflags: -L/usr/lib/sdk/texlive/lib
       env:
         PKG_CONFIG_PATH: /usr/lib/sdk/texlive/lib/pkgconfig
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
-      - --enable-bundled-libs      
+      - --enable-bundled-libs
     sources:
       - type: archive
-        url: https://github.com/mgieseki/dvisvgm/releases/download/2.10.1/dvisvgm-2.10.1.tar.gz
-        md5: e1fa5d5ce656fedcdb7cd4146220e181
+        url: https://github.com/mgieseki/dvisvgm/archive/2.11.1.tar.gz
+        sha256: 71b772d97abe04bc0b9a4dbd0077f4224ade7ea0aac325f061e4c0037d31020c
   - name: clisp
     build-options:
       env:
-        CPPFLAGS: -I/usr/lib/sdk/texlive/include
-        LDFLAGS: -L/usr/lib/sdk/texlive/lib
+        cppflags: -I/usr/lib/sdk/texlive/include
+        ldflags: -L/usr/lib/sdk/texlive/lib
     modules:
       - name: libsigsegv
         sources:
           - type: archive
-            url: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.12.tar.gz
-            sha256: 3ae1af359eebaa4ffc5896a1aee3568c052c99879316a1ab57f8fe1789c390b6
+            url: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.13.tar.gz
+            sha256: be78ee4176b05f7c75ff03298d84874db90f4b6c9d5503f0da1226b3a3c48119
     sources:
     - type: archive
       url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20180218+really2.49.92.orig.tar.bz2
