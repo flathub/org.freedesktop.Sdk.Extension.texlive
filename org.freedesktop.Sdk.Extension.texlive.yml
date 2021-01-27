@@ -12,6 +12,8 @@ build-options:
   arch:
     aarch64:
       prepend-path: /usr/lib/sdk/texlive/bin/aarch64-linux
+    arm:
+      prepend-path: /usr/lib/sdk/texlive/bin/arm-linux      
     x86_64:
       prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux
 modules:
