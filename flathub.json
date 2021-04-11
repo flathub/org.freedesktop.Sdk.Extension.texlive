@@ -1,4 +1,4 @@
 {
     "only-arches": ["x86_64"],
-    "skip-appstream-check": true,
+    "skip-appstream-check": true
 }
