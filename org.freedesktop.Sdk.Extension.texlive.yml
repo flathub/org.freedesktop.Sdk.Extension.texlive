@@ -18,7 +18,7 @@ modules:
   - name: texlive-texmf
     buildsystem: simple
     build-commands:
-      - tar -xf texlive-20200406-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
+      - tar -xf texlive-20210325-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
     sources:
       - type: file
         url: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-20210325-texmf.tar.xz
@@ -47,7 +47,7 @@ modules:
       - make texlinks
       - install -d ${FLATPAK_DEST}/tlpkg/TeXLive
       - install -m644 ../texk/tests/TeXLive/* ${FLATPAK_DEST}/tlpkg/TeXLive
-      - tar -xf ../texlive-20200406-tlpdb-full.tar.gz -C ${FLATPAK_DEST}/tlpkg
+      - tar -xf ../texlive-20210325-tlpdb-full.tar.gz -C ${FLATPAK_DEST}/tlpkg
       - mktexlsr
       - fmtutil-sys --all
       - mtxrun --generate
