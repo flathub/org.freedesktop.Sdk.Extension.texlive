@@ -21,8 +21,8 @@ modules:
       - tar -xf texlive-20200406-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
     sources:
       - type: file
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-texmf.tar.xz
-        sha256: 0aa97e583ecfd488e1dc60ff049fec073c1e22dfe7de30a3e4e8c851bb875a95
+        url: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-20210325-texmf.tar.xz
+        sha256: ff12d436c23e99fb30aad55924266104356847eb0238c193e839c150d9670f1c
   - name: texlive-source
     buildsystem: autotools
     builddir: true
@@ -31,7 +31,7 @@ modules:
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
       - --disable-native-texlive-build
-      - --with-banner-add=' - Flatpak'      
+      - --with-banner-add= - Flatpak
       - --without-x # needs additonal dependencies
       - --with-system-cairo
       - --with-system-fontconfig
@@ -54,11 +54,11 @@ modules:
     # Hints for a proper installation can be found in http://www.linuxfromscratch.org/blfs/view/svn/pst/texlive.html or http://ftp.math.utah.edu/pub/texlive-utah/ .
     sources:
       - type: archive
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-source.tar.xz
-        sha256: e32f3d08cbbbcf21d8d3f96f2143b64a1f5e4cb01b06b761d6249c8785249078
+        url: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-20210325-source.tar.xz
+        sha256: 7aefd96608d72061970f2d73f275be5648ea8ae815af073016d3106acc0d584b
       - type: file
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2020/texlive-20200406-tlpdb-full.tar.gz
-        sha256: 2990a8d275506c297b2239a1b4c5d9a9ec0d18cf12ff9a6a33924cf2e3838ed4
+        url: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-20210325-tlpdb-full.tar.gz
+        sha256: 21d218dcf56160081e8c376ec9d6b4cfc750e2a0fea14ee24884b1d5039f2566
   - name: ghostscript
     config-opts:
     - --disable-cups
@@ -73,12 +73,12 @@ modules:
     - soinstall
     sources:
     - type: archive
-      url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/ghostscript-9.53.3.tar.xz
-      sha256: 9c9f5bc85b6c7eb08368c05b1e3339f7aaf9677ddca710c6283f872d55e2a234
+      url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/ghostscript-9.54.0.tar.xz
+      sha256: c2b7b43cde600f4e70efb2cd95865f6d884a67315c3de235914697d8ccde6e3b
     cleanup:
     - /share/doc
-    - /share/ghostscript/9.53.3/doc
-    - /share/ghostscript/9.53.3/examples
+    - /share/ghostscript/9.54.0/doc
+    - /share/ghostscript/9.54.0/examples
     - /share/man    
   - name: asymptote
     config-opts:
@@ -87,8 +87,8 @@ modules:
       - --with-latex=${FLATPAK_DEST}/texmf-dist/tex/latex
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/asymptote/asymptote-2.68.src.tgz
-        sha256: e1e85a5db14dc809a43189f85415bd0845bcb9eec7aea5533767838d045b02b2
+        url: https://downloads.sourceforge.net/asymptote/asymptote-2.70.src.tgz
+        sha256: f5cc913a858c33e92f79ab421d354c0fe2babd87f452ae9dff729a902aa80c3f
   - name: dvisvgm
     buildsystem: autotools
     build-options:
@@ -113,8 +113,8 @@ modules:
       - name: libsigsegv
         sources:
           - type: archive
-            url: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.12.tar.gz
-            sha256: 3ae1af359eebaa4ffc5896a1aee3568c052c99879316a1ab57f8fe1789c390b6
+            url: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.13.tar.gz
+            sha256: be78ee4176b05f7c75ff03298d84874db90f4b6c9d5503f0da1226b3a3c48119
     sources:
     - type: archive
       url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20180218+really2.49.92.orig.tar.bz2
