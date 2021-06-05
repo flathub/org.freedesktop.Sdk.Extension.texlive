@@ -20,7 +20,7 @@ modules:
     sources:
       - type: archive
         url: https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2
-        sha256: 5eb20ac0e2944f6cb9c2d51dd6c4518941c185347d4089ea89087ffdd6e2341f
+        sha256: 251a85b3bac687974f360d3796048c20ded3bf0bd69e0d1cfd1db23d013f89ed
       - type: shell
         commands:
           - sed -i 's|/usr/local|/usr/lib/sdk/texlive|g' makefile.common
@@ -29,8 +29,8 @@ modules:
       - '*'
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
-        sha256: 31cccfc6630528db1c8e3a06f6decf2a370060b982841cfab2b8677400a5092e
+        url: https://ftp.gnu.org/gnu/wget/wget-1.21.1.tar.gz
+        sha256: 59ba0bdade9ad135eda581ae4e59a7a9f25e3a4bde6a5419632b31906120e26e
         x-checker-data:
           type: html
           url: https://ftp.gnu.org/gnu/wget
@@ -63,14 +63,13 @@ modules:
       - '*.h'
     sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.32.0.tar.gz
-        sha256: efeb1ce1f10824190ad1cadbcccf6fdb8a5d37007d0100d2d9ae5f2b5900c0b4
+        url: https://www.cpan.org/src/5.0/perl-5.34.0.tar.gz
+        sha256: 551efc818b968b05216024fb0b727ef2ad4c100f8cb6b43fab615fa78ae5be9a
         x-checker-data:
           type: html
           url: https://www.cpan.org/src/5.0
           version-pattern: perl-(5\.\d[02468]+\.*\d*).tar.gz
           url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
-        size: 18204616
       - type: script
         dest-filename: configure
         commands:
