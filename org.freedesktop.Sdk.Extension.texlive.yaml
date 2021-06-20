@@ -45,7 +45,7 @@ modules:
     build-commands:
       - 7z x texlive2020.iso
       - chmod +x install-tl
-      - "echo \"I\nn\" | TEXLIVE_INSTALL_PREFIX=/usr/lib/sdk/texlive ./install-tl\
+      - "echo \"I\nn\" | TEXLIVE_INSTALL_PREFIX=/usr/lib/sdk/texlive ./install-tl\ --profile texlive.profile
         \ -portable"
       - rm -rf /usr/lib/sdk/texlive/texmf-dist/doc
   - name: perl # required for makeglossaries
