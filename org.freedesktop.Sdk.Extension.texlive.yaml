@@ -63,14 +63,13 @@ modules:
       - '*.h'
     sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.32.0.tar.gz
-        sha256: efeb1ce1f10824190ad1cadbcccf6fdb8a5d37007d0100d2d9ae5f2b5900c0b4
+        url: https://www.cpan.org/src/5.0/perl-5.34.0.tar.gz
+        sha256: 551efc818b968b05216024fb0b727ef2ad4c100f8cb6b43fab615fa78ae5be9a
         x-checker-data:
           type: html
           url: https://www.cpan.org/src/5.0
           version-pattern: perl-(5\.\d[02468]+\.*\d*).tar.gz
           url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
-        size: 18204616
       - type: script
         dest-filename: configure
         commands:
