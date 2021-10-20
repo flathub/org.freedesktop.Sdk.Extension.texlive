@@ -89,8 +89,8 @@ modules:
       - soinstall
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/ghostscript-9.54.0.tar.xz
-        sha256: c2b7b43cde600f4e70efb2cd95865f6d884a67315c3de235914697d8ccde6e3b
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9550/ghostscript-9.55.0.tar.xz
+        sha256: 6ee3057773646d6a2c6d117eb53a17d6752feadc513828e4322f68b7b7789ff6
         x-checker-data:
           type: html
           url: https://ghostscript.com/releases/
@@ -126,8 +126,8 @@ modules:
       - --enable-bundled-libs
     sources:
       - type: archive
-        url: https://github.com/mgieseki/dvisvgm/archive/2.11.1.tar.gz
-        sha256: 71b772d97abe04bc0b9a4dbd0077f4224ade7ea0aac325f061e4c0037d31020c
+        url: https://github.com/mgieseki/dvisvgm/releases/download/2.12/dvisvgm-2.12.tar.gz
+        sha256: 90cb6e117286f98f03e2f8e3f5526cf1d370686a7186e57a031a506bf6ead0f4
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mgieseki/dvisvgm/releases/latest
@@ -151,8 +151,8 @@ modules:
               pattern: (https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-([\d\.]+).tar.gz)
     sources:
       - type: archive
-        url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20180218+really2.49.92.orig.tar.bz2
-        sha256: bd443a94aa9b02da4c4abbcecfc04ffff1919c0a8b0e7e35649b86198cd6bb89
+        url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20210628.gitde01f0f.orig.tar.xz
+        sha256: 8b71994ae76e2557da637b0c1663daac6b49b7128c2a2bdcb5a155b55b55ca60
         x-checker-data:
           type: html
           url: https://packages.debian.org/unstable/clisp
