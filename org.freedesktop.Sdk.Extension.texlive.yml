@@ -18,13 +18,18 @@ modules:
   - name: texlive-texmf
     buildsystem: simple
     build-commands:
-      - tar -xf texlive-20210325-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
+      - tar -xf texlive-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
     sources:
       - type: file
         url: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-20210325-texmf.tar.xz
         sha256: ff12d436c23e99fb30aad55924266104356847eb0238c193e839c150d9670f1c
+        dest-filename: texlive-texmf.tar.xz
+        #x-checker-data:
+        #  type: html
+        #  url: https://pi.kwarc.info/historic/systems/texlive/2021/
+        #  version-pattern: texlive-([\d\.]+).source.tar.xz
+        #  url-template: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-$version-texmf.tar.xz
   - name: texlive-source
-    buildsystem: autotools
     builddir: true
     build-options:
       ldflags: -ldl
@@ -45,9 +50,8 @@ modules:
       - --with-system-zlib
     post-install:
       - make texlinks
-      - install -d ${FLATPAK_DEST}/tlpkg/TeXLive
-      - install -m644 ../texk/tests/TeXLive/* ${FLATPAK_DEST}/tlpkg/TeXLive
-      - tar -xf ../texlive-20210325-tlpdb-full.tar.gz -C ${FLATPAK_DEST}/tlpkg
+      - install -Dm644 ../texk/tests/TeXLive/* -t ${FLATPAK_DEST}/tlpkg/TeXLive/
+      - tar -xf ../texlive-tlpdb-full.tar.gz -C ${FLATPAK_DEST}/tlpkg
       - mktexlsr
       - fmtutil-sys --all
       - mtxrun --generate
@@ -56,30 +60,47 @@ modules:
       - type: archive
         url: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-20210325-source.tar.xz
         sha256: 7aefd96608d72061970f2d73f275be5648ea8ae815af073016d3106acc0d584b
+        x-checker-data:
+          type: html
+          url: https://pi.kwarc.info/historic/systems/texlive/2021/
+          version-pattern: texlive-([\d\.]+).source.tar.xz
+          url-template: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-$version-source.tar.xz
+          is-main-source: true
       - type: file
         url: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-20210325-tlpdb-full.tar.gz
         sha256: 21d218dcf56160081e8c376ec9d6b4cfc750e2a0fea14ee24884b1d5039f2566
+        dest-filename: texlive-tlpdb-full.tar.gz
+        x-checker-data:
+          type: html
+          url: https://pi.kwarc.info/historic/systems/texlive/2021/
+          version-pattern: texlive-([\d\.]+).source.tar.xz
+          url-template: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-$version-tlpdb-full.tar.gz
   - name: ghostscript
     config-opts:
-    - --disable-cups
-    - --disable-dbus
-    - --enable-dynamic
-    - --disable-gtk
-    - --with-drivers=FILES
+      - --disable-cups
+      - --disable-dbus
+      - --enable-dynamic
+      - --disable-gtk
+      - --with-drivers=FILES
     make-args:
-    - so
+      - so
     make-install-args:
-    - install
-    - soinstall
+      - install
+      - soinstall
     sources:
-    - type: archive
-      url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/ghostscript-9.54.0.tar.xz
-      sha256: c2b7b43cde600f4e70efb2cd95865f6d884a67315c3de235914697d8ccde6e3b
+      - type: archive
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/ghostscript-9.54.0.tar.xz
+        sha256: c2b7b43cde600f4e70efb2cd95865f6d884a67315c3de235914697d8ccde6e3b
+        x-checker-data:
+          type: html
+          url: https://ghostscript.com/releases/
+          version-pattern: The latest release is Ghostscript ([\d\.]+)
+          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${version0}${version1}${version2}/ghostscript-$version.tar.xz
     cleanup:
-    - /share/doc
-    - /share/ghostscript/9.54.0/doc
-    - /share/ghostscript/9.54.0/examples
-    - /share/man    
+      - /share/doc
+      - /share/ghostscript/*/doc
+      - /share/ghostscript/*/examples
+      - /share/man
   - name: asymptote
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
@@ -87,10 +108,13 @@ modules:
       - --with-latex=${FLATPAK_DEST}/texmf-dist/tex/latex
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/asymptote/asymptote-2.70.src.tgz
+        url: https://sourceforge.net/projects/asymptote/files/2.70/asymptote-2.70.src.tgz
         sha256: f5cc913a858c33e92f79ab421d354c0fe2babd87f452ae9dff729a902aa80c3f
+        x-checker-data:
+          type: html
+          url: https://sourceforge.net/projects/asymptote/rss
+          pattern: <link>(https://sourceforge.net/.+/asymptote-([\d\.]+).src.tgz)/download</link>
   - name: dvisvgm
-    buildsystem: autotools
     build-options:
       cflags: -I/usr/lib/sdk/texlive/include
       cxxflags: -I/usr/lib/sdk/texlive/include
@@ -104,6 +128,12 @@ modules:
       - type: archive
         url: https://github.com/mgieseki/dvisvgm/archive/2.11.1.tar.gz
         sha256: 71b772d97abe04bc0b9a4dbd0077f4224ade7ea0aac325f061e4c0037d31020c
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/mgieseki/dvisvgm/releases/latest
+          version-query: .tag_name
+          url-query: .assets[] | select(.name=="dvisvgm-" + $version + ".tar.gz")
+            | .browser_download_url
   - name: clisp
     build-options:
       env:
@@ -115,29 +145,43 @@ modules:
           - type: archive
             url: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.13.tar.gz
             sha256: be78ee4176b05f7c75ff03298d84874db90f4b6c9d5503f0da1226b3a3c48119
+            x-checker-data:
+              type: html
+              url: https://www.gnu.org/software/libsigsegv/
+              pattern: (https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-([\d\.]+).tar.gz)
     sources:
-    - type: archive
-      url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20180218+really2.49.92.orig.tar.bz2
-      sha256: bd443a94aa9b02da4c4abbcecfc04ffff1919c0a8b0e7e35649b86198cd6bb89
-    - type: shell
-      commands:
-        - cp -p /usr/share/automake-*/config.{sub,guess} src/build-aux
+      - type: archive
+        url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20180218+really2.49.92.orig.tar.bz2
+        sha256: bd443a94aa9b02da4c4abbcecfc04ffff1919c0a8b0e7e35649b86198cd6bb89
+        x-checker-data:
+          type: html
+          url: https://packages.debian.org/unstable/clisp
+          version-pattern: 'Package: clisp \(1:([\d\.]+[\w]*)-\d and others\)'
+          url-template: https://deb.debian.org/debian/pool/main/c/clisp/clisp_$version.orig.tar.xz
+      - type: shell
+        commands:
+          - cp -p /usr/share/automake-*/config.{sub,guess} src/build-aux
   - name: xindy
     config-opts:
-    - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
-    - --datarootdir=${FLATPAK_DEST}
-    - --libdir=${FLATPAK_DEST}/texmf-dist
-    - --mandir=${FLATPAK_DEST}/texmf-dist/doc/man
+      - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
+      - --datarootdir=${FLATPAK_DEST}
+      - --libdir=${FLATPAK_DEST}/texmf-dist
+      - --mandir=${FLATPAK_DEST}/texmf-dist/doc/man
     sources:
-    - type: archive
-      url: http://mirrors.ctan.org/indexing/xindy/base/xindy-2.5.1.tar.gz
-      sha256: 2c8ee91db7217b5776b1ee5272dd259686f7ba3ec1d25c678f75a6c03fe9ba43        
+      - type: archive
+        url: http://mirrors.ctan.org/indexing/xindy/base/xindy-2.5.1.tar.gz
+        sha256: 2c8ee91db7217b5776b1ee5272dd259686f7ba3ec1d25c678f75a6c03fe9ba43
+        x-checker-data:
+          type: html
+          url: http://mirrors.ctan.org/indexing/xindy/base/
+          version-pattern: xindy-([\d\.]+).tar.gz
+          url-template: http://mirrors.ctan.org/indexing/xindy/base/xindy-$version.tar.gz
   - name: appdata
     buildsystem: simple
     build-commands:
-      - mkdir -p ${FLATPAK_DEST}/share/appdata
-      - cp org.freedesktop.Sdk.Extension.texlive.appdata.xml ${FLATPAK_DEST}/share/appdata
-      - appstream-compose  --basename=org.freedesktop.Sdk.Extension.texlive --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Sdk.Extension.texlive
+      - install -Dm644 ${FLATPAK_ID}.appdata.xml -t ${FLATPAK_DEST}/share/appdata/
+      - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak
+        ${FLATPAK_ID}
     sources:
       - type: file
         path: org.freedesktop.Sdk.Extension.texlive.appdata.xml
@@ -148,10 +192,18 @@ modules:
     sources:
       - type: script
         commands:
-          - install -d ${FLATPAK_DEST}
+          - install -dm755 ${FLATPAK_DEST}
           - cp -ra /usr/lib/sdk/texlive/* ${FLATPAK_DEST}
         dest-filename: install.sh
       - type: script
         commands:
-          - export PATH=/usr/lib/sdk/texlive/bin/aarch64-linux:/usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin:$PATH
+          - export PATH=/usr/lib/sdk/texlive/bin/aarch64-linux:/usr/lib/sdk/texlive/bin:$PATH
         dest-filename: enable.sh
+        only-arches:
+          - aarch64
+      - type: script
+        commands:
+          - export PATH=/usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin:$PATH
+        dest-filename: enable.sh
+        only-arches:
+          - x86_64

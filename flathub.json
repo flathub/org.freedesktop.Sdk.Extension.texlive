@@ -1,3 +1,4 @@
 {
-  "skip-icons-check": true
+    "automerge-flathubbot-prs": false,
+    "skip-icons-check": true
 }

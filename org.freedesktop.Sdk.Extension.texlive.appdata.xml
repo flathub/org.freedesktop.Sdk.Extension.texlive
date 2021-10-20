@@ -6,6 +6,7 @@
   <summary>LaTeX packages and tools</summary>
   <url type="homepage">https://tug.org/texlive/</url>
   <releases>
-    <release date="2020-04-06" version="2020.04.06" />
+    <release version="20210325" date="2021-03-25"/>
+    <release version="20200406" date="2020-04-06"/>
   </releases>
 </component>
