@@ -108,7 +108,7 @@ modules:
       - ./Build
       - tar -xf biblatex.tds.tgz -C ${FLATPAK_DEST}/texmf-dist
       - texhash
-      - ./Build install
+      - ./Build --output=${FLATPAK_DEST} install
     sources:
       - type: archive
         url: https://github.com/plk/biber/archive/v2.16/biber-2.16.tar.gz
