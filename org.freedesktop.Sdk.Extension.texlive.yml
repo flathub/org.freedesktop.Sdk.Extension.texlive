@@ -108,8 +108,8 @@ modules:
       - --with-latex=${FLATPAK_DEST}/texmf-dist/tex/latex
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/asymptote/files/2.70/asymptote-2.70.src.tgz
-        sha256: f5cc913a858c33e92f79ab421d354c0fe2babd87f452ae9dff729a902aa80c3f
+        url: https://sourceforge.net/projects/asymptote/files/2.71/asymptote-2.71.src.tgz
+        sha256: c7ddb57c42e2d137aba6cbe3a3212bd5103a27775c2afef93e9185e8d42dc480
         x-checker-data:
           type: html
           url: https://sourceforge.net/projects/asymptote/rss
