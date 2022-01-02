@@ -101,11 +101,30 @@ modules:
       - /share/ghostscript/*/doc
       - /share/ghostscript/*/examples
       - /share/man
+  # for asymptote. It seems to fail without it.
+  - name: glm
+    buildsystem: cmake-ninja
+    cleanup:
+      - "*"
+    no-make-install: true
+    post-install:
+      - install -d ${FLATPAK_DEST}/include
+      - cp -R glm ${FLATPAK_DEST}/include
+    sources:
+      - type: archive
+        url: https://github.com/g-truc/glm/releases/download/0.9.9.8/glm-0.9.9.8.zip
+        sha256: 37e2a3d62ea3322e43593c34bae29f57e3e251ea89f4067506c94043769ade4c
+  # for asymptote. It seems to fail without it.
+  - shared-modules/glu/glu-9.json
+  # freeglut is optional however.
   - name: asymptote
+    build-options:
+      cppflags: -I/usr/lib/sdk/texlive/include
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
       - --with-context=${FLATPAK_DEST}/texmf-dist/tex/context/third
       - --with-latex=${FLATPAK_DEST}/texmf-dist/tex/latex
+      - --enable-lsp=no
     sources:
       - type: archive
         url: https://sourceforge.net/projects/asymptote/files/2.74/asymptote-2.74.src.tgz
@@ -114,6 +133,9 @@ modules:
           type: html
           url: https://sourceforge.net/projects/asymptote/rss
           pattern: <link>(https://sourceforge.net/.+/asymptote-([\d\.]+).src.tgz)/download</link>
+      - type: patch
+        path: asymptote-build-fixes.patch
+
   - name: dvisvgm
     build-options:
       cflags: -I/usr/lib/sdk/texlive/include
