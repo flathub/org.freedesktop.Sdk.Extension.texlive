@@ -78,8 +78,8 @@ modules:
   - name: perl
     no-autogen: true
     config-opts:
-      --des
-      --Duseshrplib
+      - -des
+      - -Duseshrplib
     build-options:
       cflags: -fPIC
       ldflags: -fpic
