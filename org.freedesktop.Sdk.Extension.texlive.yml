@@ -75,6 +75,48 @@ modules:
           url: https://pi.kwarc.info/historic/systems/texlive/2021/
           version-pattern: texlive-([\d\.]+).source.tar.xz
           url-template: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-$version-tlpdb-full.tar.gz
+  - name: perl
+    no-autogen: true
+    config-opts:
+      - -des
+      - -Duseshrplib
+    build-options:
+      cflags: -fPIC
+      ldflags: -fpic
+    sources:
+      - type: archive
+        url: https://www.cpan.org/src/5.0/perl-5.34.0.tar.gz
+        sha256: 551efc818b968b05216024fb0b727ef2ad4c100f8cb6b43fab615fa78ae5be9a
+      - type: script
+        dest-filename: configure
+        commands: 
+          - exec ./configure.gnu $@
+    post-install:
+      - chmod -R u+w $FLATPAK_DEST/lib/perl5
+  - name: perl-libs
+    buildsystem: simple
+    build-commands:
+      - perl-libs/install.sh
+    post-install:
+      - chmod -Rf u+w $FLATPAK_DEST/lib/perl5/site_perl  
+    sources:
+      - org.freedesktop.Sdk.Extension.texlive.perllibs.yml
+  - name: biber
+    buildsystem: simple
+    build-commands:
+      - perl ./Build.PL 
+      - ./Build
+      - tar -xf biblatex.tds.tgz -C ${FLATPAK_DEST}/texmf-dist
+      - texhash
+      - ./Build --output=${FLATPAK_DEST} install
+    sources:
+      - type: archive
+        url: https://github.com/plk/biber/archive/v2.16/biber-2.16.tar.gz
+        sha256: 57111ebc6d0d1933e55d3fe1a92f8ef57c602388ae83598a8073c8a77fd811e2
+      - type: file
+        url: https://sourceforge.net/projects/biblatex/files/biblatex-3.16/biblatex-3.16.tds.tgz
+        sha256: 6030370517f1578686e7d0b3b8aec001bb651c80aff064fa57b5f5b46cb57ba0
+        dest-filename: biblatex.tds.tgz
   - name: ghostscript
     config-opts:
       - --disable-cups
