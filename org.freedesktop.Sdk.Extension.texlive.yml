@@ -175,8 +175,6 @@ modules:
           type: html
           url: https://sourceforge.net/projects/asymptote/rss
           pattern: <link>(https://sourceforge.net/.+/asymptote-([\d\.]+).src.tgz)/download</link>
-      - type: patch
-        path: asymptote-build-fixes.patch
 
   - name: dvisvgm
     build-options:
