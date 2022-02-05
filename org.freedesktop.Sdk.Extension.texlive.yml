@@ -169,8 +169,8 @@ modules:
       - --enable-lsp=no
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/asymptote/files/2.77/asymptote-2.77.src.tgz
-        sha256: ae3ddc8e37ae666c75cbd23cd8b42df9c5e95ef6c311b5a2ee4db8b3c643b96c
+        url: https://sourceforge.net/projects/asymptote/files/2.78/asymptote-2.78.src.tgz
+        sha256: af02f339ae8a7c4b8e6c6134281037c4def262e60499956ffac7deb36c10bdce
         x-checker-data:
           type: html
           url: https://sourceforge.net/projects/asymptote/rss
