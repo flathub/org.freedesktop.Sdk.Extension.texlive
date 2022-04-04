@@ -131,8 +131,8 @@ modules:
       - soinstall
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9560/ghostscript-9.56.0.tar.xz
-        sha256: ea0d80ed315c55c605e37153697e55033e181c5bd511cca7c27ddcb94954408b
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostscript-9.56.1.tar.xz
+        sha256: d43406805650009b42c3d5f6dc535233454533c1e27c13a77dd1d462a056b8e4
         x-checker-data:
           type: html
           url: https://ghostscript.com/releases/
