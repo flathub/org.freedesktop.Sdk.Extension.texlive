@@ -101,10 +101,10 @@ modules:
     sources:
       - type: archive
         url: https://github.com/plk/biber/archive/v2.17/biber-2.17.tar.gz
-        sha256: 57111ebc6d0d1933e55d3fe1a92f8ef57c602388ae83598a8073c8a77fd811e2
+        sha256: 1ee7efdd8343e982046f2301c1b0dcf09e1f9a997ac86ed1018dcb41d04c9e88
       - type: file
-        url: https://github.com/plk/biblatex/archive/v3.17/biblatex-3.17.tar.gz
-        sha256: 6030370517f1578686e7d0b3b8aec001bb651c80aff064fa57b5f5b46cb57ba0
+        url: https://sourceforge.net/projects/biblatex/files/biblatex-3.17/biblatex-3.17.tds.tgz
+        sha256: ee477c9607ad6c99974b906bdaf0543365608dfa463391742a5e7a4b84b42865
         dest-filename: biblatex.tds.tgz
   - name: ghostscript
     config-opts:
@@ -210,11 +210,6 @@ modules:
       - type: archive
         url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20210628.gitde01f0f.orig.tar.xz
         sha256: 8b71994ae76e2557da637b0c1663daac6b49b7128c2a2bdcb5a155b55b55ca60
-        x-checker-data:
-          type: html
-          url: https://packages.debian.org/unstable/clisp
-          version-pattern: 'Package: clisp \(1:([\d\.]+[\w]*)-\d and others\)'
-          url-template: https://deb.debian.org/debian/pool/main/c/clisp/clisp_$version.orig.tar.xz
       - type: shell
         commands:
           - cp -p /usr/share/automake-*/config.{sub,guess} src/build-aux
@@ -228,11 +223,6 @@ modules:
       - type: archive
         url: http://mirrors.ctan.org/indexing/xindy/base/xindy-2.5.1.tar.gz
         sha256: 2c8ee91db7217b5776b1ee5272dd259686f7ba3ec1d25c678f75a6c03fe9ba43
-        x-checker-data:
-          type: html
-          url: http://mirrors.ctan.org/indexing/xindy/base/
-          version-pattern: xindy-([\d\.]+).tar.gz
-          url-template: http://mirrors.ctan.org/indexing/xindy/base/xindy-$version.tar.gz
   - name: appdata
     buildsystem: simple
     build-commands:
