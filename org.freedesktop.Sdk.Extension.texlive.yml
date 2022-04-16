@@ -143,13 +143,13 @@ modules:
       - cp -R glm ${FLATPAK_DEST}/include
     sources:
       - type: archive
-        url: https://github.com/g-truc/glm/releases/download/0.9.9.8/glm-0.9.9.8.tar.gz
+        url: https://github.com/g-truc/glm/archive/refs/tags/0.9.9.8.tar.gz
         sha256: 37e2a3d62ea3322e43593c34bae29f57e3e251ea89f4067506c94043769ade4c
         x-checker-data:
           type: anitya
           project-id: 1181
           stable-only: true
-          url-template: https://github.com/g-truc/glm/releases/download/$version/glm-$version.tar.gz
+          url-template: https://github.com/g-truc/glm/archive/refs/tags/$version.tar.gz
   # for asymptote. It seems to fail without it.
   - shared-modules/glu/glu-9.json
   # freeglut is optional however.
