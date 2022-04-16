@@ -69,8 +69,13 @@ modules:
       ldflags: -fpic
     sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.34.0.tar.gz
-        sha256: 551efc818b968b05216024fb0b727ef2ad4c100f8cb6b43fab615fa78ae5be9a
+        url: https://www.cpan.org/src/5.0/perl-5.34.1.tar.gz
+        sha256: 357951a491b0ba1ce3611263922feec78ccd581dddc24a446b033e25acf242a1
+        x-checker-data:
+          type: anitya
+          project-id: 13599
+          stable-only: true
+          url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
       - type: script
         dest-filename: configure
         commands:
@@ -95,10 +100,10 @@ modules:
       - ./Build --output=${FLATPAK_DEST} install
     sources:
       - type: archive
-        url: https://github.com/plk/biber/archive/v2.16/biber-2.16.tar.gz
+        url: https://github.com/plk/biber/archive/v2.17/biber-2.17.tar.gz
         sha256: 57111ebc6d0d1933e55d3fe1a92f8ef57c602388ae83598a8073c8a77fd811e2
       - type: file
-        url: https://sourceforge.net/projects/biblatex/files/biblatex-3.16/biblatex-3.16.tds.tgz
+        url: https://github.com/plk/biblatex/archive/v3.17/biblatex-3.17.tar.gz
         sha256: 6030370517f1578686e7d0b3b8aec001bb651c80aff064fa57b5f5b46cb57ba0
         dest-filename: biblatex.tds.tgz
   - name: ghostscript
@@ -118,9 +123,9 @@ modules:
         url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostscript-9.56.1.tar.xz
         sha256: d43406805650009b42c3d5f6dc535233454533c1e27c13a77dd1d462a056b8e4
         x-checker-data:
-          type: html
-          url: https://ghostscript.com/releases/
-          version-pattern: The latest release is Ghostscript ([\d\.]+)
+          type: anitya
+          project-id: 1157
+          stable-only: true
           url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${version0}${version1}${version2}/ghostscript-$version.tar.xz
     cleanup:
       - /share/doc
@@ -138,8 +143,13 @@ modules:
       - cp -R glm ${FLATPAK_DEST}/include
     sources:
       - type: archive
-        url: https://github.com/g-truc/glm/releases/download/0.9.9.8/glm-0.9.9.8.zip
+        url: https://github.com/g-truc/glm/releases/download/0.9.9.8/glm-0.9.9.8.tar.gz
         sha256: 37e2a3d62ea3322e43593c34bae29f57e3e251ea89f4067506c94043769ade4c
+        x-checker-data:
+          type: anitya
+          project-id: 1181
+          stable-only: true
+          url-template: https://github.com/g-truc/glm/releases/download/$version/glm-$version.tar.gz
   # for asymptote. It seems to fail without it.
   - shared-modules/glu/glu-9.json
   # freeglut is optional however.
@@ -153,12 +163,13 @@ modules:
       - --enable-lsp=no
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/asymptote/files/2.79/asymptote-2.79.src.tgz
-        sha256: 9a15dd89c57d15826f51b0fcb93e3956a603f77941bc50acdc71281ea0f00f18
+        url: https://sourceforge.net/projects/asymptote/files/2.80/asymptote-2.80.src.tgz
+        sha256: 6266d097dc49581f8308a5d3d60a77da11262daa60513c5f2e5b21fea4de1756
         x-checker-data:
-          type: html
-          url: https://sourceforge.net/projects/asymptote/rss
-          pattern: <link>(https://sourceforge.net/.+/asymptote-([\d\.]+).src.tgz)/download</link>
+          type: anitya
+          project-id: 235714
+          stable-only: true
+          url-template: https://sourceforge.net/projects/asymptote/files/$version/asymptote-$version.src.tgz
 
   - name: dvisvgm
     build-options:
@@ -175,11 +186,10 @@ modules:
         url: https://github.com/mgieseki/dvisvgm/releases/download/2.13.3/dvisvgm-2.13.3.tar.gz
         sha256: c8b7b93684df5c28294d840545ce7896726b244138938a127a0db9db725a4c70
         x-checker-data:
-          type: json
-          url: https://api.github.com/repos/mgieseki/dvisvgm/releases/latest
-          version-query: .tag_name
-          url-query: .assets[] | select(.name=="dvisvgm-" + $version + ".tar.gz")
-            | .browser_download_url
+          type: anitya
+          project-id: 130020
+          stable-only: true
+          url-template: https://github.com/mgieseki/dvisvgm/releases/download/$version/dvisvgm-$version.tar.gz
   - name: clisp
     build-options:
       env:
@@ -192,9 +202,10 @@ modules:
             url: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.14.tar.gz
             sha256: cdac3941803364cf81a908499beb79c200ead60b6b5b40cad124fd1e06caa295
             x-checker-data:
-              type: html
-              url: https://www.gnu.org/software/libsigsegv/
-              pattern: (https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-([\d\.]+).tar.gz)
+              type: anitya
+              project-id: 1722
+              stable-only: true
+              url-template: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-$version.tar.gz
     sources:
       - type: archive
         url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20210628.gitde01f0f.orig.tar.xz
