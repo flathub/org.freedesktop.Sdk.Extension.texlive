@@ -21,14 +21,9 @@ modules:
       - tar -xf texlive-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
     sources:
       - type: file
-        url: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-20210325-texmf.tar.xz
-        sha256: ff12d436c23e99fb30aad55924266104356847eb0238c193e839c150d9670f1c
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2022/texlive-20220321-texmf.tar.xz
+        sha512: 7b845273100310c1c8aae926a61819df03fd8caa7f5cbe7850f9f0ce4ed5fc4de0457e8fb168d8c933cd607a3850d26f373e17f291179bf89f418e3efe2133b4
         dest-filename: texlive-texmf.tar.xz
-        #x-checker-data:
-        #  type: html
-        #  url: https://pi.kwarc.info/historic/systems/texlive/2021/
-        #  version-pattern: texlive-([\d\.]+).source.tar.xz
-        #  url-template: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-$version-texmf.tar.xz
   - name: texlive-source
     builddir: true
     build-options:
@@ -58,23 +53,12 @@ modules:
     # Hints for a proper installation can be found in http://www.linuxfromscratch.org/blfs/view/svn/pst/texlive.html or http://ftp.math.utah.edu/pub/texlive-utah/ .
     sources:
       - type: archive
-        url: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-20210325-source.tar.xz
-        sha256: 7aefd96608d72061970f2d73f275be5648ea8ae815af073016d3106acc0d584b
-        x-checker-data:
-          type: html
-          url: https://pi.kwarc.info/historic/systems/texlive/2021/
-          version-pattern: texlive-([\d\.]+).source.tar.xz
-          url-template: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-$version-source.tar.xz
-          is-main-source: true
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2022/texlive-20220321-source.tar.xz
+        sha512: 1c6b4c80d474b661060c3ac126b41782fd34e883139b9bca89ca1ffe543891bd9451df3be5e6297af965ddbceea9802008a61589344c3dee8075044b1b288dd7
       - type: file
-        url: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-20210325-tlpdb-full.tar.gz
-        sha256: 21d218dcf56160081e8c376ec9d6b4cfc750e2a0fea14ee24884b1d5039f2566
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2022/texlive-20220325-tlpdb-full.tar.gz
+        sha512: 6070e0cf5321265f08a532aff1aeefac1d84042eddb16a449dd24ebd135987099e9c3917d21f6fc2b310baa5843327a4f381d34982a7c33ef9ae862491a164cf
         dest-filename: texlive-tlpdb-full.tar.gz
-        x-checker-data:
-          type: html
-          url: https://pi.kwarc.info/historic/systems/texlive/2021/
-          version-pattern: texlive-([\d\.]+).source.tar.xz
-          url-template: https://pi.kwarc.info/historic/systems/texlive/2021/texlive-$version-tlpdb-full.tar.gz
   - name: perl
     no-autogen: true
     config-opts:
