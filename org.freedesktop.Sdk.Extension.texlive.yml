@@ -153,8 +153,8 @@ modules:
       - --enable-lsp=no
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/asymptote/files/2.79/asymptote-2.79.src.tgz
-        sha256: 9a15dd89c57d15826f51b0fcb93e3956a603f77941bc50acdc71281ea0f00f18
+        url: https://sourceforge.net/projects/asymptote/files/2.80/asymptote-2.80.src.tgz
+        sha256: 6266d097dc49581f8308a5d3d60a77da11262daa60513c5f2e5b21fea4de1756
         x-checker-data:
           type: html
           url: https://sourceforge.net/projects/asymptote/rss
@@ -172,8 +172,8 @@ modules:
       - --enable-bundled-libs
     sources:
       - type: archive
-        url: https://github.com/mgieseki/dvisvgm/releases/download/2.13.3/dvisvgm-2.13.3.tar.gz
-        sha256: c8b7b93684df5c28294d840545ce7896726b244138938a127a0db9db725a4c70
+        url: https://github.com/mgieseki/dvisvgm/releases/download/2.13.4/dvisvgm-2.13.4.tar.gz
+        sha256: 069c65637c7a47efe9290c2b4b8d30a6a6fc463c68385e416f41c86f91247fda
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mgieseki/dvisvgm/releases/latest
