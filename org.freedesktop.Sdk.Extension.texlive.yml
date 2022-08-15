@@ -67,7 +67,7 @@ modules:
     build-options:
       cflags: -fPIC
       ldflags: -fpic
-    sources:      
+    sources:
       - type: archive
         url: https://www.cpan.org/src/5.0/perl-5.36.0.tar.gz
         sha256: e26085af8ac396f62add8a533c3a0ea8c8497d836f0689347ac5abd7b7a4e00a
@@ -98,7 +98,7 @@ modules:
       - tar -xf biblatex.tar.gz -C ${FLATPAK_DEST}/texmf-dist
       - texhash
       - ./Build --output=${FLATPAK_DEST} install
-    sources:      
+    sources:
       - type: archive
         url: https://github.com/plk/biber/archive/v2.18/biber-2.18.tar.gz
         sha256: b966cf9b35a92ce9a705fec7930baab8dc2bfaf9a9f311cdb92393640222c844
@@ -158,8 +158,8 @@ modules:
       - --enable-lsp=no
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/asymptote/files/2.79/asymptote-2.79.src.tgz
-        sha256: 9a15dd89c57d15826f51b0fcb93e3956a603f77941bc50acdc71281ea0f00f18
+        url: https://sourceforge.net/projects/asymptote/files/2.82/asymptote-2.82.src.tgz
+        sha256: 4f6fbc5aa058c8d38513546be5b233bb5d7fa50e39486f3d8624aa7595ae748d
         x-checker-data:
           type: html
           url: https://sourceforge.net/projects/asymptote/rss
@@ -177,8 +177,8 @@ modules:
       - --enable-bundled-libs
     sources:
       - type: archive
-        url: https://github.com/mgieseki/dvisvgm/releases/download/2.13.4/dvisvgm-2.13.4.tar.gz
-        sha256: 069c65637c7a47efe9290c2b4b8d30a6a6fc463c68385e416f41c86f91247fda
+        url: https://github.com/mgieseki/dvisvgm/releases/download/2.14/dvisvgm-2.14.tar.gz
+        sha256: 092ea5ea5163e92e71d9eb9ec6c42ad17bd068c7639e24085359d4e040e28674
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mgieseki/dvisvgm/releases/latest
