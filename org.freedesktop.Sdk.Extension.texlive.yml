@@ -1,9 +1,9 @@
 id: org.freedesktop.Sdk.Extension.texlive
-branch: '21.08'
+branch: '22.08'
 runtime: org.freedesktop.Sdk
 build-extension: true
 sdk: org.freedesktop.Sdk
-runtime-version: '21.08'
+runtime-version: '22.08'
 appstream-compose: false
 separate-locales: false
 build-options:
