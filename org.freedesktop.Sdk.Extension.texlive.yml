@@ -67,7 +67,7 @@ modules:
     build-options:
       cflags: -fPIC
       ldflags: -fpic
-    sources:      
+    sources:
       - type: archive
         url: https://www.cpan.org/src/5.0/perl-5.36.0.tar.gz
         sha256: e26085af8ac396f62add8a533c3a0ea8c8497d836f0689347ac5abd7b7a4e00a
@@ -98,7 +98,7 @@ modules:
       - tar -xf biblatex.tar.gz -C ${FLATPAK_DEST}/texmf-dist
       - texhash
       - ./Build --output=${FLATPAK_DEST} install
-    sources:      
+    sources:
       - type: archive
         url: https://github.com/plk/biber/archive/v2.18/biber-2.18.tar.gz
         sha256: b966cf9b35a92ce9a705fec7930baab8dc2bfaf9a9f311cdb92393640222c844
@@ -120,8 +120,8 @@ modules:
       - soinstall
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostscript-9.56.1.tar.xz
-        sha256: d43406805650009b42c3d5f6dc535233454533c1e27c13a77dd1d462a056b8e4
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostscript-10.0.0.tar.xz
+        sha256: f1fa585f7c7d32adfa81ab389388100ac9df83444eb64db1fb92737141ef9f61
         x-checker-data:
           type: html
           url: https://ghostscript.com/releases/
@@ -184,6 +184,8 @@ modules:
           version-query: .tag_name
           url-query: .assets[] | select(.name=="dvisvgm-" + $version + ".tar.gz")
             | .browser_download_url
+      - type: patch
+        path: patches/dvisvgm-gs10.patch
   - name: clisp
     build-options:
       env:
