@@ -184,6 +184,8 @@ modules:
           version-query: .tag_name
           url-query: .assets[] | select(.name=="dvisvgm-" + $version + ".tar.gz")
             | .browser_download_url
+      - type: patch
+        path: patches/dvisvgm-gs10.patch            
   - name: clisp
     build-options:
       env:
