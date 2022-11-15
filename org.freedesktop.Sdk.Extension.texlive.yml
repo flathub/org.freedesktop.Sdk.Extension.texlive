@@ -95,17 +95,17 @@ modules:
     build-commands:
       - perl ./Build.PL
       - ./Build
-      - tar -xf biblatex.tar.gz -C ${FLATPAK_DEST}/texmf-dist
+      - tar -xf biblatex.tds.tgz -C ${FLATPAK_DEST}/texmf-dist
       - texhash
       - ./Build --output=${FLATPAK_DEST} install
-    sources:      
+    sources:
       - type: archive
         url: https://github.com/plk/biber/archive/v2.18/biber-2.18.tar.gz
         sha256: b966cf9b35a92ce9a705fec7930baab8dc2bfaf9a9f311cdb92393640222c844
       - type: file
-        url: https://github.com/plk//biblatex/archive/v3.18/biblatex-3.18.tar.gz
-        sha256: 38192b5ebae3677e346b10b3914d5793c9fa0fc56b2d91f79e42d733391a9700
-        dest-filename: biblatex.tar.gz
+        url: https://sourceforge.net/projects/biblatex/files/biblatex-3.18/biblatex-3.18b.tds.tgz
+        sha256: 9714295434cfe78d6c58de3460876f6d4b254bf88a4acd3d3112d3ccfe8d826b
+        dest-filename: biblatex.tds.tgz
   - name: ghostscript
     config-opts:
       - --disable-cups
