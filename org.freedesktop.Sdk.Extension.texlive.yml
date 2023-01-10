@@ -184,7 +184,7 @@ modules:
           version-query: .tag_name
           url-query: .assets[] | select(.name=="dvisvgm-" + $version + ".tar.gz")
             | .browser_download_url
-- name: clisp
+  - name: clisp
     build-options:
       env:
         CPPFLAGS: -I/usr/lib/sdk/texlive/include
