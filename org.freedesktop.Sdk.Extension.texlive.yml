@@ -176,8 +176,8 @@ modules:
       - --enable-bundled-libs
     sources:
       - type: archive
-        url: https://github.com/mgieseki/dvisvgm/releases/download/3.0.1/dvisvgm-3.0.1.tar.gz
-        sha256: 21b395b89cb98a82a55ef880133904df6b0e679a5fcdcc36a71bc2ba27f01a5d
+        url: https://github.com/mgieseki/dvisvgm/releases/download/3.0.2/dvisvgm-3.0.2.tar.gz
+        sha256: 0bdcae37c23c9ab41c4261152912075edbbe798ddb2d06ba431af3e134ce18a6
         x-checker-data:
           type: json
           url: https://api.github.com/repos/mgieseki/dvisvgm/releases/latest
