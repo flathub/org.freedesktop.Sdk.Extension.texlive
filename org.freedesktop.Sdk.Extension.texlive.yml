@@ -209,7 +209,7 @@ modules:
         sha256: 8b71994ae76e2557da637b0c1663daac6b49b7128c2a2bdcb5a155b55b55ca60
         x-checker-data:
           type: debian-repo
-          root: http://deb.debian.org/debian/
+          root: https://deb.debian.org/debian/
           dist: unstable
           component: main
           package-name: clisp
