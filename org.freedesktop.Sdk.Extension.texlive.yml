@@ -24,6 +24,12 @@ modules:
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2023/texlive-20230313-texmf.tar.xz
         sha512: 5b95a63e77953c540ce1b8e6338d7189785f19333a34c73ae97662d5691968ccaaff9bfd712d2006ebec518a6a6545c00adaf97afd22bfc1fa35ab47c8ce4474
         dest-filename: texlive-texmf.tar.xz
+  - name: luametatex
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://github.com/contextgarden/luametatex/archive/refs/tags/v2.10.07.tar.gz
+        sha256: 25c3334127e00c610a498728f8b08bb063b76e385c633d09e9fffaa61f2cc485        
   - name: texlive-source
     builddir: true
     build-options:
