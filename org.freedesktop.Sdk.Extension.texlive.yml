@@ -21,9 +21,15 @@ modules:
       - tar -xf texlive-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
     sources:
       - type: file
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2022/texlive-20220321-texmf.tar.xz
-        sha512: 7b845273100310c1c8aae926a61819df03fd8caa7f5cbe7850f9f0ce4ed5fc4de0457e8fb168d8c933cd607a3850d26f373e17f291179bf89f418e3efe2133b4
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2023/texlive-20230313-texmf.tar.xz
+        sha512: 5b95a63e77953c540ce1b8e6338d7189785f19333a34c73ae97662d5691968ccaaff9bfd712d2006ebec518a6a6545c00adaf97afd22bfc1fa35ab47c8ce4474
         dest-filename: texlive-texmf.tar.xz
+  - name: luametatex
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://github.com/contextgarden/luametatex/archive/refs/tags/v2.10.07.tar.gz
+        sha256: 25c3334127e00c610a498728f8b08bb063b76e385c633d09e9fffaa61f2cc485        
   - name: texlive-source
     builddir: true
     build-options:
@@ -49,15 +55,15 @@ modules:
       - tar -xf ../texlive-tlpdb-full.tar.gz -C ${FLATPAK_DEST}/tlpkg
       - mktexlsr
       - fmtutil-sys --all
-      - mtxrun --generate
+      # - mtxrun --generate
     # Hints for a proper installation can be found in http://www.linuxfromscratch.org/blfs/view/svn/pst/texlive.html or http://ftp.math.utah.edu/pub/texlive-utah/ .
     sources:
       - type: archive
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2022/texlive-20220321-source.tar.xz
-        sha512: 1c6b4c80d474b661060c3ac126b41782fd34e883139b9bca89ca1ffe543891bd9451df3be5e6297af965ddbceea9802008a61589344c3dee8075044b1b288dd7
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2023/texlive-20230313-source.tar.xz
+        sha512: 5874e7c9937ef63fdb03780f8137e0a63ad23a1b2a9d232a71bd2ab999669152981911fadc9c8ff3cf5e3a2cf828d575982b7fce1a15c101a62328d89d851a88
       - type: file
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2022/texlive-20220325-tlpdb-full.tar.gz
-        sha512: 6070e0cf5321265f08a532aff1aeefac1d84042eddb16a449dd24ebd135987099e9c3917d21f6fc2b310baa5843327a4f381d34982a7c33ef9ae862491a164cf
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2023/texlive-20230311-tlpdb-full.tar.gz
+        sha512: c7f947ebc2e44d5d37d1119ed17c3d0c0eb87e2ee00dd49d6732c8a223c495554fa0c8f0e6ba4100569c44847b1a1ec1ef2b380d8246bed0d2598b6c579b090e
         dest-filename: texlive-tlpdb-full.tar.gz
   - name: perl
     no-autogen: true
@@ -125,10 +131,10 @@ modules:
       - type: archive
         url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostscript-10.0.0.tar.xz
         sha256: f1fa585f7c7d32adfa81ab389388100ac9df83444eb64db1fb92737141ef9f61
-        x-checker-data:
-          type: anitya
-          project-id: 1157
-          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${version0}${version1}${version2}/ghostscript-$version.tar.xz
+        # x-checker-data:
+          # type: anitya
+          # project-id: 1157
+          # url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${version0}${version1}${version2}/ghostscript-$version.tar.xz
     cleanup:
       - /share/doc
       - /share/ghostscript/*/doc
