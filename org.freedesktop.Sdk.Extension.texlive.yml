@@ -32,7 +32,9 @@ modules:
     post-install:
       - install -m755 luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
       - ln -sf luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context
-      - ln -svf luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun
+      - ln -sf luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun
+      - ln -sf ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/context.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context.lua
+      - ln -sf ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/mtxrun.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun.lua      
     sources:
       - type: archive
         url: https://github.com/contextgarden/luametatex/archive/refs/tags/v2.10.07.tar.gz
@@ -62,8 +64,6 @@ modules:
       - tar -xf ../texlive-tlpdb-full.tar.gz -C ${FLATPAK_DEST}/tlpkg
       - mktexlsr
       - fmtutil-sys --all
-      - ln -sf ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/context.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context.lua
-      - ln -sf ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/mtxrun.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun.lua
       - mtxrun --generate
     sources:
       - type: archive
