@@ -27,14 +27,13 @@ modules:
   - name: luametatex
     buildsystem: cmake-ninja
     config-opts:
-      - -DCMAKE_INSTALL_PREFIX=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
-      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_BUILD_TYPE=native # installs luametatex to /usr/lib/sdk/texlive/bin/
     post-install:
-      - install -m755 luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
-      - ln -sf luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context
-      - ln -sf luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun
-      - ln -sf ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/context.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context.lua
-      - ln -sf ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/mtxrun.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun.lua      
+      - install -Dm755 /usr/lib/sdk/texlive/bin/luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/luametatex
+      - ln -s ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context
+      - ln -s ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun
+      - ln -s ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/context.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context.lua
+      - ln -s ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/mtxrun.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun.lua   
     sources:
       - type: archive
         url: https://github.com/contextgarden/luametatex/archive/refs/tags/v2.10.07.tar.gz
