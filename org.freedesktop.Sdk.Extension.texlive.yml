@@ -82,8 +82,8 @@ modules:
       ldflags: -fpic
     sources:      
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.36.1.tar.gz
-        sha256: 68203665d8ece02988fc77dc92fccbb297a83a4bb4b8d07558442f978da54cc1
+        url: https://www.cpan.org/src/5.0/perl-5.38.0.tar.gz
+        sha256: 213ef58089d2f2c972ea353517dc60ec3656f050dcc027666e118b508423e517
         x-checker-data:
           type: anitya
           project-id: 13599
@@ -136,8 +136,8 @@ modules:
       - soinstall
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostscript-10.0.0.tar.xz
-        sha256: f1fa585f7c7d32adfa81ab389388100ac9df83444eb64db1fb92737141ef9f61
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostscript-10.01.2.tar.xz
+        sha256: 48d079242a2ca02a2e47a76a52cdfa818b2ad769c2bab00ad0497dd13560e7e7        
         # x-checker-data:
           # type: anitya
           # project-id: 1157
