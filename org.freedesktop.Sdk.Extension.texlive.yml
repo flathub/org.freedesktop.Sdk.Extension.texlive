@@ -126,7 +126,6 @@ modules:
     config-opts:
       - --disable-cups
       - --disable-dbus
-      - --enable-dynamic
       - --disable-gtk
       - --with-drivers=FILES
     make-args:
