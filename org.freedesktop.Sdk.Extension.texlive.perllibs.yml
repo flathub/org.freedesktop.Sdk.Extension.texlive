@@ -93,7 +93,19 @@
 - dest: perl-libs/Regexp-Common
   sha256: ee07853aee06f310e040b6bf1a0199a18d81896d3219b9b35c9630d0eb69089b
   type: archive
-  url: https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-2017060201.tar.gz
+  url: https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-2017060201.tar.gz  
+- dest: perl-libs/File-Remove
+  sha256: fd857f585908fc503461b9e48b3c8594e6535766bc14beb17c90ba58d5dc4975
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/File-Remove-1.61.tar.gz
+- dest: perl-libs/Module-ScanDeps
+  sha256: 7ab3556ccaa812298da33f0a0515037cd513b9e72c42a76d2c2e4d28832215f0
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/R/RS/RSCHUPP/Module-ScanDeps-1.32.tar.gz
+- dest: perl-libs/YAML-Tiny
+  sha256: 7b38ca9f5d3ce24230a6b8bdc1f47f5b2db348e7f7f9666c26f5955636e33d6c
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/YAML-Tiny-1.74.tar.gz  
 - dest: perl-libs/Module-Install
   sha256: fbf91007f30565f3920e106055fd0d4287981d5e7dad8b35323ce4b733f15a7b
   type: archive
@@ -477,6 +489,9 @@
   - "(make_install perl-libs/Config-AutoConf)"
   - "(make_install perl-libs/Text-BibTeX)"
   - "(make_install perl-libs/Regexp-Common)"
+  - "(make_install perl-libs/File-Remove)"
+  - "(make_install perl-libs/Module-ScanDeps)"
+  - "(make_install perl-libs/YAML-Tiny)"
   - "(make_install perl-libs/Module-Install)"  
   - "(make_install perl-libs/IPC-Run3)"  
   - "(make_install perl-libs/Encode-HanExtra)"
