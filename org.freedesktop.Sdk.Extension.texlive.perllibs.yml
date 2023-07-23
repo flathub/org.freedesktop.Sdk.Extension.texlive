@@ -94,7 +94,7 @@
   sha256: ee07853aee06f310e040b6bf1a0199a18d81896d3219b9b35c9630d0eb69089b
   type: archive
   url: https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-2017060201.tar.gz
-- dest: perl/libs/Module-Install
+- dest: perl-libs/Module-Install
   sha256: fbf91007f30565f3920e106055fd0d4287981d5e7dad8b35323ce4b733f15a7b
   type: archive
   url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/Module-Install-1.21.tar.gz
