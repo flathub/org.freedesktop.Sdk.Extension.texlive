@@ -1,243 +1,191 @@
-- dest: perl-libs/File-Remove
-  sha256: e86e2a40ffedc6d5697d071503fd6ba14a5f9b8220af3af022110d8e724f8ca6
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/File-Remove-1.60.tar.gz
 - dest: perl-libs/Module-Build
-  sha256: 7e0f4c692c1740c1ac84ea14d7ea3d8bc798b2fb26c09877229e04f430b2b717
+  sha256: 66aeac6127418be5e471ead3744648c766bd01482825c5b66652675f2bc86a8f
   type: archive
-  url: https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4231.tar.gz
+  url: https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4234.tar.gz
+- dest: perl-libs/File-Which
+  sha256: 3201f1a60e3f16484082e6045c896842261fc345de9fb2e620fd2a2c7af3a93a
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-Which-1.27.tar.gz
+- dest: perl-libs/Capture-Tiny
+  sha256: 6c23113e87bad393308c90a207013e505f659274736638d8c79bac9c67cc3e19
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.48.tar.gz
+- dest: perl-libs/FFI-CheckLib
+  sha256: 04d885fc377d44896e5ea1c4ec310f979bb04f2f18658a7e7a4d509f7e80bb80
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/FFI-CheckLib-0.31.tar.gz
+- dest: perl-libs/File-chdir
+  sha256: 31ebf912df48d5d681def74b9880d78b1f3aca4351a0ed1fe3570b8e03af6c79
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/File-chdir-0.1011.tar.gz
+- dest: perl-libs/Path-Tiny
+  sha256: f6ea094ece845c952a02c2789332579354de8d410a707f9b7045bd241206487d
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Path-Tiny-0.144.tar.gz
+- dest: perl-libs/Alien-Build
+  sha256: d9edc936b06705bb5cb5ee5a2ea8bcf6111a3e8815914f177e15e3c0fed301f3
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Build-2.80.tar.gz
+- dest: perl-libs/URI
+  sha256: 8fed5f819905c8a8e18f4447034322d042c3536b43c13ac1f09ba92e1a50a394
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/S/SI/SIMBABQUE/URI-5.19.tar.gz
+- dest: perl-libs/Alien-Build-Plugin-Download-GitLab
+  sha256: c1f089c8ea152a789909d48a83dbfcf2626f773daf30431c8622582b26aba902
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Build-Plugin-Download-GitLab-0.01.tar.gz
+- dest: perl-libs/Mozilla-CA
+  sha256: 701bea67be670add5a102f9f8c879402b4983096b1cb0e20dd47d52d7a10666b
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/H/HA/HAARG/Mozilla-CA-20221114.tar.gz
+- dest: perl-libs/IO-Socket-SSL
+  sha256: 904ef28765440a97d8a9a0df597f8c3d7f3cb0a053d1b082c10bed03bc802069
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.083.tar.gz
+- dest: perl-libs/Alien-Libxml2
+  sha256: f4a674099bbd5747c0c3b75ead841f3b244935d9ef42ba35368024bd611174c9
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Libxml2-0.19.tar.gz
+- dest: perl-libs/XML-SAX-Base
+  sha256: 66cb355ba4ef47c10ca738bd35999723644386ac853abbeb5132841f5e8a2ad0
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/G/GR/GRANTM/XML-SAX-Base-1.09.tar.gz
+- dest: perl-libs/XML-NamespaceSupport
+  sha256: 47e995859f8dd0413aa3f22d350c4a62da652e854267aa0586ae544ae2bae5ef
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/P/PE/PERIGRIN/XML-NamespaceSupport-1.12.tar.gz
+- dest: perl-libs/XML-SAX
+  sha256: 4506c387043aa6a77b455f00f57409f3720aa7e553495ab2535263b4ed1ea12a
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/G/GR/GRANTM/XML-SAX-1.02.tar.gz
+- dest: perl-libs/XML-LibXML
+  sha256: b4a5abbcd689aa2fbbc8b7b45339e961c4984e48108494eb6c282b4748222425
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXML-2.0209.tar.gz
+- dest: perl-libs/XML-LibXML-Simple
+  sha256: cd98c8104b70d7672bfa26b4513b78adf2b4b9220e586aa8beb1a508500365a6
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/M/MA/MARKOV/XML-LibXML-Simple-1.01.tar.gz
+- dest: perl-libs/PerlIO-utf8_strict
+  sha256: bcd2848b72df290b5e984fae8b1a6ca96f6d072003cf222389a8c9e8e1c570cd
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/L/LE/LEONT/PerlIO-utf8_strict-0.010.tar.gz
+- dest: perl-libs/Encode-Locale
+  sha256: 176fa02771f542a4efb1dbc2a4c928e8f4391bf4078473bd6040d8f11adb0ec1
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/G/GA/GAAS/Encode-Locale-1.05.tar.gz
+- dest: perl-libs/List-MoreUtils-XS
+  sha256: e8ce46d57c179eecd8758293e9400ff300aaf20fefe0a9d15b9fe2302b9cb242
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-XS-0.430.tar.gz
+- dest: perl-libs/ExtUtils-LibBuilder
+  sha256: c51171e06de53039f0bca1d97a6471ec37941ff59e8a3d1cb170ebdd2573b5d2
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/A/AM/AMBS/ExtUtils-LibBuilder-0.08.tar.gz
+- dest: perl-libs/Config-AutoConf
+  sha256: bb57a958ef49d3f7162276dae14a7bd5af43fd1d8513231af35d665459454023
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/A/AM/AMBS/Config-AutoConf-0.320.tar.gz
+- dest: perl-libs/Text-BibTeX
+  sha256: 88a78ebf088ec7502f401c5a2b138c862cf5458534b773223bbf3aaf41224196
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/A/AM/AMBS/Text-BibTeX-0.89.tar.gz
+- dest: perl-libs/Regexp-Common
+  sha256: ee07853aee06f310e040b6bf1a0199a18d81896d3219b9b35c9630d0eb69089b
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-2017060201.tar.gz  
+- dest: perl-libs/File-Remove
+  sha256: fd857f585908fc503461b9e48b3c8594e6535766bc14beb17c90ba58d5dc4975
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/File-Remove-1.61.tar.gz
+- dest: perl-libs/Module-ScanDeps
+  sha256: 7ab3556ccaa812298da33f0a0515037cd513b9e72c42a76d2c2e4d28832215f0
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/R/RS/RSCHUPP/Module-ScanDeps-1.32.tar.gz
+- dest: perl-libs/YAML-Tiny
+  sha256: 7b38ca9f5d3ce24230a6b8bdc1f47f5b2db348e7f7f9666c26f5955636e33d6c
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/YAML-Tiny-1.74.tar.gz  
+- dest: perl-libs/Module-Install
+  sha256: fbf91007f30565f3920e106055fd0d4287981d5e7dad8b35323ce4b733f15a7b
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/Module-Install-1.21.tar.gz
 - dest: perl-libs/IPC-Run3
   sha256: 3d81c3cc1b5cff69cca9361e2c6e38df0352251ae7b41e2ff3febc850e463565
   type: archive
-  url: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/IPC-Run3-0.048.tar.gz
+  url: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/IPC-Run3-0.048.tar.gz  
+- dest: perl-libs/Encode-HanExtra
+  sha256: 1fd4b06cada70858003af153f94c863b3b95f2e3d03ba18d0451a81d51db443a
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/A/AU/AUDREYT/Encode-HanExtra-0.23.tar.gz
+- dest: perl-libs/Clone
+  sha256: aadeed5e4c8bd6bbdf68c0dd0066cb513e16ab9e5b4382dc4a0aafd55890697b
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/G/GA/GARU/Clone-0.46.tar.gz
 - dest: perl-libs/Number-Compare
   sha256: 83293737e803b43112830443fb5208ec5208a2e6ea512ed54ef8e4dd2b880827
   type: archive
   url: https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Number-Compare-0.03.tar.gz
 - dest: perl-libs/Text-Glob
-  sha256: 069ccd49d3f0a2dedb115f4bdc9fbac07a83592840953d1fcdfc39eb9d305287
+  sha256: '069ccd49d3f0a2dedb115f4bdc9fbac07a83592840953d1fcdfc39eb9d305287'
   type: archive
   url: https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Text-Glob-0.11.tar.gz
 - dest: perl-libs/File-Find-Rule
   sha256: 7e6f16cc33eb1f29ff25bee51d513f4b8a84947bbfa18edb2d3cc40a2d64cafe
   type: archive
   url: https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/File-Find-Rule-0.34.tar.gz
-- dest: perl-libs/Clone
-  sha256: cbb6ee348afa95432e4878893b46752549e70dc68fe6d9e430d1d2e99079a9e6
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.45.tar.gz
 - dest: perl-libs/Data-Compare
-  sha256: 818a20f1f38f74e65253cf8bcf6fed7f94a5a8dd662f75330dcaf4b117cee8bd
+  sha256: 53c9db3b93263c88aaa3c4072d819eaded024d7a36b38c0c37737d288d5afa8c
   type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL/Data-Compare-1.27.tar.gz
-- dest: perl-libs/URI
-  sha256: 03e63ada499d2645c435a57551f041f3943970492baa3b3338246dab6f1fae0a
+  url: https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL/Data-Compare-1.29.tar.gz
+- dest: perl-libs/Text-CSV
+  sha256: 84120de3e10489ea8fbbb96411a340c32cafbe5cdff7dd9576b207081baa9d24
   type: archive
-  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.09.tar.gz
-- dest: perl-libs/List-MoreUtils-XS
-  sha256: e8ce46d57c179eecd8758293e9400ff300aaf20fefe0a9d15b9fe2302b9cb242
+  url: https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.02.tar.gz
+- dest: perl-libs/Business-ISBN-Data
+  sha256: 69d7eec7be1cf459dd8240d8097bfd3cde4091366bb1a78a876b46cde7d228a6
   type: archive
-  url: https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-XS-0.430.tar.gz
-- dest: perl-libs/Exporter-Tiny
-  sha256: 00f0b95716b18157132c6c118ded8ba31392563d19e490433e9a65382e707101
+  url: https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Business-ISBN-Data-20230719.001.tar.gz
+- dest: perl-libs/Business-ISBN
+  sha256: 19c4a1d4d99a0dd7695a90192b13404a0e3eeebedfcbe97a0202e36b238c0e69
   type: archive
-  url: https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Exporter-Tiny-1.002002.tar.gz
-- dest: perl-libs/List-MoreUtils
-  sha256: 63b1f7842cd42d9b538d1e34e0330de5ff1559e4c2737342506418276f646527
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.430.tar.gz
-- dest: perl-libs/Module-Runtime
-  sha256: 68302ec646833547d410be28e09676db75006f4aa58a11f3bdb44ffe99f0f024
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Module-Runtime-0.016.tar.gz
-- dest: perl-libs/Dist-CheckConflicts
-  sha256: ea844b9686c94d666d9d444321d764490b2cde2f985c4165b4c2c77665caedc4
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DO/DOY/Dist-CheckConflicts-0.11.tar.gz
-- dest: perl-libs/Role-Tiny
-  sha256: d7bdee9e138a4f83aa52d0a981625644bda87ff16642dfa845dcb44d9a242b45
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.002004.tar.gz
-- dest: perl-libs/XString
-  sha256: f247f55c19aee6ba4a1ae73c0804259452e02ea85a9be07f8acf700a5138f884
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/XString-0.005.tar.gz
-- dest: perl-libs/Eval-Closure
-  sha256: ea0944f2f5ec98d895bef6d503e6e4a376fea6383a6bc64c7670d46ff2218cad
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DO/DOY/Eval-Closure-0.14.tar.gz
-- dest: perl-libs/Try-Tiny
-  sha256: da5bd0d5c903519bbf10bb9ba0cb7bcac0563882bcfe4503aee3fb143eddef6b
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz
-- dest: perl-libs/Test-Fatal
-  sha256: 7283d430f2ba2030b8cd979ae3039d3f1b2ec3dde1a11ca6ae09f992a66f788f
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Test-Fatal-0.016.tar.gz
-- dest: perl-libs/MRO-Compat
-  sha256: 8a2c3b6ccc19328d5579d02a7d91285e2afd85d801f49d423a8eb16f323da4f8
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/H/HA/HAARG/MRO-Compat-0.13.tar.gz
-- dest: perl-libs/Sub-Quote
-  sha256: 6e4e2af42388fa6d2609e0e82417de7cc6be47223f576592c656c73c7524d89d
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/H/HA/HAARG/Sub-Quote-2.006006.tar.gz
-- dest: perl-libs/Devel-StackTrace
-  sha256: cd3c03ed547d3d42c61fa5814c98296139392e7971c092e09a431f2c9f5d6855
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Devel-StackTrace-2.04.tar.gz
-- dest: perl-libs/Specio
-  sha256: f41307f14444f8777e572f27eeb6a964084399e7e382c47c577827ad8a286a1c
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Specio-0.47.tar.gz
-- dest: perl-libs/Sub-Identify
-  sha256: 068d272086514dd1e842b6a40b1bedbafee63900e5b08890ef6700039defad6f
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/R/RG/RGARCIA/Sub-Identify-0.14.tar.gz
-- dest: perl-libs/Sub-Exporter-Progressive
-  sha256: d535b7954d64da1ac1305b1fadf98202769e3599376854b2ced90c382beac056
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/F/FR/FREW/Sub-Exporter-Progressive-0.001013.tar.gz
-- dest: perl-libs/Module-Implementation
-  sha256: c15f1a12f0c2130c9efff3c2e1afe5887b08ccd033bd132186d1e7d5087fd66d
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Module-Implementation-0.09.tar.gz
-- dest: perl-libs/Variable-Magic
-  sha256: 3f9a18517e33f006a9c2fc4f43f01b54abfe6ff2eae7322424f31069296b615c
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/V/VP/VPIT/Variable-Magic-0.62.tar.gz
-- dest: perl-libs/B-Hooks-EndOfScope
-  sha256: da1b6a9f7c7424776363182f9673e666b06136f13dc744241f7adce3d1ad0c1a
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/B-Hooks-EndOfScope-0.25.tar.gz
-- dest: perl-libs/Package-Stash-XS
-  sha256: d3676ba94641e03d6a30e951f09266c4c3ca3f5b58aa7b314a67f28e419878aa
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/Package-Stash-XS-0.29.tar.gz
-- dest: perl-libs/Package-Stash
-  sha256: 9165f555112e080493ce0e9129de0886da30b2593fb353a2abd1c76b2d2621b5
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/Package-Stash-0.39.tar.gz
-- dest: perl-libs/namespace-clean
-  sha256: 8a10a83c3e183dc78f9e7b7aa4d09b47c11fb4e7d3a33b9a12912fd22e31af9d
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/namespace-clean-0.27.tar.gz
-- dest: perl-libs/namespace-autoclean
-  sha256: 45ebd8e64a54a86f88d8e01ae55212967c8aa8fed57e814085def7608ac65804
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/namespace-autoclean-0.29.tar.gz
-- dest: perl-libs/Class-Data-Inheritable
-  sha256: 44088d6e90712e187b8a5b050ca5b1c70efe2baa32ae123e9bd8f59f29f06e4d
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/R/RS/RSHERER/Class-Data-Inheritable-0.09.tar.gz
-- dest: perl-libs/Exception-Class
-  sha256: 5482a77ef027ca1f9f39e1f48c558356e954936fc8fbbdee6c811c512701b249
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Exception-Class-1.45.tar.gz
-- dest: perl-libs/Params-ValidationCompiler
-  sha256: dc5bee23383be42765073db284bed9fbd819d4705ad649c20b644452090d16cb
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz
-- dest: perl-libs/Class-Singleton
-  sha256: 27ba13f0d9512929166bbd8c9ef95d90d630fc80f0c9a1b7458891055e9282a4
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.6.tar.gz
-- dest: perl-libs/DateTime-TimeZone
-  sha256: 01717ec4180b46c321e62e360200f32a99181686bff6eac7a93bf2507a0a1552
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.49.tar.gz
-- dest: perl-libs/File-ShareDir-Install
-  sha256: 45befdf0d95cbefe7c25a1daf293d85f780d6d2576146546e6828aad26e580f9
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-ShareDir-Install-0.13.tar.gz
-- dest: perl-libs/Class-Inspector
-  sha256: cc295d23a472687c24489d58226ead23b9fdc2588e522f0b5f0747741700694e
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Class-Inspector-1.36.tar.gz
-- dest: perl-libs/File-ShareDir
-  sha256: 3bb2a20ba35df958dc0a4f2306fc05d903d8b8c4de3c8beefce17739d281c958
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/R/RE/REHSACK/File-ShareDir-1.118.tar.gz
-- dest: perl-libs/DateTime-Locale
-  sha256: 78eabec73d13e1a23b0afcd1b05e84e3196258b98d1bbfafbad90d47db9c6679
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.32.tar.gz
-- dest: perl-libs/DateTime
-  sha256: b12eda6d900713f227964dc4dc0e2efb86d294e8bc2f16be9e95b659f953b2e7
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-1.54.tar.gz
-- dest: perl-libs/DateTime-Calendar-Julian
-  sha256: faafa769a5e70ff1b584f6e2ef16561588d88c74bc336bddc1aa00f3381ba86c
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/W/WY/WYANT/DateTime-Calendar-Julian-0.106.tar.gz
-- dest: perl-libs/Data-Dump
-  sha256: a4aa6e0ddbf39d5ad49bddfe0f89d9da864e3bc00f627125d1bc580472f53fbd
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Dump-1.25.tar.gz
-- dest: perl-libs/Scalar-List-Utils
-  sha256: c685bad8021f008f321288b7c3182ec724ab198a77610e877c86f3fad4b85f07
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Scalar-List-Utils-1.60.tar.gz
-- dest: perl-libs/List-SomeUtils-XS
-  sha256: 4f9e4d2622481b79cc298e8e29de8a30943aff9f4be7992c0ebb7b22e5b4b297
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/List-SomeUtils-XS-0.58.tar.gz
-- dest: perl-libs/List-SomeUtils
-  sha256: 96eafb359339d22bf2a2de421298847a3c40f6a28b6d44005d0965da86a5469d
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/List-SomeUtils-0.58.tar.gz
-- dest: perl-libs/List-UtilsBy
-  sha256: faddf43b4bc21db8e4c0e89a26e5f23fe626cde3491ec651b6aa338627f5775a
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/P/PE/PEVANS/List-UtilsBy-0.11.tar.gz
-- dest: perl-libs/List-AllUtils
-  sha256: 30a8146ab21a7787b8c56d5829cf9a7f2b15276d3b3fca07336ac38d3002ffbc
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/List-AllUtils-0.19.tar.gz
+  url: https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Business-ISBN-3.008.tar.gz
 - dest: perl-libs/Parse-RecDescent
   sha256: 1943336a4cb54f1788a733f0827c0c55db4310d5eae15e542639c9dd85656e37
   type: archive
   url: https://cpan.metacpan.org/authors/id/J/JT/JTBRAUN/Parse-RecDescent-1.967015.tar.gz
-- dest: perl-libs/Params-Validate
-  sha256: 9a3a35583d3125d07e8c802c1f92f5be7d526e76dd496e944da270b1e273d812
+- dest: perl-libs/Class-Accessor
+  sha256: bf12a3e5de5a2c6e8a447b364f4f5a050bf74624c56e315022ae7992ff2f411c
   type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-Validate-1.30.tar.gz
-- dest: perl-libs/DateTime-Format-Strptime
-  sha256: 701e46802c86ed4d88695c1a6dacbbe90b3390beeb794f387e7c792300037579
+  url: https://cpan.metacpan.org/authors/id/K/KA/KASEI/Class-Accessor-0.51.tar.gz
+- dest: perl-libs/Exporter-Tiny
+  sha256: 6f295e2cbffb1dbc15bdb9dadc341671c1e0cd2bdf2d312b17526273c322638d
   type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Strptime-1.79.tar.gz
-- dest: perl-libs/DateTime-Format-Builder
-  sha256: 61ffb23d85b3ca1786b2da3289e99b57e0625fe0e49db02a6dc0cb62c689e2f2
+  url: https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Exporter-Tiny-1.006002.tar.gz
+- dest: perl-libs/List-MoreUtils
+  sha256: 63b1f7842cd42d9b538d1e34e0330de5ff1559e4c2737342506418276f646527
   type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.83.tar.gz
-- dest: perl-libs/Text-Roman
-  sha256: cb4a08a3b151802ffb2fce3258a416542ab81db0f739ee474a9583ffb73e046a
+  url: https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.430.tar.gz
+- dest: perl-libs/Data-Dump
+  sha256: a4aa6e0ddbf39d5ad49bddfe0f89d9da864e3bc00f627125d1bc580472f53fbd
   type: archive
-  url: https://cpan.metacpan.org/authors/id/S/SY/SYP/Text-Roman-3.5.tar.gz
-- dest: perl-libs/XML-Writer
-  sha256: 73c8f5bd3ecf2b350f4adae6d6676d52e08ecc2d7df4a9f089fa68360d400d1f
+  url: https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Dump-1.25.tar.gz
+- dest: perl-libs/autovivification
+  sha256: 2d99975685242980d0a9904f639144c059d6ece15899efde4acb742d3253f105
   type: archive
-  url: https://cpan.metacpan.org/authors/id/J/JO/JOSEPHW/XML-Writer-0.900.tar.gz
-- dest: perl-libs/ExtUtils-LibBuilder
-  sha256: c51171e06de53039f0bca1d97a6471ec37941ff59e8a3d1cb170ebdd2573b5d2
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/A/AM/AMBS/ExtUtils-LibBuilder-0.08.tar.gz
-- dest: perl-libs/WWW-RobotRules
-  sha256: 46b502e7a288d559429891eeb5d979461dd3ecc6a5c491ead85d165b6e03a51e
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/G/GA/GAAS/WWW-RobotRules-6.02.tar.gz
+  url: https://cpan.metacpan.org/authors/id/V/VP/VPIT/autovivification-0.18.tar.gz
 - dest: perl-libs/TimeDate
   sha256: c0b69c4b039de6f501b0d9f13ec58c86b040c1f7e9b27ef249651c143d605eb2
   type: archive
   url: https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/TimeDate-2.33.tar.gz
 - dest: perl-libs/HTTP-Date
-  sha256: 365d6294dfbd37ebc51def8b65b81eb79b3934ecbc95a2ec2d4d827efe6a922b
+  sha256: 7b685191c6acc3e773d1fc02c95ee1f9fae94f77783175f5e78c181cc92d2b52
   type: archive
-  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.05.tar.gz
-- dest: perl-libs/Encode-Locale
-  sha256: 176fa02771f542a4efb1dbc2a4c928e8f4391bf4078473bd6040d8f11adb0ec1
+  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.06.tar.gz
+- dest: perl-libs/HTTP-CookieJar
+  sha256: 7094ea5c91f536d263b85e83ab4e9a963e11c4408ce08ecae553fa9c0cc47e73
   type: archive
-  url: https://cpan.metacpan.org/authors/id/G/GA/GAAS/Encode-Locale-1.05.tar.gz
+  url: https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/HTTP-CookieJar-0.014.tar.gz
 - dest: perl-libs/LWP-MediaTypes
   sha256: 8f1bca12dab16a1c2a7c03a49c5e58cce41a6fec9519f0aadfba8dad997919d9
   type: archive
@@ -247,347 +195,389 @@
   type: archive
   url: https://cpan.metacpan.org/authors/id/C/CJ/CJM/IO-HTML-1.004.tar.gz
 - dest: perl-libs/HTTP-Message
-  sha256: 23b967f71b852cb209ec92a1af6bac89a141dff1650d69824d29a345c1eceef7
+  sha256: 398b647bf45aa972f432ec0111f6617742ba32fc773c6612d21f64ab4eacbca1
   type: archive
-  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-6.33.tar.gz
-- dest: perl-libs/HTTP-Cookies
-  sha256: e36f36633c5ce6b5e4b876ffcf74787cc5efe0736dd7f487bdd73c14f0bd7007
+  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-6.44.tar.gz
+- dest: perl-libs/Net-HTTP
+  sha256: 0d65c09dd6c8589b2ae1118174d3c1a61703b6ecfc14a3442a8c74af65e0c94e
   type: archive
-  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.10.tar.gz
-- dest: perl-libs/HTTP-Negotiate
-  sha256: 1c729c1ea63100e878405cda7d66f9adfd3ed4f1d6cacaca0ee9152df728e016
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTTP-Negotiate-6.01.tar.gz
+  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.23.tar.gz
 - dest: perl-libs/HTML-Tagset
   sha256: adb17dac9e36cd011f5243881c9739417fd102fce760f8de4e9be4c7131108e2
   type: archive
   url: https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/HTML-Tagset-3.20.tar.gz
 - dest: perl-libs/HTML-Parser
-  sha256: 64d9e2eb2b420f1492da01ec0e6976363245b4be9290f03f10b7d2cb63fa2f61
+  sha256: c0910a5c8f92f8817edd06ccfd224ba1c2ebe8c10f551f032587a1fc83d62ff2
   type: archive
-  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.76.tar.gz
+  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.81.tar.gz
+- dest: perl-libs/WWW-RobotRules
+  sha256: 46b502e7a288d559429891eeb5d979461dd3ecc6a5c491ead85d165b6e03a51e
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/G/GA/GAAS/WWW-RobotRules-6.02.tar.gz
 - dest: perl-libs/File-Listing
-  sha256: 15b3a4871e23164a36f226381b74d450af41f12cc94985f592a669fcac7b48ff
+  sha256: 189b3a13fc0a1ba412b9d9ec5901e9e5e444cc746b9f0156d4399370d33655c6
   type: archive
-  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-Listing-6.14.tar.gz
-- dest: perl-libs/Net-HTTP
-  sha256: 375aa35b76be99f06464089174d66ac76f78ce83a5c92a907bbfab18b099eec4
+  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-Listing-6.16.tar.gz
+- dest: perl-libs/Try-Tiny
+  sha256: 3300d31d8a4075b26d8f46ce864a1d913e0e8467ceeba6655d5d2b2e206c11be
   type: archive
-  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.21.tar.gz
+  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.31.tar.gz
+- dest: perl-libs/HTTP-Negotiate
+  sha256: 1c729c1ea63100e878405cda7d66f9adfd3ed4f1d6cacaca0ee9152df728e016
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTTP-Negotiate-6.01.tar.gz
+- dest: perl-libs/HTTP-Cookies
+  sha256: e36f36633c5ce6b5e4b876ffcf74787cc5efe0736dd7f487bdd73c14f0bd7007
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.10.tar.gz
 - dest: perl-libs/libwww-perl
-  sha256: 30c242359cb808f3fe2b115fb90712410557f0786ad74844f9801fd719bc42f8
+  sha256: e9b8354fd5e20be207afe23ddd584fcd59bf82998dc077decf684ba1dae5a05d
   type: archive
-  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.57.tar.gz
-- dest: perl-libs/Net-SSLeay
-  sha256: f8696cfaca98234679efeedc288a9398fcf77176f1f515dbc589ada7c650dc93
+  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.72.tar.gz
+- dest: perl-libs/Lingua-Translit
+  sha256: 1ad2fabc0079dad708b7d9d55437c9ebb192e610bf960af25945858b92597752
   type: archive
-  url: https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.90.tar.gz
-- dest: perl-libs/Mozilla-CA
-  sha256: 122c8900000a9d388aa8e44f911cab6c118fe8497417917a84a8ec183971b449
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/A/AB/ABH/Mozilla-CA-20211001.tar.gz
-- dest: perl-libs/IO-Socket-SSL
-  sha256: b5bee81db3905a9069340a450a48e1e1b32dec4ede0064f5703bafb9a707b89d
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.072.tar.gz
-- dest: perl-libs/YAML-Tiny
-  sha256: bc315fa12e8f1e3ee5e2f430d90b708a5dc7e47c867dba8dce3a6b8fbe257744
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/YAML-Tiny-1.73.tar.gz
-- dest: perl-libs/LWP-Protocol-https
-  sha256: cecfc31fe2d4fc854cac47fce13d3a502e8fdfe60c5bc1c09535743185f2a86c
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.10.tar.gz
-- dest: perl-libs/Module-Install
-  sha256: 1a53a78ddf3ab9e3c03fc5e354b436319a944cba4281baf0b904fa932a13011b
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/Module-Install-1.19.tar.gz
-- dest: perl-libs/Business-ISSN
-  sha256: 97ecab15d24d11e2852bf0b28f84c8798bd38402a0a69e17be0e6689b272715e
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Business-ISSN-1.004.tar.gz
-- dest: perl-libs/Encode-HanExtra
-  sha256: 1fd4b06cada70858003af153f94c863b3b95f2e3d03ba18d0451a81d51db443a
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/A/AU/AUDREYT/Encode-HanExtra-0.23.tar.gz
-- dest: perl-libs/Unicode-Collate
-  sha256: b75dd07bbc252937b1b87064bf79ccd0a1b7ee993b8cf0e80f47406c3205639f
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/S/SA/SADAHIRO/Unicode-Collate-1.31.tar.gz
-- dest: perl-libs/IO-String
-  sha256: 2a3f4ad8442d9070780e58ef43722d19d1ee21a803bf7c8206877a10482de5a0
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/G/GA/GAAS/IO-String-1.08.tar.gz
-- dest: perl-libs/Text-CSV_XS
-  sha256: 27e39f0d5f2322aaf78ff90eb1221f3cbed1d4c514d0956bda19407fcb98bed6
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/H/HM/HMBRAND/Text-CSV_XS-1.46.tgz
-- dest: perl-libs/Text-CSV
-  sha256: 2a90a5eea3f22c40b87932a929621680609ab5f6b874a77c4134c8a04eb8e74b
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.01.tar.gz
+  url: https://cpan.metacpan.org/authors/id/A/AL/ALINKE/Lingua-Translit-0.29.tar.gz
 - dest: perl-libs/Log-Log4perl
-  sha256: bbabe42d3b4cdaa3a47666b957be81d55bbd1cbcffcdff2b119586d33602eabe
+  sha256: 0f8fcb7638a8f3db4c797df94fdbc56013749142f2f94cbc95b43c9fca096a13
   type: archive
-  url: https://cpan.metacpan.org/authors/id/E/ET/ETJ/Log-Log4perl-1.54.tar.gz
-- dest: perl-libs/Sort-Key
-  sha256: ed6a4ccfab094c9cd164f564024e98bd21d94f4312ccac4d6246d22b34081acf
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/S/SA/SALVA/Sort-Key-1.33.tar.gz
-- dest: perl-libs/Business-ISBN-Data
-  sha256: 98c2cfb266b5fdd016989abaa471d9dd4c1d593c508a6f01f66d184d5fee8bae
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Business-ISBN-Data-20210112.006.tar.gz
-- dest: perl-libs/Business-ISBN
-  sha256: c1fefe68354ffb80cdbd24303ebe684b3b6828df3d5f09b429a09fc4f0919c9a
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Business-ISBN-3.006.tar.gz
-- dest: perl-libs/autovivification
-  sha256: 2d99975685242980d0a9904f639144c059d6ece15899efde4acb742d3253f105
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/V/VP/VPIT/autovivification-0.18.tar.gz
+  url: https://cpan.metacpan.org/authors/id/E/ET/ETJ/Log-Log4perl-1.57.tar.gz
 - dest: perl-libs/MIME-Charset
-  sha256: 878c779c0256c591666bd06c0cde4c0d7820eeeb98fd1183082aee9a1e7b1d13
+  sha256: 1bb7a6e0c0d251f23d6e60bf84c9adefc5b74eec58475bfee4d39107e60870f0
   type: archive
-  url: https://cpan.metacpan.org/authors/id/N/NE/NEZUMI/MIME-Charset-1.012.2.tar.gz
+  url: https://cpan.metacpan.org/authors/id/N/NE/NEZUMI/MIME-Charset-1.013.1.tar.gz
 - dest: perl-libs/Unicode-LineBreak
   sha256: 486762e4cacddcc77b13989f979a029f84630b8175e7fef17989e157d4b6318a
   type: archive
   url: https://cpan.metacpan.org/authors/id/N/NE/NEZUMI/Unicode-LineBreak-2019.001.tar.gz
-- dest: perl-libs/Capture-Tiny
-  sha256: 6c23113e87bad393308c90a207013e505f659274736638d8c79bac9c67cc3e19
+- dest: perl-libs/File-Slurper
+  sha256: d5a36487339888c3cd758e648160ee1d70eb4153cacbaff57846dbcefb344b0c
   type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.48.tar.gz
-- dest: perl-libs/Config-AutoConf
-  sha256: bb57a958ef49d3f7162276dae14a7bd5af43fd1d8513231af35d665459454023
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/A/AM/AMBS/Config-AutoConf-0.320.tar.gz
-- dest: perl-libs/Regexp-Common
-  sha256: ee07853aee06f310e040b6bf1a0199a18d81896d3219b9b35c9630d0eb69089b
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-2017060201.tar.gz
-- dest: perl-libs/PerlIO-utf8_strict
-  sha256: 5f798ded50dcc7d421b57850f837310666d817f4c67c15ba0f5a1d38c74df459
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/L/LE/LEONT/PerlIO-utf8_strict-0.008.tar.gz
-- dest: perl-libs/File-Which
-  sha256: 3201f1a60e3f16484082e6045c896842261fc345de9fb2e620fd2a2c7af3a93a
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-Which-1.27.tar.gz
-- dest: perl-libs/FFI-CheckLib
-  sha256: cf377ce735b332c41f600ca6c5e87af30db6c3787f9b67d50a245d1ebe6fc350
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/FFI-CheckLib-0.28.tar.gz
-- dest: perl-libs/Path-Tiny
-  sha256: 32138d8d0f4c9c1a84d2a8f91bc5e913d37d8a7edefbb15a10961bfed560b0fd
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Path-Tiny-0.118.tar.gz
-- dest: perl-libs/File-chdir
-  sha256: efc121f40bd7a0f62f8ec9b8bc70f7f5409d81cd705e37008596c8efc4452b01
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/File-chdir-0.1010.tar.gz
-- dest: perl-libs/Alien-Build
-  sha256: 517c99c69fd236e106c1827896bd8562d7768043cc11bfbc399d55e95a63b791
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Build-2.42.tar.gz
-- dest: perl-libs/Alien-Libxml2
-  sha256: 73b45244f0b5c36e5332c33569b82a1ab2c33e263f1d00785d2003bcaec68db3
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Libxml2-0.17.tar.gz
-- dest: perl-libs/XML-NamespaceSupport
-  sha256: 47e995859f8dd0413aa3f22d350c4a62da652e854267aa0586ae544ae2bae5ef
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/P/PE/PERIGRIN/XML-NamespaceSupport-1.12.tar.gz
-- dest: perl-libs/XML-SAX-Base
-  sha256: 66cb355ba4ef47c10ca738bd35999723644386ac853abbeb5132841f5e8a2ad0
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/G/GR/GRANTM/XML-SAX-Base-1.09.tar.gz
-- dest: perl-libs/XML-SAX
-  sha256: 4506c387043aa6a77b455f00f57409f3720aa7e553495ab2535263b4ed1ea12a
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/G/GR/GRANTM/XML-SAX-1.02.tar.gz
-- dest: perl-libs/XML-LibXML
-  sha256: 903436c9859875bef5593243aae85ced329ad0fb4b57bbf45975e32547c50c15
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXML-2.0207.tar.gz
-- dest: perl-libs/XML-LibXML-Simple
-  sha256: cd98c8104b70d7672bfa26b4513b78adf2b4b9220e586aa8beb1a508500365a6
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/M/MA/MARKOV/XML-LibXML-Simple-1.01.tar.gz
-- dest: perl-libs/Text-BibTeX
-  sha256: b014586e68bdbcafb0a2cfa0401eb0a04ea5de8c4d5bc36dd0f7faeab6acf42c
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/A/AM/AMBS/Text-BibTeX-0.88.tar.gz
+  url: https://cpan.metacpan.org/authors/id/L/LE/LEONT/File-Slurper-0.014.tar.gz
 - dest: perl-libs/Encode-EUCJPASCII
   sha256: f998d34d55fd9c82cf910786a0448d1edfa60bf68e2c2306724ca67c629de861
   type: archive
   url: https://cpan.metacpan.org/authors/id/N/NE/NEZUMI/Encode-EUCJPASCII-0.03.tar.gz
-- dest: perl-libs/Class-Accessor
-  sha256: bf12a3e5de5a2c6e8a447b364f4f5a050bf74624c56e315022ae7992ff2f411c
+- dest: perl-libs/List-SomeUtils-XS
+  sha256: 4f9e4d2622481b79cc298e8e29de8a30943aff9f4be7992c0ebb7b22e5b4b297
   type: archive
-  url: https://cpan.metacpan.org/authors/id/K/KA/KASEI/Class-Accessor-0.51.tar.gz
-- dest: perl-libs/Tie-Cycle
-  sha256: 0987e1c053bb080c3052710e9733a81ab6fb84e60da76828efa7fc92e7f47633
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/List-SomeUtils-XS-0.58.tar.gz
+- dest: perl-libs/Module-Runtime
+  sha256: 68302ec646833547d410be28e09676db75006f4aa58a11f3bdb44ffe99f0f024
   type: archive
-  url: https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Tie-Cycle-1.226.tar.gz
-- dest: perl-libs/Business-ISMN
-  sha256: ca8db9253ddda906b47d5068e745b9f2a03754589455ffcf26b0706c8194db26
+  url: https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Module-Runtime-0.016.tar.gz
+- dest: perl-libs/Module-Implementation
+  sha256: c15f1a12f0c2130c9efff3c2e1afe5887b08ccd033bd132186d1e7d5087fd66d
   type: archive
-  url: https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Business-ISMN-1.202.tar.gz
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Module-Implementation-0.09.tar.gz
+- dest: perl-libs/List-SomeUtils
+  sha256: fab30372e4c67bf5a46062da38d1d0c8756279feada866eb439fa29571a2dc7b
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/List-SomeUtils-0.59.tar.gz
+- dest: perl-libs/List-UtilsBy
+  sha256: fff1281fd469fe982b1a58044becfd970f313bff3a26e1c7b2b3f4c0a5ed71e0
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/P/PE/PEVANS/List-UtilsBy-0.12.tar.gz
+- dest: perl-libs/List-AllUtils
+  sha256: 30a8146ab21a7787b8c56d5829cf9a7f2b15276d3b3fca07336ac38d3002ffbc
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/List-AllUtils-0.19.tar.gz
+- dest: perl-libs/Text-Roman
+  sha256: cb4a08a3b151802ffb2fce3258a416542ab81db0f739ee474a9583ffb73e046a
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/S/SY/SYP/Text-Roman-3.5.tar.gz
+- dest: perl-libs/Text-CSV_XS
+  sha256: 85b5e1bed7e11dc0413d4e920cee25d980de47376c0048029041cf461eac96b1
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/H/HM/HMBRAND/Text-CSV_XS-1.50.tgz
+- dest: perl-libs/XML-Writer
+  sha256: 73c8f5bd3ecf2b350f4adae6d6676d52e08ecc2d7df4a9f089fa68360d400d1f
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/J/JO/JOSEPHW/XML-Writer-0.900.tar.gz
+- dest: perl-libs/IO-String
+  sha256: 2a3f4ad8442d9070780e58ef43722d19d1ee21a803bf7c8206877a10482de5a0
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/G/GA/GAAS/IO-String-1.08.tar.gz
+- dest: perl-libs/Dist-CheckConflicts
+  sha256: ea844b9686c94d666d9d444321d764490b2cde2f985c4165b4c2c77665caedc4
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DO/DOY/Dist-CheckConflicts-0.11.tar.gz
+- dest: perl-libs/File-ShareDir-Install
+  sha256: 8f9533b198f2d4a9a5288cbc7d224f7679ad05a7a8573745599789428bc5aea0
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-ShareDir-Install-0.14.tar.gz
+- dest: perl-libs/Sub-Identify
+  sha256: '068d272086514dd1e842b6a40b1bedbafee63900e5b08890ef6700039defad6f'
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/R/RG/RGARCIA/Sub-Identify-0.14.tar.gz
+- dest: perl-libs/Package-Stash-XS
+  sha256: 26bad65c1959c57379b3e139dc776fbec5f702906617ef27cdc293ddf1239231
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/Package-Stash-XS-0.30.tar.gz
+- dest: perl-libs/Package-Stash
+  sha256: 5a9722c6d9cb29ee133e5f7b08a5362762a0b5633ff5170642a5b0686e95e066
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/Package-Stash-0.40.tar.gz
+- dest: perl-libs/Sub-Exporter-Progressive
+  sha256: d535b7954d64da1ac1305b1fadf98202769e3599376854b2ced90c382beac056
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/F/FR/FREW/Sub-Exporter-Progressive-0.001013.tar.gz
+- dest: perl-libs/Variable-Magic
+  sha256: ba4083b2c31ff2694f2371333d554c826aaf24b4d98d03e48b5b4a43a2a0e679
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/V/VP/VPIT/Variable-Magic-0.63.tar.gz
+- dest: perl-libs/B-Hooks-EndOfScope
+  sha256: 39df2f8c007a754672075f95b90797baebe97ada6d944b197a6352709cb30671
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/B-Hooks-EndOfScope-0.26.tar.gz
+- dest: perl-libs/namespace-clean
+  sha256: 8a10a83c3e183dc78f9e7b7aa4d09b47c11fb4e7d3a33b9a12912fd22e31af9d
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI/namespace-clean-0.27.tar.gz
+- dest: perl-libs/namespace-autoclean
+  sha256: 45ebd8e64a54a86f88d8e01ae55212967c8aa8fed57e814085def7608ac65804
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/namespace-autoclean-0.29.tar.gz
+- dest: perl-libs/Test-Fatal
+  sha256: 37dfffdafb84b762efe96b02fb2aa41f37026c73e6b83590db76229697f3c4a6
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Test-Fatal-0.017.tar.gz
+- dest: perl-libs/XString
+  sha256: f247f55c19aee6ba4a1ae73c0804259452e02ea85a9be07f8acf700a5138f884
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/XString-0.005.tar.gz
+- dest: perl-libs/Eval-Closure
+  sha256: ea0944f2f5ec98d895bef6d503e6e4a376fea6383a6bc64c7670d46ff2218cad
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DO/DOY/Eval-Closure-0.14.tar.gz
+- dest: perl-libs/Sub-Quote
+  sha256: 94bebd500af55762e83ea2f2bc594d87af828072370c7110c60c238a800d15b2
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/H/HA/HAARG/Sub-Quote-2.006008.tar.gz
+- dest: perl-libs/Role-Tiny
+  sha256: d7bdee9e138a4f83aa52d0a981625644bda87ff16642dfa845dcb44d9a242b45
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.002004.tar.gz
+- dest: perl-libs/Devel-StackTrace
+  sha256: cd3c03ed547d3d42c61fa5814c98296139392e7971c092e09a431f2c9f5d6855
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Devel-StackTrace-2.04.tar.gz
+- dest: perl-libs/MRO-Compat
+  sha256: 0d4535f88e43babd84ab604866215fc4d04398bd4db7b21852d4a31b1c15ef61
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/H/HA/HAARG/MRO-Compat-0.15.tar.gz
+- dest: perl-libs/Specio
+  sha256: 0c85793580f1274ef08173079131d101f77b22accea7afa8255202f0811682b2
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Specio-0.48.tar.gz
+- dest: perl-libs/Class-Inspector
+  sha256: cc295d23a472687c24489d58226ead23b9fdc2588e522f0b5f0747741700694e
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Class-Inspector-1.36.tar.gz
+- dest: perl-libs/File-ShareDir
+  sha256: 3bb2a20ba35df958dc0a4f2306fc05d903d8b8c4de3c8beefce17739d281c958
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/R/RE/REHSACK/File-ShareDir-1.118.tar.gz
+- dest: perl-libs/Class-Data-Inheritable
+  sha256: 44088d6e90712e187b8a5b050ca5b1c70efe2baa32ae123e9bd8f59f29f06e4d
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/R/RS/RSHERER/Class-Data-Inheritable-0.09.tar.gz
+- dest: perl-libs/Exception-Class
+  sha256: 5482a77ef027ca1f9f39e1f48c558356e954936fc8fbbdee6c811c512701b249
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Exception-Class-1.45.tar.gz
+- dest: perl-libs/Params-ValidationCompiler
+  sha256: 7b6497173f1b6adb29f5d51d8cf9ec36d2f1219412b4b2410e9d77a901e84a6d
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.31.tar.gz
+- dest: perl-libs/DateTime-Locale
+  sha256: 10c145a6c7daf7118864e97482b4ae9f94f93b9414212eee8aa30b16a8135100
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.39.tar.gz
+- dest: perl-libs/Class-Singleton
+  sha256: 27ba13f0d9512929166bbd8c9ef95d90d630fc80f0c9a1b7458891055e9282a4
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.6.tar.gz
+- dest: perl-libs/DateTime-TimeZone
+  sha256: f0460d379323905b579bed44e141237a337dc25dd26b6ab0c60ac2b80629323d
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.60.tar.gz
+- dest: perl-libs/DateTime
+  sha256: de3e9a63ce15470b4db4adad4ba6ac8ec297d88c0c6c6b354b081883b0a67695
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-1.59.tar.gz
+- dest: perl-libs/DateTime-Calendar-Julian
+  sha256: fcb2b424844bb13bcad46b1c7aa239b5a09bab2556f53bd1f27fad90c260d33d
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/W/WY/WYANT/DateTime-Calendar-Julian-0.107.tar.gz
 - dest: perl-libs/Encode-JIS2K
   sha256: 1ec84d72db39deb4dad6fca95acfcc21033f45a24d347c20f9a1a696896c35cc
   type: archive
   url: https://cpan.metacpan.org/authors/id/D/DA/DANKOGAI/Encode-JIS2K-0.03.tar.gz
-- dest: perl-libs/File-Slurper
-  sha256: 4efb2ea416b110a1bda6f8133549cc6ea3676402e3caf7529fce0313250aa578
+- dest: perl-libs/Tie-Cycle
+  sha256: 7838335791e71a3b33b8a19de3052949e1890a4823def6397823c99222fa1dd8
   type: archive
-  url: https://cpan.metacpan.org/authors/id/L/LE/LEONT/File-Slurper-0.012.tar.gz
-- dest: perl-libs/Lingua-Translit
-  sha256: 113f91d8fc2c630437153a49fb7a52b023af8f6278ed96c070b1f60824b8eae1
+  url: https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Tie-Cycle-1.227.tar.gz
+- dest: perl-libs/Business-ISMN
+  sha256: 4f53aedab2e687d4e1f72856eafc22159390621123daaf79e4506a897e293e88
   type: archive
-  url: https://cpan.metacpan.org/authors/id/A/AL/ALINKE/Lingua-Translit-0.28.tar.gz
+  url: https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Business-ISMN-1.203.tar.gz
+- dest: perl-libs/Sort-Key
+  sha256: ed6a4ccfab094c9cd164f564024e98bd21d94f4312ccac4d6246d22b34081acf
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/S/SA/SALVA/Sort-Key-1.33.tar.gz
+- dest: perl-libs/Business-ISSN
+  sha256: 3b09b0267f0a6660fb92b6f50c4c7796ef6a263b62ad3bbeaa07189a0c7c39b3
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Business-ISSN-1.005.tar.gz
+- dest: perl-libs/LWP-Protocol-https
+  sha256: 0132ddbf03661565ca85050f2a5094fb9263cbbc3ccb1a4d9c41ac9bb083b917
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.11.tar.gz
 - dest: perl-libs/Data-Uniqid
   sha256: b6919ba49b9fe98bfdf3e8accae7b9b7f78dc9e71ebbd0b7fef7a45d99324ccb
   type: archive
   url: https://cpan.metacpan.org/authors/id/M/MW/MWX/Data-Uniqid-0.12.tar.gz
-- dest: perl-libs/XML-LibXSLT
-  sha256: 127e17a877fb61e47b9e8b87bf8daad31339a62a00121f9751d522b438b0f7f0
+- dest: perl-libs/DateTime-Format-Strptime
+  sha256: 701e46802c86ed4d88695c1a6dacbbe90b3390beeb794f387e7c792300037579
   type: archive
-  url: https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXSLT-1.99.tar.gz
-- dest: perl-libs/Test-Differences
-  sha256: e68547206cb099a2594165ca0adc99fc12adb97c7f02a1222f62961fd775e270
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Strptime-1.79.tar.gz
+- dest: perl-libs/Params-Validate
+  sha256: 1bf2518ef2c4869f91590e219f545c8ef12ed53cf313e0eb5704adf7f1b2961e
   type: archive
-  url: https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL/Test-Differences-0.68.tar.gz
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-Validate-1.31.tar.gz
+- dest: perl-libs/DateTime-Format-Builder
+  sha256: 61ffb23d85b3ca1786b2da3289e99b57e0625fe0e49db02a6dc0cb62c689e2f2
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.83.tar.gz
 - commands:
-    - set -e
-    - function make_install {
-    - '    mod_dir=$1'
-    - '    cd $mod_dir'
-    - '    if [ -f ''Makefile.PL'' ]; then'
-    - '        perl Makefile.PL && make install'
-    - '    elif [ -f ''Build.PL'' ]; then'
-    - '        perl Build.PL && ./Build && ./Build install'
-    - '    else'
-    - '        echo ''No Makefile.PL or Build.PL found. Do not know how to install
-      this module'''
-    - '        exit 1'
-    - '    fi'
-    - '}'
-    - (make_install perl-libs/File-Remove)
-    - (make_install perl-libs/Module-Build)
-    - (make_install perl-libs/IPC-Run3)
-    - (make_install perl-libs/Number-Compare)
-    - (make_install perl-libs/Text-Glob)
-    - (make_install perl-libs/File-Find-Rule)
-    - (make_install perl-libs/Clone)
-    - (make_install perl-libs/Data-Compare)
-    - (make_install perl-libs/URI)
-    - (make_install perl-libs/List-MoreUtils-XS)
-    - (make_install perl-libs/Exporter-Tiny)
-    - (make_install perl-libs/List-MoreUtils)
-    - (make_install perl-libs/Module-Runtime)
-    - (make_install perl-libs/Dist-CheckConflicts)
-    - (make_install perl-libs/Role-Tiny)
-    - (make_install perl-libs/XString)
-    - (make_install perl-libs/Eval-Closure)
-    - (make_install perl-libs/Try-Tiny)
-    - (make_install perl-libs/Test-Fatal)
-    - (make_install perl-libs/MRO-Compat)
-    - (make_install perl-libs/Sub-Quote)
-    - (make_install perl-libs/Devel-StackTrace)
-    - (make_install perl-libs/Specio)
-    - (make_install perl-libs/Sub-Identify)
-    - (make_install perl-libs/Sub-Exporter-Progressive)
-    - (make_install perl-libs/Module-Implementation)
-    - (make_install perl-libs/Variable-Magic)
-    - (make_install perl-libs/B-Hooks-EndOfScope)
-    - (make_install perl-libs/Package-Stash-XS)
-    - (make_install perl-libs/Package-Stash)
-    - (make_install perl-libs/namespace-clean)
-    - (make_install perl-libs/namespace-autoclean)
-    - (make_install perl-libs/Class-Data-Inheritable)
-    - (make_install perl-libs/Exception-Class)
-    - (make_install perl-libs/Params-ValidationCompiler)
-    - (make_install perl-libs/Class-Singleton)
-    - (make_install perl-libs/DateTime-TimeZone)
-    - (make_install perl-libs/File-ShareDir-Install)
-    - (make_install perl-libs/Class-Inspector)
-    - (make_install perl-libs/File-ShareDir)
-    - (make_install perl-libs/DateTime-Locale)
-    - (make_install perl-libs/DateTime)
-    - (make_install perl-libs/DateTime-Calendar-Julian)
-    - (make_install perl-libs/Data-Dump)
-    - (make_install perl-libs/Scalar-List-Utils)
-    - (make_install perl-libs/List-SomeUtils-XS)
-    - (make_install perl-libs/List-SomeUtils)
-    - (make_install perl-libs/List-UtilsBy)
-    - (make_install perl-libs/List-AllUtils)
-    - (make_install perl-libs/Parse-RecDescent)
-    - (make_install perl-libs/Params-Validate)
-    - (make_install perl-libs/DateTime-Format-Strptime)
-    - (make_install perl-libs/DateTime-Format-Builder)
-    - (make_install perl-libs/Text-Roman)
-    - (make_install perl-libs/XML-Writer)
-    - (make_install perl-libs/ExtUtils-LibBuilder)
-    - (make_install perl-libs/WWW-RobotRules)
-    - (make_install perl-libs/TimeDate)
-    - (make_install perl-libs/HTTP-Date)
-    - (make_install perl-libs/Encode-Locale)
-    - (make_install perl-libs/LWP-MediaTypes)
-    - (make_install perl-libs/IO-HTML)
-    - (make_install perl-libs/HTTP-Message)
-    - (make_install perl-libs/HTTP-Cookies)
-    - (make_install perl-libs/HTTP-Negotiate)
-    - (make_install perl-libs/HTML-Tagset)
-    - (make_install perl-libs/HTML-Parser)
-    - (make_install perl-libs/File-Listing)
-    - (make_install perl-libs/Net-HTTP)
-    - (make_install perl-libs/libwww-perl)
-    - (make_install perl-libs/Net-SSLeay)
-    - (make_install perl-libs/Mozilla-CA)
-    - (make_install perl-libs/IO-Socket-SSL)
-    - (make_install perl-libs/YAML-Tiny)
-    - (make_install perl-libs/LWP-Protocol-https)
-    - (make_install perl-libs/Module-Install)
-    - (make_install perl-libs/Business-ISSN)
-    - (make_install perl-libs/Encode-HanExtra)
-    - (make_install perl-libs/Unicode-Collate)
-    - (make_install perl-libs/IO-String)
-    - (make_install perl-libs/Text-CSV_XS)
-    - (make_install perl-libs/Text-CSV)
-    - (make_install perl-libs/Log-Log4perl)
-    - (make_install perl-libs/Sort-Key)
-    - (make_install perl-libs/Business-ISBN-Data)
-    - (make_install perl-libs/Business-ISBN)
-    - (make_install perl-libs/autovivification)
-    - (make_install perl-libs/MIME-Charset)
-    - (make_install perl-libs/Unicode-LineBreak)
-    - (make_install perl-libs/Capture-Tiny)
-    - (make_install perl-libs/Config-AutoConf)
-    - (make_install perl-libs/Regexp-Common)
-    - (make_install perl-libs/PerlIO-utf8_strict)
-    - (make_install perl-libs/File-Which)
-    - (make_install perl-libs/FFI-CheckLib)
-    - (make_install perl-libs/Path-Tiny)
-    - (make_install perl-libs/File-chdir)
-    - (make_install perl-libs/Alien-Build)
-    - (make_install perl-libs/Alien-Libxml2)
-    - (make_install perl-libs/XML-NamespaceSupport)
-    - (make_install perl-libs/XML-SAX-Base)
-    - (make_install perl-libs/XML-SAX)
-    - (make_install perl-libs/XML-LibXML)
-    - (make_install perl-libs/XML-LibXML-Simple)
-    - (make_install perl-libs/Text-BibTeX)
-    - (make_install perl-libs/Encode-EUCJPASCII)
-    - (make_install perl-libs/Class-Accessor)
-    - (make_install perl-libs/Tie-Cycle)
-    - (make_install perl-libs/Business-ISMN)
-    - (make_install perl-libs/Encode-JIS2K)
-    - (make_install perl-libs/File-Slurper)
-    - (make_install perl-libs/Lingua-Translit)
-    - (make_install perl-libs/Data-Uniqid)
-    - (make_install perl-libs/XML-LibXSLT)
-    - (make_install perl-libs/Test-Differences)
+  - set -e
+  - function make_install {
+  - "    mod_dir=$1"
+  - "    cd $mod_dir"
+  - "    if [ -f 'Makefile.PL' ]; then"
+  - "        perl Makefile.PL PREFIX=${FLATPAK_DEST} && make install PREFIX=${FLATPAK_DEST}"
+  - "    elif [ -f 'Build.PL' ]; then"
+  - "        perl Build.PL && ./Build && ./Build install"
+  - "    else"
+  - "        echo 'No Makefile.PL or Build.PL found. Do not know how to install this
+    module'"
+  - "        exit 1"
+  - "    fi"
+  - "}"
+  - "(make_install perl-libs/Module-Build)"
+  - "(make_install perl-libs/File-Which)"
+  - "(make_install perl-libs/Capture-Tiny)"
+  - "(make_install perl-libs/FFI-CheckLib)"
+  - "(make_install perl-libs/File-chdir)"
+  - "(make_install perl-libs/Path-Tiny)"
+  - "(make_install perl-libs/Alien-Build)"
+  - "(make_install perl-libs/URI)"
+  - "(make_install perl-libs/Alien-Build-Plugin-Download-GitLab)"
+  - "(make_install perl-libs/Mozilla-CA)"
+  - "(make_install perl-libs/IO-Socket-SSL)"
+  - "(make_install perl-libs/Alien-Libxml2)"
+  - "(make_install perl-libs/XML-SAX-Base)"
+  - "(make_install perl-libs/XML-NamespaceSupport)"
+  - "(make_install perl-libs/XML-SAX)"
+  - "(make_install perl-libs/XML-LibXML)"
+  - "(make_install perl-libs/XML-LibXML-Simple)"
+  - "(make_install perl-libs/PerlIO-utf8_strict)"
+  - "(make_install perl-libs/Encode-Locale)"
+  - "(make_install perl-libs/List-MoreUtils-XS)"
+  - "(make_install perl-libs/ExtUtils-LibBuilder)"
+  - "(make_install perl-libs/Config-AutoConf)"
+  - "(make_install perl-libs/Text-BibTeX)"
+  - "(make_install perl-libs/Regexp-Common)"
+  - "(make_install perl-libs/File-Remove)"
+  - "(make_install perl-libs/Module-ScanDeps)"
+  - "(make_install perl-libs/YAML-Tiny)"
+  - "(make_install perl-libs/Module-Install)"  
+  - "(make_install perl-libs/IPC-Run3)"  
+  - "(make_install perl-libs/Encode-HanExtra)"
+  - "(make_install perl-libs/Clone)"
+  - "(make_install perl-libs/Number-Compare)"
+  - "(make_install perl-libs/Text-Glob)"
+  - "(make_install perl-libs/File-Find-Rule)"
+  - "(make_install perl-libs/Data-Compare)"
+  - "(make_install perl-libs/Text-CSV)"
+  - "(make_install perl-libs/Business-ISBN-Data)"
+  - "(make_install perl-libs/Business-ISBN)"
+  - "(make_install perl-libs/Parse-RecDescent)"
+  - "(make_install perl-libs/Class-Accessor)"
+  - "(make_install perl-libs/Exporter-Tiny)"
+  - "(make_install perl-libs/List-MoreUtils)"
+  - "(make_install perl-libs/Data-Dump)"
+  - "(make_install perl-libs/autovivification)"
+  - "(make_install perl-libs/TimeDate)"
+  - "(make_install perl-libs/HTTP-Date)"
+  - "(make_install perl-libs/HTTP-CookieJar)"
+  - "(make_install perl-libs/LWP-MediaTypes)"
+  - "(make_install perl-libs/IO-HTML)"
+  - "(make_install perl-libs/HTTP-Message)"
+  - "(make_install perl-libs/Net-HTTP)"
+  - "(make_install perl-libs/HTML-Tagset)"
+  - "(make_install perl-libs/HTML-Parser)"
+  - "(make_install perl-libs/WWW-RobotRules)"
+  - "(make_install perl-libs/File-Listing)"
+  - "(make_install perl-libs/Try-Tiny)"
+  - "(make_install perl-libs/HTTP-Negotiate)"
+  - "(make_install perl-libs/HTTP-Cookies)"
+  - "(make_install perl-libs/libwww-perl)"
+  - "(make_install perl-libs/Lingua-Translit)"
+  - "(make_install perl-libs/Log-Log4perl)"
+  - "(make_install perl-libs/MIME-Charset)"
+  - "(make_install perl-libs/Unicode-LineBreak)"
+  - "(make_install perl-libs/File-Slurper)"
+  - "(make_install perl-libs/Encode-EUCJPASCII)"
+  - "(make_install perl-libs/List-SomeUtils-XS)"
+  - "(make_install perl-libs/Module-Runtime)"
+  - "(make_install perl-libs/Module-Implementation)"
+  - "(make_install perl-libs/List-SomeUtils)"
+  - "(make_install perl-libs/List-UtilsBy)"
+  - "(make_install perl-libs/List-AllUtils)"
+  - "(make_install perl-libs/Text-Roman)"
+  - "(make_install perl-libs/Text-CSV_XS)"
+  - "(make_install perl-libs/XML-Writer)"
+  - "(make_install perl-libs/IO-String)"
+  - "(make_install perl-libs/Dist-CheckConflicts)"
+  - "(make_install perl-libs/File-ShareDir-Install)"
+  - "(make_install perl-libs/Sub-Identify)"
+  - "(make_install perl-libs/Package-Stash-XS)"
+  - "(make_install perl-libs/Package-Stash)"
+  - "(make_install perl-libs/Sub-Exporter-Progressive)"
+  - "(make_install perl-libs/Variable-Magic)"
+  - "(make_install perl-libs/B-Hooks-EndOfScope)"
+  - "(make_install perl-libs/namespace-clean)"
+  - "(make_install perl-libs/namespace-autoclean)"
+  - "(make_install perl-libs/Test-Fatal)"
+  - "(make_install perl-libs/XString)"
+  - "(make_install perl-libs/Eval-Closure)"
+  - "(make_install perl-libs/Sub-Quote)"
+  - "(make_install perl-libs/Role-Tiny)"
+  - "(make_install perl-libs/Devel-StackTrace)"
+  - "(make_install perl-libs/MRO-Compat)"
+  - "(make_install perl-libs/Specio)"
+  - "(make_install perl-libs/Class-Inspector)"
+  - "(make_install perl-libs/File-ShareDir)"
+  - "(make_install perl-libs/Class-Data-Inheritable)"
+  - "(make_install perl-libs/Exception-Class)"
+  - "(make_install perl-libs/Params-ValidationCompiler)"
+  - "(make_install perl-libs/DateTime-Locale)"
+  - "(make_install perl-libs/Class-Singleton)"
+  - "(make_install perl-libs/DateTime-TimeZone)"
+  - "(make_install perl-libs/DateTime)"
+  - "(make_install perl-libs/DateTime-Calendar-Julian)"
+  - "(make_install perl-libs/Encode-JIS2K)"
+  - "(make_install perl-libs/Tie-Cycle)"
+  - "(make_install perl-libs/Business-ISMN)"
+  - "(make_install perl-libs/Sort-Key)"
+  - "(make_install perl-libs/Business-ISSN)"
+  - "(make_install perl-libs/LWP-Protocol-https)"
+  - "(make_install perl-libs/Data-Uniqid)"
+  - "(make_install perl-libs/DateTime-Format-Strptime)"
+  - "(make_install perl-libs/Params-Validate)"
+  - "(make_install perl-libs/DateTime-Format-Builder)"
   dest: perl-libs
   dest-filename: install.sh
   type: script
