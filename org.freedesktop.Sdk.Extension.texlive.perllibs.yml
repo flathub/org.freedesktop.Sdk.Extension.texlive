@@ -94,14 +94,14 @@
   sha256: ee07853aee06f310e040b6bf1a0199a18d81896d3219b9b35c9630d0eb69089b
   type: archive
   url: https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-2017060201.tar.gz
-- dest: perl-libs/IPC-Run3
-  sha256: 3d81c3cc1b5cff69cca9361e2c6e38df0352251ae7b41e2ff3febc850e463565
-  type: archive
-  url: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/IPC-Run3-0.048.tar.gz
 - dest: perl/libs/Module-Install
   sha256: fbf91007f30565f3920e106055fd0d4287981d5e7dad8b35323ce4b733f15a7b
   type: archive
-  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/Module-Install-1.21.tar.gz  
+  url: https://cpan.metacpan.org/authors/id/E/ET/ETHER/Module-Install-1.21.tar.gz
+- dest: perl-libs/IPC-Run3
+  sha256: 3d81c3cc1b5cff69cca9361e2c6e38df0352251ae7b41e2ff3febc850e463565
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/IPC-Run3-0.048.tar.gz  
 - dest: perl-libs/Encode-HanExtra
   sha256: 1fd4b06cada70858003af153f94c863b3b95f2e3d03ba18d0451a81d51db443a
   type: archive
@@ -477,8 +477,8 @@
   - "(make_install perl-libs/Config-AutoConf)"
   - "(make_install perl-libs/Text-BibTeX)"
   - "(make_install perl-libs/Regexp-Common)"
-  - "(make_install perl-libs/IPC-Run3)"
   - "(make_install perl-libs/Module-Install)"  
+  - "(make_install perl-libs/IPC-Run3)"  
   - "(make_install perl-libs/Encode-HanExtra)"
   - "(make_install perl-libs/Clone)"
   - "(make_install perl-libs/Number-Compare)"
