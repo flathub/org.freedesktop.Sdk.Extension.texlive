@@ -33,11 +33,11 @@ modules:
       - ln -rs ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context
       - ln -rs ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun
       - ln -rs ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/context.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context.lua
-      - ln -rs ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/mtxrun.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun.lua   
+      - ln -rs ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/mtxrun.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun.lua
     sources:
       - type: archive
         url: https://github.com/contextgarden/luametatex/archive/refs/tags/v2.10.07.tar.gz
-        sha256: 25c3334127e00c610a498728f8b08bb063b76e385c633d09e9fffaa61f2cc485        
+        sha256: 25c3334127e00c610a498728f8b08bb063b76e385c633d09e9fffaa61f2cc485
   - name: texlive-source
     builddir: true
     build-options:
@@ -80,10 +80,10 @@ modules:
     build-options:
       cflags: -fPIC
       ldflags: -fpic
-    sources:      
+    sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.38.0.tar.gz
-        sha256: 213ef58089d2f2c972ea353517dc60ec3656f050dcc027666e118b508423e517
+        url: https://www.cpan.org/src/5.0/perl-5.38.1.tar.gz
+        sha256: e9b02f3f37f73f38e456ef76d7daded16141cfd91dd4aa271c5f9e6332eade98
         x-checker-data:
           type: anitya
           project-id: 13599
@@ -112,7 +112,7 @@ modules:
       - ./Build --output=${FLATPAK_DEST} install
     sources:
       - type: archive
-        url: https://github.com/plk/biber/archive/v2.19/biber-2.19.tar.gz 
+        url: https://github.com/plk/biber/archive/v2.19/biber-2.19.tar.gz
         sha256: 1c1266bc8adb1637c4c59e23c47d919c5a38da4e53544a3c22c21de4a68fc9fe
         x-checker-data:
           type: anitya
@@ -136,7 +136,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10020/ghostscript-10.02.0.tar.xz
-        sha256: fa08ce016b30d26293dc322c6353691aced94fd3667a68ede7ff5395d71fcd0b        
+        sha256: fa08ce016b30d26293dc322c6353691aced94fd3667a68ede7ff5395d71fcd0b
         # x-checker-data:
           # type: anitya
           # project-id: 1157
@@ -225,7 +225,7 @@ modules:
           dist: unstable
           component: main
           package-name: clisp
-          source: true        
+          source: true
       - type: shell
         commands:
           - cp -p /usr/share/automake-*/config.{sub,guess} src/build-aux
