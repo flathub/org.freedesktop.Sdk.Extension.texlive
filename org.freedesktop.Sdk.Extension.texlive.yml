@@ -82,8 +82,8 @@ modules:
       ldflags: -fpic
     sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.38.1.tar.gz
-        sha256: e9b02f3f37f73f38e456ef76d7daded16141cfd91dd4aa271c5f9e6332eade98
+        url: https://www.cpan.org/src/5.0/perl-5.38.2.tar.gz
+        sha256: a0a31534451eb7b83c7d6594a497543a54d488bc90ca00f5e34762577f40655e
         x-checker-data:
           type: anitya
           project-id: 13599
