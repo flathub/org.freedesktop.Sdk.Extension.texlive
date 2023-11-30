@@ -1,3 +1,7 @@
+- dest: perl-libs/File-HomeDir
+  sha256: 593737c62df0f6dab5d4122e0b4476417945bb6262c33eedc009665ef1548852
+  type: archive
+  url: https://cpan.metacpan.org/authors/id/R/RE/REHSACK/File-HomeDir-1.006.tar.gz
 - dest: perl-libs/Module-Build
   sha256: 66aeac6127418be5e471ead3744648c766bd01482825c5b66652675f2bc86a8f
   type: archive
@@ -465,6 +469,7 @@
   - "        exit 1"
   - "    fi"
   - "}"
+  - "(make_install perl-libs/File-HomeDir)"
   - "(make_install perl-libs/Module-Build)"
   - "(make_install perl-libs/File-Which)"
   - "(make_install perl-libs/Capture-Tiny)"
