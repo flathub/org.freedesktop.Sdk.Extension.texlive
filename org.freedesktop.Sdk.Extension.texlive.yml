@@ -112,8 +112,8 @@ modules:
       - ./Build --output=${FLATPAK_DEST} install
     sources:
       - type: archive
-        url: https://github.com/plk/biber/archive/v2.19/biber-2.19.tar.gz
-        sha256: 1c1266bc8adb1637c4c59e23c47d919c5a38da4e53544a3c22c21de4a68fc9fe
+        url: https://github.com/plk/biber/archive/v2.20/biber-2.20.tar.gz
+        sha256: 19f0312e59bf2f5711b8d69b3585a0ca894c36574f086fbb8d53ccd5c0a45ff9
         x-checker-data:
           type: anitya
           project-id: 6443
