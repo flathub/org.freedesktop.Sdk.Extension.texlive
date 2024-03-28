@@ -21,23 +21,9 @@ modules:
       - tar -xf texlive-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
     sources:
       - type: file
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2023/texlive-20230313-texmf.tar.xz
-        sha512: 5b95a63e77953c540ce1b8e6338d7189785f19333a34c73ae97662d5691968ccaaff9bfd712d2006ebec518a6a6545c00adaf97afd22bfc1fa35ab47c8ce4474
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2024/texlive-20240312-texmf.tar.xz
+        sha256: c8eae2deaaf51e86d93baa6bbcc4e94c12aa06a0d92893df474cc7d2a012c7a7
         dest-filename: texlive-texmf.tar.xz
-  - name: luametatex
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DCMAKE_BUILD_TYPE=native # installs luametatex to /usr/lib/sdk/texlive/bin/
-    post-install:
-      - install -Dm755 /usr/lib/sdk/texlive/bin/luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/luametatex
-      - ln -rs ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context
-      - ln -rs ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun
-      - ln -rs ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/context.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context.lua
-      - ln -rs ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/mtxrun.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun.lua
-    sources:
-      - type: archive
-        url: https://github.com/contextgarden/luametatex/archive/refs/tags/v2.10.07.tar.gz
-        sha256: 25c3334127e00c610a498728f8b08bb063b76e385c633d09e9fffaa61f2cc485
   - name: texlive-source
     builddir: true
     build-options:
@@ -60,18 +46,17 @@ modules:
     post-install:
       - make texlinks
       - install -Dm644 ../texk/tests/TeXLive/* -t ${FLATPAK_DEST}/tlpkg/TeXLive/
-      - tar -xf ../texlive-tlpdb-full.tar.gz -C ${FLATPAK_DEST}/tlpkg
+      - tar -xf ../texlive-extra.tar.gz -C ${FLATPAK_DEST}/tlpkg
       - mktexlsr
       - fmtutil-sys --all
-      - mtxrun --generate
     sources:
       - type: archive
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2023/texlive-20230313-source.tar.xz
-        sha512: 5874e7c9937ef63fdb03780f8137e0a63ad23a1b2a9d232a71bd2ab999669152981911fadc9c8ff3cf5e3a2cf828d575982b7fce1a15c101a62328d89d851a88
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2024/texlive-20240312-source.tar.xz
+        sha256: 7b6d87cf01661670fac45c93126bed97b9843139ed510f975d047ea938b6fe96
       - type: file
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2023/texlive-20230311-tlpdb-full.tar.gz
-        sha512: c7f947ebc2e44d5d37d1119ed17c3d0c0eb87e2ee00dd49d6732c8a223c495554fa0c8f0e6ba4100569c44847b1a1ec1ef2b380d8246bed0d2598b6c579b090e
-        dest-filename: texlive-tlpdb-full.tar.gz
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2024/texlive-20240312-extra.tar.xz
+        sha256: 770f1946cdcd1b5ddada2ea328bb37294174f70a2be28b33f38ce14717bc5496
+        dest-filename: texlive-extra.tar.gz
   - name: perl
     no-autogen: true
     config-opts:
