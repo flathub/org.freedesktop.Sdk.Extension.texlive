@@ -24,20 +24,6 @@ modules:
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2024/texlive-20240312-texmf.tar.xz
         sha256: c8eae2deaaf51e86d93baa6bbcc4e94c12aa06a0d92893df474cc7d2a012c7a7
         dest-filename: texlive-texmf.tar.xz
-  - name: luametatex
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DCMAKE_BUILD_TYPE=native # installs luametatex to /usr/lib/sdk/texlive/bin/
-    post-install:
-      - install -Dm755 /usr/lib/sdk/texlive/bin/luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/luametatex
-      - ln -rs ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context
-      - ln -rs ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/luametatex ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun
-      - ln -rs ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/context.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/context.lua
-      - ln -rs ${FLATPAK_DEST}/texmf-dist/scripts/context/lua/mtxrun.lua ${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux/mtxrun.lua
-    sources:
-      - type: archive
-        url: https://github.com/contextgarden/luametatex/archive/refs/tags/v2.10.07.tar.gz
-        sha256: 25c3334127e00c610a498728f8b08bb063b76e385c633d09e9fffaa61f2cc485
   - name: texlive-source
     builddir: true
     build-options:
