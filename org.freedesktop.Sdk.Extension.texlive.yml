@@ -74,12 +74,13 @@ modules:
         dest-filename: texlive-tlpdb-full.tar.gz
   - name: perl
     no-autogen: true
-    config-opts:
-      - -des
-      - -Duseshrplib
-    build-options:
-      cflags: -fPIC
-      ldflags: -fpic
+    buildsystem: simple
+    build-commands:
+      - mkdir tempdir
+      - ./Configure -des -Duseshrplib -Dprefix=/app/texlive
+      - make
+      - make DESTDIR=${pwd}/tempdir install
+      - cp -v -r tempdir/app/texlive/* /usr/lib/sdk/texlive/
     sources:
       - type: archive
         url: https://www.cpan.org/src/5.0/perl-5.38.2.tar.gz
