@@ -89,10 +89,6 @@ modules:
           type: anitya
           project-id: 13599
           url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
-      - type: script
-        dest-filename: configure
-        commands:
-          - exec ./configure.gnu $@
     post-install:
       - chmod -R u+w $FLATPAK_DEST/lib/perl5
   - name: perl-libs
