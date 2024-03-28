@@ -72,28 +72,6 @@ modules:
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2023/texlive-20230311-tlpdb-full.tar.gz
         sha512: c7f947ebc2e44d5d37d1119ed17c3d0c0eb87e2ee00dd49d6732c8a223c495554fa0c8f0e6ba4100569c44847b1a1ec1ef2b380d8246bed0d2598b6c579b090e
         dest-filename: texlive-tlpdb-full.tar.gz
-  - name: perl
-    no-autogen: true
-    config-opts:
-      - -des
-      - -Duseshrplib
-    build-options:
-      cflags: -fPIC
-      ldflags: -fpic
-    sources:
-      - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.38.2.tar.gz
-        sha256: a0a31534451eb7b83c7d6594a497543a54d488bc90ca00f5e34762577f40655e
-        x-checker-data:
-          type: anitya
-          project-id: 13599
-          url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
-      - type: script
-        dest-filename: configure
-        commands:
-          - exec ./configure.gnu $@
-    post-install:
-      - chmod -R u+w $FLATPAK_DEST/lib/perl5
   - name: perl-libs
     buildsystem: simple
     build-commands:
@@ -244,6 +222,25 @@ modules:
           url: http://mirrors.ctan.org/indexing/xindy/base/
           version-pattern: xindy-([\d\.]+).tar.gz
           url-template: http://mirrors.ctan.org/indexing/xindy/base/xindy-$version.tar.gz
+  - name: perl
+    no-autogen: true
+    buildsystem: simple
+    build-commands:
+      - mkdir tempdir
+      - ./Configure -des -Duseshrplib -Dprefix=/app/texlive
+      - make
+      - make DESTDIR=tempdir install
+      - cp -v -r tempdir/app/texlive/* /usr/lib/sdk/texlive/
+    sources:
+      - type: archive
+        url: https://www.cpan.org/src/5.0/perl-5.38.2.tar.gz
+        sha256: a0a31534451eb7b83c7d6594a497543a54d488bc90ca00f5e34762577f40655e
+        x-checker-data:
+          type: anitya
+          project-id: 13599
+          url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
+    post-install:
+      - chmod -R u+w $FLATPAK_DEST/lib/perl5
   - name: appdata
     buildsystem: simple
     build-commands:
