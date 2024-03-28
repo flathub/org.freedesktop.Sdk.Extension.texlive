@@ -79,7 +79,7 @@ modules:
       - mkdir tempdir
       - ./Configure -des -Duseshrplib -Dprefix=/app/texlive
       - make
-      - make DESTDIR=${pwd}/tempdir install
+      - make DESTDIR=tempdir install
       - cp -v -r tempdir/app/texlive/* /usr/lib/sdk/texlive/
     sources:
       - type: archive
