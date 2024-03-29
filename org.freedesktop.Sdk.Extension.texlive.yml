@@ -14,6 +14,8 @@ build-options:
       prepend-path: /usr/lib/sdk/texlive/bin/aarch64-linux
     x86_64:
       prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux
+cleanup:
+  - *.pdf
 modules:
   - name: texlive-texmf
     buildsystem: simple
@@ -229,7 +231,7 @@ modules:
           url: http://mirrors.ctan.org/indexing/xindy/base/
           version-pattern: xindy-([\d\.]+).tar.gz
           url-template: http://mirrors.ctan.org/indexing/xindy/base/xindy-$version.tar.gz
-  - name: perl
+  - name: perl2
     no-autogen: true
     buildsystem: simple
     build-commands:
