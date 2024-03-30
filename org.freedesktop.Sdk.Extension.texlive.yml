@@ -7,6 +7,8 @@ runtime-version: '23.08'
 appstream-compose: false
 separate-locales: false
 build-options:
+  env:
+    PERL5LIB: "${PERL5LIB}:/usr/lib/sdk/texlive/lib/perl5/site_perl/5.38.2"
   prefix: /usr/lib/sdk/texlive
   prepend-path: /usr/lib/sdk/texlive/bin
   arch:
@@ -59,28 +61,6 @@ modules:
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2024/texlive-20240312-extra.tar.xz
         sha256: 770f1946cdcd1b5ddada2ea328bb37294174f70a2be28b33f38ce14717bc5496
         dest-filename: texlive-extra.tar.gz
-  - name: perl
-    no-autogen: true
-    config-opts:
-      - -des
-      - -Duseshrplib
-    build-options:
-      cflags: -fPIC
-      ldflags: -fpic
-    sources:
-      - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.38.2.tar.gz
-        sha256: a0a31534451eb7b83c7d6594a497543a54d488bc90ca00f5e34762577f40655e
-        x-checker-data:
-          type: anitya
-          project-id: 13599
-          url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
-      - type: script
-        dest-filename: configure
-        commands:
-          - exec ./configure.gnu $@
-    post-install:
-      - chmod -R u+w $FLATPAK_DEST/lib/perl5
   - name: perl-libs
     buildsystem: simple
     build-commands:
@@ -231,7 +211,7 @@ modules:
           url: http://mirrors.ctan.org/indexing/xindy/base/
           version-pattern: xindy-([\d\.]+).tar.gz
           url-template: http://mirrors.ctan.org/indexing/xindy/base/xindy-$version.tar.gz
-  - name: perl2
+  - name: perl
     no-autogen: true
     buildsystem: simple
     build-commands:
