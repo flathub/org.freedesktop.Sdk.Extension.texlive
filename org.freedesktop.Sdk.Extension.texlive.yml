@@ -72,7 +72,7 @@ modules:
   - name: biber
     buildsystem: simple
     build-commands:
-      - perl ./Build.PL
+      - perl ./Build.PL --prefix ${FLATPAK_DEST}
       - ./Build
       - tar -xf biblatex.tds.tgz -C ${FLATPAK_DEST}/texmf-dist
       - texhash
