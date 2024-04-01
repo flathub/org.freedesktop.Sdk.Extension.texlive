@@ -454,6 +454,7 @@
   - set -e
   - function make_install {
   - "    mod_dir=$1"
+  - "    echo -n '------> Modulo: ' && echo $mod_dir" 
   - "    cd $mod_dir"
   - "    if [ -f 'Makefile.PL' ]; then"
   - "        perl Makefile.PL PREFIX=${FLATPAK_DEST} && make install PREFIX=${FLATPAK_DEST}"
