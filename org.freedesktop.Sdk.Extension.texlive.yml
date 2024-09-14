@@ -67,8 +67,8 @@ modules:
       ldflags: -fpic
     sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.38.2.tar.gz
-        sha256: a0a31534451eb7b83c7d6594a497543a54d488bc90ca00f5e34762577f40655e
+        url: https://www.cpan.org/src/5.0/perl-5.40.0.tar.gz
+        sha256: c740348f357396327a9795d3e8323bafd0fe8a5c7835fc1cbaba0cc8dfe7161f
       - type: script
         dest-filename: configure
         commands:
@@ -159,8 +159,8 @@ modules:
       - --enable-bundled-libs
     sources:
       - type: archive
-        url: https://github.com/mgieseki/dvisvgm/releases/download/3.2.2/dvisvgm-3.2.2.tar.gz
-        sha256: f0628bea5aa33145d75b0a6a6dd18fad889b752738cbc01c19418f35473a1d00
+        url: https://github.com/mgieseki/dvisvgm/releases/download/3.4/dvisvgm-3.4.tar.gz
+        sha256: 527bdda33027d1a4ba96a7c7d1bd36359945df0c8eb61b5c840243e5f624ef00
   - name: clisp
     build-options:
       env:
