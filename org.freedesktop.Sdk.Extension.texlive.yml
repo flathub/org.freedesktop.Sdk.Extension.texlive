@@ -69,10 +69,6 @@ modules:
       - type: archive
         url: https://www.cpan.org/src/5.0/perl-5.38.2.tar.gz
         sha256: a0a31534451eb7b83c7d6594a497543a54d488bc90ca00f5e34762577f40655e
-        x-checker-data:
-          type: anitya
-          project-id: 13599
-          url-template: https://www.cpan.org/src/5.0/perl-$version.tar.gz
       - type: script
         dest-filename: configure
         commands:
@@ -99,10 +95,6 @@ modules:
       - type: archive
         url: https://github.com/plk/biber/archive/v2.19/biber-2.19.tar.gz
         sha256: 1c1266bc8adb1637c4c59e23c47d919c5a38da4e53544a3c22c21de4a68fc9fe
-        x-checker-data:
-          type: anitya
-          project-id: 6443
-          url-template: https://github.com/plk/biber/archive/v$version/biber-$version.tar.gz
       - type: file
         url: https://sourceforge.net/projects/biblatex/files/biblatex-3.19/biblatex-3.19.tds.tgz
         sha256: 7db64bdcdab7bbda00b6065ed5388ab0ff2967006ba07c6006b1701e9858537d
@@ -120,12 +112,8 @@ modules:
       - soinstall
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10020/ghostscript-10.02.0.tar.xz
-        sha256: fa08ce016b30d26293dc322c6353691aced94fd3667a68ede7ff5395d71fcd0b
-        # x-checker-data:
-          # type: anitya
-          # project-id: 1157
-          # url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${version0}${version1}${version2}/ghostscript-$version.tar.xz
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10031/ghostscript-10.03.1.tar.xz 
+        sha256: c3328d2d743e9afa3377755d4c4c4fffb0d8ce01a2e71fbc95d893b91d41b8fe
     cleanup:
       - /share/doc
       - /share/ghostscript/*/doc
@@ -144,10 +132,6 @@ modules:
       - type: archive
         url: https://github.com/g-truc/glm/releases/download/0.9.9.8/glm-0.9.9.8.zip
         sha256: 37e2a3d62ea3322e43593c34bae29f57e3e251ea89f4067506c94043769ade4c
-        x-checker-data:
-          type: anitya
-          project-id: 1181
-          url-template: https://github.com/g-truc/glm/releases/download/$version/glm-$version.zip
   # for asymptote. It seems to fail without it.
   - shared-modules/glu/glu-9.json
   # freeglut is optional however.
@@ -163,10 +147,6 @@ modules:
       - type: archive
         url: https://sourceforge.net/projects/asymptote/files/2.79/asymptote-2.79.src.tgz
         sha256: 9a15dd89c57d15826f51b0fcb93e3956a603f77941bc50acdc71281ea0f00f18
-#        x-checker-data:
-#          type: html
-#          url: https://sourceforge.net/projects/asymptote/rss
-#          pattern: <link>(https://sourceforge.net/.+/asymptote-([\d\.]+).src.tgz)/download</link>
   - name: dvisvgm
     build-options:
       cflags: -I/usr/lib/sdk/texlive/include
@@ -181,10 +161,6 @@ modules:
       - type: archive
         url: https://github.com/mgieseki/dvisvgm/releases/download/3.2.2/dvisvgm-3.2.2.tar.gz
         sha256: f0628bea5aa33145d75b0a6a6dd18fad889b752738cbc01c19418f35473a1d00
-        x-checker-data:
-          type: anitya
-          project-id: 130020
-          url-template: https://github.com/mgieseki/dvisvgm/releases/download/$version/dvisvgm-$version.tar.gz
   - name: clisp
     build-options:
       env:
@@ -196,10 +172,6 @@ modules:
           - type: archive
             url: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.14.tar.gz
             sha256: cdac3941803364cf81a908499beb79c200ead60b6b5b40cad124fd1e06caa295
-            x-checker-data:
-              type: anitya
-              project-id: 1722
-              url-template: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-$version.tar.gz
     sources:
       - type: archive
         url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20210628.gitde01f0f.orig.tar.xz
@@ -224,11 +196,6 @@ modules:
       - type: archive
         url: http://mirrors.ctan.org/indexing/xindy/base/xindy-2.5.1.tar.gz
         sha256: 2c8ee91db7217b5776b1ee5272dd259686f7ba3ec1d25c678f75a6c03fe9ba43
-        x-checker-data:
-          type: html
-          url: http://mirrors.ctan.org/indexing/xindy/base/
-          version-pattern: xindy-([\d\.]+).tar.gz
-          url-template: http://mirrors.ctan.org/indexing/xindy/base/xindy-$version.tar.gz
   - name: appdata
     buildsystem: simple
     build-commands:
