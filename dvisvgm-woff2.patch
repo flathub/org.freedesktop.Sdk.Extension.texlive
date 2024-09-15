@@ -1,0 +1,11 @@
+--- a/src/ttf/Makefile.am	Fri Aug 23 12:34:10 2024 +0200
++++ b/src/ttf/Makefile.am	Sun Sep 15 20:14:27 2024 +0200
+@@ -17,4 +17,7 @@
+ 	VheaTable.hpp   VheaTable.cpp \
+ 	VmtxTable.hpp   VmtxTable.cpp
+ 
+-AM_CXXFLAGS = -I$(dvisvgm_srcdir)/libs/boost -I$(dvisvgm_srcdir)/libs/variant/include
++AM_CXXFLAGS = \
++	-I$(dvisvgm_srcdir)/libs/boost \
++	-I$(dvisvgm_srcdir)/libs/variant/include \
++	-I$(dvisvgm_srcdir)/libs/woff2/include
