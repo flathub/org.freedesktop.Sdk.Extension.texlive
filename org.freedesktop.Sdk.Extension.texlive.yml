@@ -93,11 +93,11 @@ modules:
       - ./Build --output=${FLATPAK_DEST} install
     sources:
       - type: archive
-        url: https://github.com/plk/biber/archive/v2.19/biber-2.19.tar.gz
-        sha256: 1c1266bc8adb1637c4c59e23c47d919c5a38da4e53544a3c22c21de4a68fc9fe
+        url: https://github.com/plk/biber/archive/v2.20/biber-2.20.tar.gz
+        sha256: 19f0312e59bf2f5711b8d69b3585a0ca894c36574f086fbb8d53ccd5c0a45ff9
       - type: file
-        url: https://sourceforge.net/projects/biblatex/files/biblatex-3.19/biblatex-3.19.tds.tgz
-        sha256: 7db64bdcdab7bbda00b6065ed5388ab0ff2967006ba07c6006b1701e9858537d
+        url: https://sourceforge.net/projects/biblatex/files/biblatex-3.20/biblatex-3.20.tds.tgz
+        sha256: 31e5d9243b5712291cdacdade4557a3665c872dd98078493d89c8c68b1398e7d
         dest-filename: biblatex.tds.tgz
   - name: ghostscript
     config-opts:
