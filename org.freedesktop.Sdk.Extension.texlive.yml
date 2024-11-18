@@ -67,8 +67,8 @@ modules:
       ldflags: -fpic
     sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.38.2.tar.gz
-        sha256: a0a31534451eb7b83c7d6594a497543a54d488bc90ca00f5e34762577f40655e
+        url: https://www.cpan.org/src/5.0/perl-5.41.5.tar.gz
+        sha256: 844d47856b8347fba553c90fa10e76de7ae579f81ed5312acf5f638d72079df4
         x-checker-data:
           type: anitya
           project-id: 13599
@@ -97,8 +97,8 @@ modules:
       - ./Build --output=${FLATPAK_DEST} install
     sources:
       - type: archive
-        url: https://github.com/plk/biber/archive/v2.19/biber-2.19.tar.gz
-        sha256: 1c1266bc8adb1637c4c59e23c47d919c5a38da4e53544a3c22c21de4a68fc9fe
+        url: https://github.com/plk/biber/archive/v2.20/biber-2.20.tar.gz
+        sha256: 19f0312e59bf2f5711b8d69b3585a0ca894c36574f086fbb8d53ccd5c0a45ff9
         x-checker-data:
           type: anitya
           project-id: 6443
@@ -179,8 +179,8 @@ modules:
       - --enable-bundled-libs
     sources:
       - type: archive
-        url: https://github.com/mgieseki/dvisvgm/releases/download/3.2.2/dvisvgm-3.2.2.tar.gz
-        sha256: f0628bea5aa33145d75b0a6a6dd18fad889b752738cbc01c19418f35473a1d00
+        url: https://github.com/mgieseki/dvisvgm/releases/download/3.4.2/dvisvgm-3.4.2.tar.gz
+        sha256: 8f012532819650304d7384a36c3fe8b2f8810e96d449ffe2948b152bd08588f7
         x-checker-data:
           type: anitya
           project-id: 130020
@@ -202,8 +202,8 @@ modules:
               url-template: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-$version.tar.gz
     sources:
       - type: archive
-        url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20210628.gitde01f0f.orig.tar.xz
-        sha256: 8b71994ae76e2557da637b0c1663daac6b49b7128c2a2bdcb5a155b55b55ca60
+        url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20241117.git2640aef.orig.tar.xz
+        sha256: 680b1762e944055f94c6e2ce177755b3a457921f9ff22ef8dc232d82600c009f
         x-checker-data:
           type: debian-repo
           root: https://deb.debian.org/debian/
