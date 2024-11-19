@@ -202,8 +202,8 @@ modules:
               url-template: https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-$version.tar.gz
     sources:
       - type: archive
-        url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20210628.gitde01f0f.orig.tar.xz
-        sha256: 8b71994ae76e2557da637b0c1663daac6b49b7128c2a2bdcb5a155b55b55ca60
+        url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20241117.git2640aef.orig.tar.xz
+        sha256: 680b1762e944055f94c6e2ce177755b3a457921f9ff22ef8dc232d82600c009f
         x-checker-data:
           type: debian-repo
           root: https://deb.debian.org/debian/
