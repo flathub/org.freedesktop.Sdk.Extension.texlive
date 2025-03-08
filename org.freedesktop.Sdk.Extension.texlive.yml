@@ -112,7 +112,7 @@ modules:
       - soinstall
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10031/ghostscript-10.03.1.tar.xz 
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10031/ghostscript-10.03.1.tar.xz
         sha256: 157212edc96b8ccc409475dce2e49833fb4427f150c455258ded9632c106abee
     cleanup:
       - /share/doc
@@ -176,8 +176,8 @@ modules:
             sha256: cdac3941803364cf81a908499beb79c200ead60b6b5b40cad124fd1e06caa295
     sources:
       - type: archive
-        url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20210628.gitde01f0f.orig.tar.xz
-        sha256: 8b71994ae76e2557da637b0c1663daac6b49b7128c2a2bdcb5a155b55b55ca60
+        url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20241228.gitc3ec11b.orig.tar.xz
+        sha256: 6dae1a12709af3d96356ebbc0da541d6db1d8e0eb6a55885f16f6530e80e8bf9
         x-checker-data:
           type: debian-repo
           root: https://deb.debian.org/debian/
