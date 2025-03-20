@@ -21,8 +21,8 @@ modules:
       - tar -xf texlive-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
     sources:
       - type: file
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2024/texlive-20240312-texmf.tar.xz
-        sha256: c8eae2deaaf51e86d93baa6bbcc4e94c12aa06a0d92893df474cc7d2a012c7a7
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2025/texlive-20250308-texmf.tar.xz
+        sha256: 08dcda7430bf0d2f6ebb326f1e197e1473d3f7cc0984a2adb7236df45316c7cf
         dest-filename: texlive-texmf.tar.xz
   - name: texlive-source
     builddir: true
@@ -51,11 +51,11 @@ modules:
       - fmtutil-sys --all
     sources:
       - type: archive
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2024/texlive-20240312-source.tar.xz
-        sha256: 7b6d87cf01661670fac45c93126bed97b9843139ed510f975d047ea938b6fe96
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2025/texlive-20250308-source.tar.xz
+        sha256: fffdb1a3d143c177a4398a2229a40d6a88f18098e5f6dcfd57648c9f2417490f
       - type: file
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2024/texlive-20240312-extra.tar.xz
-        sha256: 770f1946cdcd1b5ddada2ea328bb37294174f70a2be28b33f38ce14717bc5496
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2025/texlive-20250308-extra.tar.xz
+        sha256: ea69cfecbc9b138acbc45476e8cb4d9357f5e4e45fd12b3bf9ceabbebd7669d2
         dest-filename: texlive-extra.tar.gz
   - name: perl
     no-autogen: true
@@ -67,8 +67,8 @@ modules:
       ldflags: -fpic
     sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.40.0.tar.gz
-        sha256: c740348f357396327a9795d3e8323bafd0fe8a5c7835fc1cbaba0cc8dfe7161f
+        url: https://www.cpan.org/src/5.0/perl-5.40.1.tar.gz
+        sha256: 02f8c45bb379ed0c3de7514fad48c714fd46be8f0b536bfd5320050165a1ee26
       - type: script
         dest-filename: configure
         commands:
