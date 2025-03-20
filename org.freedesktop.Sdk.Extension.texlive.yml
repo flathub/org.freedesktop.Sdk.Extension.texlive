@@ -178,13 +178,6 @@ modules:
       - type: archive
         url: https://deb.debian.org/debian/pool/main/c/clisp/clisp_2.49.20210628.gitde01f0f.orig.tar.xz
         sha256: 8b71994ae76e2557da637b0c1663daac6b49b7128c2a2bdcb5a155b55b55ca60
-        x-checker-data:
-          type: debian-repo
-          root: https://deb.debian.org/debian/
-          dist: unstable
-          component: main
-          package-name: clisp
-          source: true
       - type: shell
         commands:
           - cp -p /usr/share/automake-*/config.{sub,guess} src/build-aux
