@@ -14,8 +14,6 @@ build-options:
       prepend-path: /usr/lib/sdk/texlive/bin/aarch64-linux
     x86_64:
       prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux
-cleanup:
-  - '*.pdf'
 modules:
   - name: texlive-texmf
     buildsystem: simple
