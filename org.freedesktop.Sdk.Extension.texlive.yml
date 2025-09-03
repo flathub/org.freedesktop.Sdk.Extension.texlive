@@ -27,6 +27,7 @@ modules:
   - name: texlive-source
     builddir: true
     build-options:
+      cflags: -std=gnu17
       ldflags: -ldl
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
