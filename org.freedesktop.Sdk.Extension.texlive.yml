@@ -28,7 +28,7 @@ modules:
     builddir: true
     build-options:
       cflags: -std=gnu17
-      cxxflags: -std=gnu++17
+      cxxflags: -std=gnu++20
       ldflags: -ldl
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
