@@ -27,6 +27,7 @@ modules:
   - name: texlive-source
     builddir: true
     build-options:
+      cflags: -std=gnu17
       ldflags: -ldl
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
@@ -57,6 +58,8 @@ modules:
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2025/texlive-20250308-extra.tar.xz
         sha256: ea69cfecbc9b138acbc45476e8cb4d9357f5e4e45fd12b3bf9ceabbebd7669d2
         dest-filename: texlive-extra.tar.gz
+      - type: patch
+        path: patchfile        
   - name: perl
     no-autogen: true
     config-opts:
@@ -77,6 +80,8 @@ modules:
       - chmod -R u+w $FLATPAK_DEST/lib/perl5
   - name: perl-libs
     buildsystem: simple
+    build-options:
+      cflags: -std=gnu17    
     build-commands:
       - perl-libs/install.sh
     post-install:
@@ -85,6 +90,8 @@ modules:
       - org.freedesktop.Sdk.Extension.texlive.perllibs.yml
   - name: biber
     buildsystem: simple
+    build-options:
+      cflags: -std=gnu17    
     build-commands:
       - perl ./Build.PL
       - ./Build
