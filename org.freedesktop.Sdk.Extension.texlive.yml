@@ -28,7 +28,6 @@ modules:
     builddir: true
     build-options:
       cflags: -std=gnu17
-      cxxflags: -std=gnu++20
       ldflags: -ldl
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
@@ -59,6 +58,8 @@ modules:
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2025/texlive-20250308-extra.tar.xz
         sha256: ea69cfecbc9b138acbc45476e8cb4d9357f5e4e45fd12b3bf9ceabbebd7669d2
         dest-filename: texlive-extra.tar.gz
+      - type: patch
+        path: patchfile        
   - name: perl
     no-autogen: true
     config-opts:
