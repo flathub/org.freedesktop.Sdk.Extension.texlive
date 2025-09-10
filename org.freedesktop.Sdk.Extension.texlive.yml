@@ -80,6 +80,8 @@ modules:
       - chmod -R u+w $FLATPAK_DEST/lib/perl5
   - name: perl-libs
     buildsystem: simple
+    build-options:
+      cflags: -std=gnu17    
     build-commands:
       - perl-libs/install.sh
     post-install:
@@ -88,6 +90,8 @@ modules:
       - org.freedesktop.Sdk.Extension.texlive.perllibs.yml
   - name: biber
     buildsystem: simple
+    build-options:
+      cflags: -std=gnu17    
     build-commands:
       - perl ./Build.PL
       - ./Build
