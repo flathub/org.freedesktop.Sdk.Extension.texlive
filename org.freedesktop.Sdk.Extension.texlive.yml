@@ -32,6 +32,7 @@ modules:
     config-opts:
       - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
       - --disable-native-texlive-build
+      - --datarootdir=${FLATPAK_DEST}
       - --with-banner-add= - Flatpak
       - --without-x # needs additonal dependencies
       - --with-system-cairo
