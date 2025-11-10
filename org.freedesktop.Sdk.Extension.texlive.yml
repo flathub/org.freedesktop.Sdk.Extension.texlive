@@ -18,7 +18,7 @@ modules:
   - name: texlive-texmf
     buildsystem: simple
     build-commands:
-      - tar -xf texlive-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
+      - tar --exclude=texmf-dist/doc -xf texlive-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
     sources:
       - type: file
         url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2025/texlive-20250308-texmf.tar.xz
