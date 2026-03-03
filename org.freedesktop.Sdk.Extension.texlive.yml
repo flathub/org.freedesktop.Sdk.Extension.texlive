@@ -21,20 +21,24 @@ modules:
       - tar --exclude=texmf-dist/doc -xf texlive-texmf.tar.xz -C ${FLATPAK_DEST} --strip-components=1
     sources:
       - type: file
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2025/texlive-20250308-texmf.tar.xz
-        sha256: 08dcda7430bf0d2f6ebb326f1e197e1473d3f7cc0984a2adb7236df45316c7cf
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2026/texlive-20260301-texmf.tar.xz
+        sha512: 0b8f87622e4b9e31d4bd8c7720376aa9685e5ee299c896e3e1660459546a31e11508946f2c40a71671944c8b467483e5d4d859ff17698d239c7d5aced65d4a6b
         dest-filename: texlive-texmf.tar.xz
   - name: texlive-source
     builddir: true
     build-options:
-      cflags: -std=gnu17
       ldflags: -ldl
     config-opts:
-      - --bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux
-      - --disable-native-texlive-build
+      - --bindir=${FLATPAK_DEST}/bin
       - --datarootdir=${FLATPAK_DEST}
+      - --disable-native-texlive-build
+      - --includedir=${FLATPAK_DEST}/include
+      - --infodir=${FLATPAK_DEST}/texmf-dist/doc/info
+      - --libdir=${FLATPAK_DEST}/lib
+      - --mandir=${FLATPAK_DEST}/texmf-dist/doc/man
+      - --prefix=${FLATPAK_DEST}
       - --with-banner-add= - Flatpak
-      - --without-x # needs additonal dependencies
+      - --without-x
       - --with-system-cairo
       - --with-system-fontconfig
       - --with-system-freetype2
@@ -53,26 +57,31 @@ modules:
       - fmtutil-sys --all
     sources:
       - type: archive
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2025/texlive-20250308-source.tar.xz
-        sha256: fffdb1a3d143c177a4398a2229a40d6a88f18098e5f6dcfd57648c9f2417490f
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2026/texlive-20260301-source.tar.xz
+        sha512: c2ea189fee82475e3013e5e6d7bdbbeef80fe33d3636b99b35bf7c8d0ff06b48dcc54d12f4c3959a0fc9e24b80f9c4878a417d4b55ef4880ff238aefbcf189a3
       - type: file
-        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2025/texlive-20250308-extra.tar.xz
-        sha256: ea69cfecbc9b138acbc45476e8cb4d9357f5e4e45fd12b3bf9ceabbebd7669d2
+        url: https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2026/texlive-20260301-extra.tar.xz
+        sha512: bde992edb7cbaa119c79bfc73697203dfb6bb7d04488d8e50085c06ebbe241f9ef3d161afb996a814c3d1e35bc2cbfe6a957beb5dfcdcfcc7e0cc827b32c5fc3
         dest-filename: texlive-extra.tar.gz
-      - type: patch
-        path: patchfile        
   - name: perl
     no-autogen: true
     config-opts:
+      - -Darchlibexp=${FLATPAK_DEST}/lib/perl5/
+      - -Dbinexp=${FLATPAK_DEST}/bin
       - -des
+      - -Dman1direxp=${FLATPAK_DEST}/man/man1
+      - -Dman3direxp=${FLATPAK_DEST}/man/man3
+      - -Dprefixexp=${FLATPAK_DEST}
+      - -Dprivlibexp=${FLATPAK_DEST}/lib/perl5/
+      - -Dscriptdirexp=${FLATPAK_DEST}/bin
       - -Duseshrplib
     build-options:
       cflags: -fPIC
       ldflags: -fpic
     sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.40.1.tar.gz
-        sha256: 02f8c45bb379ed0c3de7514fad48c714fd46be8f0b536bfd5320050165a1ee26
+        url: https://www.cpan.org/src/5.0/perl-5.42.0.tar.gz
+        sha256: e093ef184d7f9a1b9797e2465296f55510adb6dab8842b0c3ed53329663096dc
       - type: script
         dest-filename: configure
         commands:
@@ -81,8 +90,6 @@ modules:
       - chmod -R u+w $FLATPAK_DEST/lib/perl5
   - name: perl-libs
     buildsystem: simple
-    build-options:
-      cflags: -std=gnu17    
     build-commands:
       - perl-libs/install.sh
     post-install:
@@ -91,8 +98,6 @@ modules:
       - org.freedesktop.Sdk.Extension.texlive.perllibs.yml
   - name: biber
     buildsystem: simple
-    build-options:
-      cflags: -std=gnu17    
     build-commands:
       - perl ./Build.PL
       - ./Build
@@ -101,11 +106,11 @@ modules:
       - ./Build --output=${FLATPAK_DEST} install
     sources:
       - type: archive
-        url: https://github.com/plk/biber/archive/v2.19/biber-2.19.tar.gz
-        sha256: 1c1266bc8adb1637c4c59e23c47d919c5a38da4e53544a3c22c21de4a68fc9fe
+        url: https://github.com/plk/biber/archive/v2.21/biber-2.21.tar.gz
+        sha256: 2652cf3ae0abff5fb233aa77f18e70014cc2c70b94a8693c099a3cad9bbb4b20
       - type: file
-        url: https://sourceforge.net/projects/biblatex/files/biblatex-3.19/biblatex-3.19.tds.tgz
-        sha256: 7db64bdcdab7bbda00b6065ed5388ab0ff2967006ba07c6006b1701e9858537d
+        url: https://github.com/plk/biblatex/archive/v3.21/biblatex-3.21.tar.gz
+        sha256: 8dfbd8e6f75650740066d7b25f3e8c527169febb3c70eb70c337d2f1bb157e3a
         dest-filename: biblatex.tds.tgz        
   - name: appdata
     buildsystem: simple

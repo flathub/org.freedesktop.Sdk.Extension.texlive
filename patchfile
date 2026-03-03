@@ -1,9 +1,0 @@
---- source/texk/dvisvgm/dvisvgm-src/libs/woff2/include/woff2/output.h	2025-09-09 19:45:57.393764873 +0200
-+++ source/texk/dvisvgm/dvisvgm-src/libs/woff2/include/woff2/output.h.patched	2025-09-09 19:46:08.363804157 +0200
-@@ -11,6 +11,7 @@
- 
- #include <algorithm>
- #include <cstring>
-+#include <cstdint>
- #include <memory>
- #include <string>
