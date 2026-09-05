@@ -1,0 +1,13 @@
+--- configure.ac	(revision 78749)
++++ configure.ac	(working copy)
+@@ -59,6 +59,6 @@ m4_include([ac/web2c.ac])
+ 
+-# XeTeX requires C++11 because ICU does :(.
++# XeTeX follows the ICU requirement for C++.
+ if test "x$enable_xetex" = xyes; then
+-  AC_MSG_NOTICE([checking for C++11, since XeTeX is enabled])
+-  AX_CXX_COMPILE_STDCXX([11])
++  AC_MSG_NOTICE([checking for C++17, since XeTeX is enabled])
++  AX_CXX_COMPILE_STDCXX([17])
+ fi
+ 
