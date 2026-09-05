@@ -60,7 +60,7 @@ modules:
         sha512: bde992edb7cbaa119c79bfc73697203dfb6bb7d04488d8e50085c06ebbe241f9ef3d161afb996a814c3d1e35bc2cbfe6a957beb5dfcdcfcc7e0cc827b32c5fc3
         dest-filename: texlive-extra.tar.gz
       - type: patch
-        filename: xetex_bug205.diff
+        path: xetex_bug205.diff
   - name: perl
     no-autogen: true
     config-opts:
