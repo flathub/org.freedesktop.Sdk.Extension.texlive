@@ -1,5 +1,5 @@
---- configure.ac	(revision 78749)
-+++ configure.ac	(working copy)
+--- ${FLATPAK_DEST}/texk/web2c/configure.ac	(revision 78749)
++++ "${FLATPAK_DEST}/texk/web2c/configure.ac	(working copy)
 @@ -59,6 +59,6 @@ m4_include([ac/web2c.ac])
  
 -# XeTeX requires C++11 because ICU does :(.
