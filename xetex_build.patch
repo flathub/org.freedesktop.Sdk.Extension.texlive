@@ -898,20 +898,6 @@ index 1a4c1c24f6..c6194f39b3 100755
  # Check whether --enable-cxx-runtime-hack was given.
  if test ${enable_cxx_runtime_hack+y}
  then :
-diff --git a/texk/web2c/ChangeLog b/texk/web2c/ChangeLog
-index 1edec7e320..2e1e45acf3 100644
---- a/texk/web2c/ChangeLog
-+++ b/texk/web2c/ChangeLog
-@@ -1,3 +1,9 @@
-+2026-04-20  Karl Berry  <karl@freefriends.org>
-+
-+	* configure.ac [XeTeX]: ICU 76 requires C++17, so XeTeX does too.
-+	From Norbert.
-+	https://sourceforge.net/p/xetex/bugs/205/
-+
- 2026-04-12  Karl Berry  <karl@freefriends.org>
- 
- 	* am/bootstrap.am (ctangleboot_DEPENDENCIES): add
 diff --git a/texk/web2c/Makefile.in b/texk/web2c/Makefile.in
 index 05946344fd..d5b9a2f5e5 100644
 --- a/texk/web2c/Makefile.in
