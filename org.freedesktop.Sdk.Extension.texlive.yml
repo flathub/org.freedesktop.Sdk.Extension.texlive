@@ -61,8 +61,6 @@ modules:
         dest-filename: texlive-extra.tar.gz
       - type: patch
         path: xetex_build.patch
-        options:
-          - --exclude=texk/web2c/ChangeLog
   - name: perl
     no-autogen: true
     config-opts:
